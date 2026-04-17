@@ -428,7 +428,7 @@ function HeroSection() {
           <p className="text-sm font-medium text-[#111827]">Comparacion</p>
           <h2 className="mt-2 text-[30px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0f172a] md:text-[42px]">
             ¿Por que elegir
-            <span className="ml-2 text-[#0ea5a4]">BudgetTrack?</span>
+            <span className="ml-2 text-[#0ea5a4]">FinanzasTrack?</span>
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-[14px] text-[#4b5563] md:text-[17px]">
             Compara y descubre por que miles de personas ya dejaron atras los metodos
@@ -447,7 +447,7 @@ function HeroSection() {
                   <span className="mx-auto mb-3 grid h-10 w-10 place-content-center rounded-xl border border-[#f3f4f6] bg-white shadow-[0_6px_14px_rgba(15,23,42,0.08)]">
                     <Square className="h-4 w-4 stroke-[2.5] text-[#9ca3af]" aria-hidden="true" />
                   </span>
-                  <p className="text-[24px] font-semibold text-[#0f172a]">BudgetTrack</p>
+                  <p className="text-[24px] font-semibold text-[#0f172a]">FinanzasTrack</p>
                 </th>
                 <th className="w-[20%] border-b border-r border-[#eef2f7] bg-[#f1fff7] px-5 py-7 text-center">
                   <span className="mx-auto mb-3 grid h-10 w-10 place-content-center rounded-xl bg-[#16a34a] shadow-[0_6px_14px_rgba(22,163,74,0.25)]">
@@ -500,7 +500,7 @@ function HeroSection() {
           <p className="text-sm font-medium text-[#111827]">Conoce la App</p>
           <h2 className="mt-2 text-[30px] font-bold leading-[1.12] tracking-[-0.02em] text-[#0f172a] md:text-[42px]">
             Descubre todo lo que puedes hacer con
-            <span className="ml-2 text-[#0ea5a4]">BudgetTrack</span>
+            <span className="ml-2 text-[#0ea5a4]">FinanzasTrack</span>
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-[14px] text-[#4b5563] md:text-[17px]">
             Una plataforma completa diseñada para que tengas el control total de tus finanzas

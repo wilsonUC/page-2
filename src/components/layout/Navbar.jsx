@@ -11,7 +11,7 @@ function Navbar() {
             <Square className="h-4 w-4 stroke-[2.5]" aria-hidden="true" />
           </span>
           <span className="text-[31px] font-semibold leading-none tracking-[-0.04em] text-[#111827]">
-            BudgetTrack
+            FinanzasTrack
           </span>
         </a>
 
