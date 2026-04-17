@@ -83,18 +83,18 @@ const benefits = [
 ]
 
 const comparisonRows = [
-  { feature: 'Acceso desde cualquier dispositivo', budgetTrack: true, excel: true, notebook: false },
-  { feature: 'Graficos y visualizaciones automaticas', budgetTrack: true, excel: true, notebook: false },
-  { feature: 'Alertas y recordatorios inteligentes', budgetTrack: true, excel: false, notebook: false },
-  { feature: 'Categorizacion automatica', budgetTrack: true, excel: false, notebook: false },
-  { feature: 'Reportes profesionales en PDF', budgetTrack: true, excel: true, notebook: false },
-  { feature: 'Metas de ahorro con seguimiento', budgetTrack: true, excel: false, notebook: false },
-  { feature: 'Transacciones recurrentes', budgetTrack: true, excel: false, notebook: false },
-  { feature: 'Respaldo automatico en la nube', budgetTrack: true, excel: true, notebook: false },
-  { feature: 'Analisis de tendencias', budgetTrack: true, excel: false, notebook: false },
-  { feature: 'Interfaz intuitiva y moderna', budgetTrack: true, excel: false, notebook: false },
-  { feature: 'Actualizaciones en tiempo real', budgetTrack: true, excel: false, notebook: false },
-  { feature: 'Seguridad bancaria', budgetTrack: true, excel: false, notebook: false },
+  { feature: 'Acceso desde cualquier dispositivo', finanzasTrack: true, excel: true, notebook: false },
+  { feature: 'Graficos y visualizaciones automaticas', finanzasTrack: true, excel: true, notebook: false },
+  { feature: 'Alertas y recordatorios inteligentes', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Categorizacion automatica', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Reportes profesionales en PDF', finanzasTrack: true, excel: true, notebook: false },
+  { feature: 'Metas de ahorro con seguimiento', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Transacciones recurrentes', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Respaldo automatico en la nube', finanzasTrack: true, excel: true, notebook: false },
+  { feature: 'Analisis de tendencias', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Interfaz intuitiva y moderna', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Actualizaciones en tiempo real', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Seguridad bancaria', finanzasTrack: true, excel: false, notebook: false },
 ]
 
 const demoVideoUrl = 'https://drive.google.com/file/d/1lZOXHgS1GUbnDNI0qeovX4ogqAC_FRg6/preview'
@@ -223,14 +223,14 @@ const pricingFeatures = [
 
 const faqItems = [
   {
-    question: '¿Como funciona BudgetTrack?',
+    question: '¿Como funciona FinanzasTrack?',
     answer:
-      'BudgetTrack es una aplicación web que te permite registrar y gestionar tus ingresos, gastos e inventario de manera simple. Solo necesitas crear una cuenta, configurar tus categorías y empezar a registrar tus transacciones. La plataforma genera automáticamente gráficos y reportes para que puedas visualizar tu situación financiera en tiempo real.',
+      'FinanzasTrack es una aplicación web que te permite registrar y gestionar tus ingresos, gastos e inventario de manera simple. Solo necesitas crear una cuenta, configurar tus categorías y empezar a registrar tus transacciones. La plataforma genera automáticamente gráficos y reportes para que puedas visualizar tu situación financiera en tiempo real.',
   },
   {
     question: '¿Que incluye el precio de 20 soles pago unico?',
     answer:
-      'El pago único de 20 soles te da acceso de por vida a todas las funcionalidades de BudgetTrack: control de gastos e ingresos, gestión de inventario, métricas avanzadas, reportes en PDF, presupuestos personalizados, respaldo automático, soporte técnico y todas las actualizaciones futuras sin costo adicional.',
+      'El pago único de 20 soles te da acceso de por vida a todas las funcionalidades de FinanzasTrack: control de gastos e ingresos, gestión de inventario, métricas avanzadas, reportes en PDF, presupuestos personalizados, respaldo automático, soporte técnico y todas las actualizaciones futuras sin costo adicional.',
   },
   {
     question: '¿Puedo descargar los reportes?',
@@ -240,7 +240,7 @@ const faqItems = [
   {
     question: '¿Puedo acceder desde mi celular?',
     answer:
-      'Absolutamente. BudgetTrack es una aplicación web responsive que funciona perfectamente en cualquier dispositivo: computadora, tablet o celular. Solo necesitas un navegador web e internet para acceder desde cualquier lugar y en cualquier momento.',
+      'Absolutamente. FinanzasTrack es una aplicación web responsive que funciona perfectamente en cualquier dispositivo: computadora, tablet o celular. Solo necesitas un navegador web e internet para acceder desde cualquier lugar y en cualquier momento.',
   },
   {
     question: '¿Mis datos estan seguros?',
@@ -260,25 +260,25 @@ const faqItems = [
   {
     question: '¿Es realmente un pago unico?',
     answer:
-      'Sí, es 100% un pago único. No hay suscripciones mensuales ni costos ocultos. Pagas 20 soles una sola vez y obtienes acceso de por vida a BudgetTrack, incluyendo todas las actualizaciones y nuevas funcionalidades que agreguemos en el futuro.',
+      'Sí, es 100% un pago único. No hay suscripciones mensuales ni costos ocultos. Pagas 20 soles una sola vez y obtienes acceso de por vida a FinanzasTrack, incluyendo todas las actualizaciones y nuevas funcionalidades que agreguemos en el futuro.',
   },
   {
     question: '¿Sirve para negocios o solo uso personal?',
     answer:
-      'BudgetTrack es perfecto para ambos. Puedes usarlo para gestionar tus finanzas personales, tu negocio pequeño, tu emprendimiento o incluso para llevar las cuentas de varios proyectos. Las categorías personalizables y la gestión de inventario lo hacen ideal tanto para uso personal como profesional.',
+      'FinanzasTrack es perfecto para ambos. Puedes usarlo para gestionar tus finanzas personales, tu negocio pequeño, tu emprendimiento o incluso para llevar las cuentas de varios proyectos. Las categorías personalizables y la gestión de inventario lo hacen ideal tanto para uso personal como profesional.',
   },
 ]
 
 const testimonials = [
   {
     quote:
-      'BudgetTrack cambio completamente mi forma de manejar las finanzas de mi negocio. Ahora tengo control total de mis gastos e ingresos, y los reportes mensuales me ayudan a tomar mejores decisiones.',
+      'FinanzasTrack cambio completamente mi forma de manejar las finanzas de mi negocio. Ahora tengo control total de mis gastos e ingresos, y los reportes mensuales me ayudan a tomar mejores decisiones.',
     name: 'Maria Garcia',
     role: 'Emprendedora',
   },
   {
     quote:
-      'Como freelancer, necesitaba algo simple pero potente. BudgetTrack es exactamente eso. La gestion de inventario y las metricas avanzadas me han ahorrado horas de trabajo cada semana.',
+      'Como freelancer, necesitaba algo simple pero potente. FinanzasTrack es exactamente eso. La gestion de inventario y las metricas avanzadas me han ahorrado horas de trabajo cada semana.',
     name: 'Carlos Mendoza',
     role: 'Freelancer',
   },
@@ -299,10 +299,20 @@ const trustStats = [
 
 function ComparisonStatus({ enabled }) {
   if (enabled) {
-    return <CircleCheck className="mx-auto h-5 w-5 fill-[#22c55e] text-white stroke-3" aria-hidden="true" />
+    return (
+      <CircleCheck
+        className="mx-auto h-5 w-5 fill-[#22c55e] text-white stroke-3 transition-transform duration-200 group-hover/row:scale-110 motion-reduce:group-hover/row:scale-100"
+        aria-hidden="true"
+      />
+    )
   }
 
-  return <CircleX className="mx-auto h-5 w-5 fill-[#f87171] text-white stroke-3" aria-hidden="true" />
+  return (
+    <CircleX
+      className="mx-auto h-5 w-5 fill-[#f87171] text-white stroke-3 transition-transform duration-200 group-hover/row:scale-105 motion-reduce:group-hover/row:scale-100"
+      aria-hidden="true"
+    />
+  )
 }
 
 /** Cuenta atrás inicial 24:59:59 (ajustable) */
@@ -326,24 +336,27 @@ function HeroSection() {
 
   return (
     <main className="mx-auto w-full max-w-6xl px-6 pb-24 pt-8">
-      <section className="mx-auto max-w-5xl text-center">
-        <p className="mx-auto inline-flex items-center gap-2 rounded-full border border-[#d8bf80] bg-white px-5 py-2 text-[14px] text-[#6b7280] shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
-          <Square className="h-3 w-3 text-[#d98104]" aria-hidden="true" />
+      <section id="inicio" className="mx-auto max-w-5xl scroll-mt-24 text-center">
+        <p className="mx-auto inline-flex items-center gap-2 rounded-full border border-[#d8bf80] bg-white px-5 py-2 text-[14px] text-[#6b7280] shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all duration-300 motion-safe:animate-fade-in-up motion-reduce:animate-none hover:-translate-y-0.5 hover:border-[#c9a84d] hover:shadow-[0_12px_28px_rgba(0,0,0,0.1)] motion-reduce:hover:translate-y-0">
+          <Square className="h-3 w-3 text-[#d98104] transition-transform duration-300 hover:rotate-12" aria-hidden="true" />
           ¿No sabes donde se fue tu dinero este mes?
         </p>
 
-        <h1 className="mx-auto mt-9 w-fit whitespace-nowrap text-center text-[clamp(2rem,3.8vw,4.5rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-black">
-          Tu dinero bajo control con BudgetTrack
+        <h1 className="mx-auto mt-9 w-fit whitespace-nowrap text-center text-[clamp(2rem,3.8vw,4.5rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-black motion-safe:animate-fade-in-up motion-safe:[animation-delay:80ms] motion-reduce:animate-none">
+          Tu dinero bajo control con FinanzasTrack
         </h1>
 
-        <p className="mx-auto mt-5 max-w-4xl text-[17px] leading-[1.4] text-[#1f2937] md:text-[20px]">
+        <p className="mx-auto mt-5 max-w-4xl text-[17px] leading-[1.4] text-[#1f2937] md:text-[20px] motion-safe:animate-fade-in-up motion-safe:[animation-delay:160ms] motion-reduce:animate-none">
           Gestiona ingresos, gastos e inventario en un solo lugar. Metricas inteligentes
           que te ayudan a tomar mejores decisiones financieras.
         </p>
 
-        <button className="mt-10 inline-flex items-center gap-2 rounded-2xl bg-[#d98104] px-8 py-2.5 text-[16px] font-semibold text-white shadow-[0_8px_18px_rgba(217,129,4,0.35)] transition hover:bg-[#c87400] md:text-[18px]">
+        <button className="group mt-10 inline-flex items-center gap-2 rounded-2xl bg-[#d98104] px-8 py-2.5 text-[16px] font-semibold text-white shadow-[0_8px_18px_rgba(217,129,4,0.35)] transition-all duration-200 motion-safe:animate-fade-in-up motion-safe:[animation-delay:240ms] motion-reduce:animate-none hover:-translate-y-0.5 hover:bg-[#c87400] hover:shadow-[0_14px_28px_rgba(217,129,4,0.42)] active:translate-y-0 active:scale-[0.98] motion-reduce:hover:translate-y-0 md:text-[18px]">
           Organiza tu dinero en 5 minutos
-          <Square className="h-4 w-4 stroke-[2.5]" aria-hidden="true" />
+          <Square
+            className="h-4 w-4 stroke-[2.5] transition-transform duration-200 group-hover:translate-x-1"
+            aria-hidden="true"
+          />
         </button>
       </section>
 
@@ -358,10 +371,10 @@ function HeroSection() {
         ))}
       </section>
 
-      <section className="group mx-auto mt-16 w-full max-w-5xl rounded-[26px] border border-[#dce8ea] bg-[#f7fbfb] p-5 shadow-[0_0_0_1px_rgba(220,232,234,0.7),0_10px_22px_rgba(15,23,42,0.08),0_0_24px_rgba(20,184,166,0.1)] transition-transform duration-300 ease-out hover:scale-[1.01] md:p-6">
+      <section className="group mx-auto mt-16 w-full max-w-5xl rounded-[26px] border border-[#dce8ea] bg-[#f7fbfb] p-5 shadow-[0_0_0_1px_rgba(220,232,234,0.7),0_10px_22px_rgba(15,23,42,0.08),0_0_24px_rgba(20,184,166,0.1)] transition-all duration-300 ease-out hover:scale-[1.01] hover:border-[#b8e0e4] hover:shadow-[0_0_0_1px_rgba(184,224,228,0.9),0_18px_36px_rgba(15,23,42,0.1),0_0_32px_rgba(20,184,166,0.14)] motion-reduce:hover:scale-100 md:p-6">
         <div className="mb-6 flex flex-col gap-4 md:mb-8 md:flex-row md:items-start md:justify-between">
           <div className="flex items-start gap-4">
-            <span className="mt-1 grid h-12 w-12 place-content-center rounded-full bg-[#14b8a6] text-white shadow-[0_10px_22px_rgba(20,184,166,0.35)]">
+            <span className="mt-1 grid h-12 w-12 place-content-center rounded-full bg-[#14b8a6] text-white shadow-[0_10px_22px_rgba(20,184,166,0.35)] transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_12px_28px_rgba(20,184,166,0.45)]">
               <Square className="h-4 w-4 stroke-[2.5]" aria-hidden="true" />
             </span>
 
@@ -375,18 +388,21 @@ function HeroSection() {
             </div>
           </div>
 
-          <button className="inline-flex w-fit items-center gap-2 rounded-full bg-[#14b8a6] px-8 py-3 text-[15px] font-semibold text-[#053b3b] shadow-[0_10px_20px_rgba(20,184,166,0.25)]">
-            <VolumeX className="h-4 w-4 stroke-[2.5]" aria-hidden="true" />
+          <button className="group/sound inline-flex w-fit items-center gap-2 rounded-full bg-[#14b8a6] px-8 py-3 text-[15px] font-semibold text-[#053b3b] shadow-[0_10px_20px_rgba(20,184,166,0.25)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0d9488] hover:shadow-[0_14px_26px_rgba(20,184,166,0.35)] active:scale-[0.98] motion-reduce:hover:translate-y-0">
+            <VolumeX
+              className="h-4 w-4 stroke-[2.5] transition-transform duration-200 group-hover/sound:scale-110"
+              aria-hidden="true"
+            />
             Sonido
           </button>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border border-[#d1d5db] bg-[#9a9a9a] transition-transform duration-300 ease-out group-hover:scale-[1.01]">
+        <div className="overflow-hidden rounded-2xl border border-[#d1d5db] bg-[#9a9a9a] transition-all duration-300 ease-out group-hover:scale-[1.01] group-hover:border-[#94a3b8] group-hover:shadow-inner motion-reduce:group-hover:scale-100">
           <div className="relative min-h-[300px] w-full pb-[56.25%]">
             <iframe
               className="absolute inset-0 h-full w-full"
               src={demoVideoUrl}
-              title="Demo de BudgetTrack"
+              title="Demo de FinanzasTrack"
               allow="autoplay; encrypted-media"
               allowFullScreen
             />
@@ -394,7 +410,7 @@ function HeroSection() {
         </div>
       </section>
 
-      <section className="mx-auto mt-20 w-full max-w-6xl">
+      <section id="beneficios" className="mx-auto mt-20 w-full max-w-6xl scroll-mt-24">
         <div className="text-center">
           <h2 className="text-[30px] font-bold leading-[1.1] tracking-[-0.02em] text-[#0f172a] md:text-[42px]">
             Di adios al estres financiero.
@@ -409,9 +425,9 @@ function HeroSection() {
           {benefits.map((benefit) => (
             <article
               key={benefit.title}
-              className="rounded-2xl border border-[#e5e7eb] bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.06)]"
+              className="group/benefit rounded-2xl border border-[#e5e7eb] bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#c5ebe8] hover:shadow-[0_18px_40px_rgba(15,23,42,0.1)] motion-reduce:hover:translate-y-0"
             >
-              <span className="mb-5 inline-grid h-10 w-10 place-content-center rounded-xl bg-[#14b8a6] text-white shadow-[0_10px_20px_rgba(20,184,166,0.35)]">
+              <span className="mb-5 inline-grid h-10 w-10 place-content-center rounded-xl bg-[#14b8a6] text-white shadow-[0_10px_20px_rgba(20,184,166,0.35)] transition-transform duration-300 group-hover/benefit:scale-110 group-hover/benefit:shadow-[0_12px_24px_rgba(20,184,166,0.45)]">
                 <Square className="h-3.5 w-3.5 stroke-[2.5]" aria-hidden="true" />
               </span>
               <h3 className="text-[17px] font-semibold leading-[1.35] text-[#0f172a]">
@@ -436,7 +452,7 @@ function HeroSection() {
           </p>
         </div>
 
-        <div className="mt-10 overflow-x-auto rounded-[22px] border border-[#e5e7eb] bg-white shadow-[0_20px_35px_rgba(15,23,42,0.08)]">
+        <div className="mt-10 overflow-x-auto rounded-[22px] border border-[#e5e7eb] bg-white shadow-[0_20px_35px_rgba(15,23,42,0.08)] transition-shadow duration-300 hover:shadow-[0_24px_48px_rgba(15,23,42,0.12)]">
           <table className="w-full min-w-[920px] border-collapse">
             <thead>
               <tr>
@@ -466,12 +482,12 @@ function HeroSection() {
 
             <tbody>
               {comparisonRows.map((row) => (
-                <tr key={row.feature}>
+                <tr key={row.feature} className="group/row transition-colors duration-200 hover:bg-[#f9fafb]">
                   <td className="border-b border-r border-[#eef2f7] px-5 py-4 text-[17px] text-[#0f172a]">
                     {row.feature}
                   </td>
                   <td className="border-b border-r border-[#eef2f7] px-5 py-4 text-center">
-                    <ComparisonStatus enabled={row.budgetTrack} />
+                    <ComparisonStatus enabled={row.finanzasTrack} />
                   </td>
                   <td className="border-b border-r border-[#eef2f7] bg-[#f1fff7] px-5 py-4 text-center">
                     <ComparisonStatus enabled={row.excel} />
@@ -486,7 +502,7 @@ function HeroSection() {
         </div>
       </section>
 
-      <section className="mx-auto mt-12 w-full max-w-4xl rounded-[22px] border border-[#e9eef2] bg-white px-6 py-5 shadow-[0_10px_26px_rgba(15,23,42,0.05)] md:px-8">
+      <section className="mx-auto mt-12 w-full max-w-4xl rounded-[22px] border border-[#e9eef2] bg-white px-6 py-5 shadow-[0_10px_26px_rgba(15,23,42,0.05)] transition-all duration-300 hover:border-[#d0e8e6] hover:shadow-[0_16px_36px_rgba(15,23,42,0.08)] md:px-8">
         <h3 className="text-[22px] font-semibold leading-none tracking-[-0.02em] text-[#0f172a] md:text-[24px]">
           ¿Listo para el cambio?
         </h3>
@@ -495,7 +511,7 @@ function HeroSection() {
         </p>
       </section>
 
-      <section className="mx-auto mt-20 w-full max-w-6xl">
+      <section id="funcionalidades" className="mx-auto mt-20 w-full max-w-6xl scroll-mt-24">
         <div className="text-center">
           <p className="text-sm font-medium text-[#111827]">Conoce la App</p>
           <h2 className="mt-2 text-[30px] font-bold leading-[1.12] tracking-[-0.02em] text-[#0f172a] md:text-[42px]">
@@ -524,7 +540,9 @@ function HeroSection() {
               </div>
 
               <div>
-                <p className={`inline-flex rounded-full px-4 py-1.5 text-[14px] font-semibold ${item.tagColor}`}>
+                <p
+                  className={`inline-flex rounded-full px-4 py-1.5 text-[14px] font-semibold transition-transform duration-200 group-hover/app:-translate-y-px ${item.tagColor}`}
+                >
                   {item.tag}
                 </p>
                 <h3 className="mt-4 text-[24px] font-bold leading-tight text-[#0f172a] md:text-[32px]">
@@ -552,13 +570,13 @@ function HeroSection() {
 
       <section className="mx-auto mt-20 w-full max-w-6xl">
         <div className="text-center">
-          <p className="mx-auto inline-flex items-center gap-2 rounded-full bg-[#f5f7ed] px-4 py-1 text-[12px] font-medium text-[#0f766e]">
-            <Bot className="h-3.5 w-3.5" aria-hidden="true" />
+          <p className="mx-auto inline-flex items-center gap-2 rounded-full bg-[#f5f7ed] px-4 py-1 text-[12px] font-medium text-[#0f766e] transition-all duration-300 hover:scale-105 hover:bg-[#ecfccb] motion-reduce:hover:scale-100">
+            <Bot className="h-3.5 w-3.5 transition-transform duration-300 hover:rotate-12" aria-hidden="true" />
             Potenciado con IA
           </p>
           <h2 className="mt-4 text-[30px] font-bold leading-[1.1] tracking-[-0.02em] text-[#0f172a] md:text-[42px]">
             Inteligencia Artificial con
-            <span className="ml-2 text-[#0ea5a4]">BudgetTrack</span>
+            <span className="ml-2 text-[#0ea5a4]">FinanzasTrack</span>
           </h2>
           <p className="mx-auto mt-4 max-w-4xl text-[14px] text-[#334155] md:text-[17px]">
             Puedes pedirle a la inteligencia artificial de nuestro programa que haga un resumen
@@ -570,9 +588,9 @@ function HeroSection() {
         <div className="mt-10 grid items-center gap-6 lg:grid-cols-2">
           <div className="relative pb-10 sm:pb-8 lg:pb-6">
             <img
-              className="h-[260px] w-full rounded-2xl border border-[#e5e7eb] bg-white p-3 object-contain shadow-[0_16px_30px_rgba(15,23,42,0.1)] md:h-[320px]"
+              className="h-[260px] w-full rounded-2xl border border-[#e5e7eb] bg-white p-3 object-contain shadow-[0_16px_30px_rgba(15,23,42,0.1)] transition-all duration-300 hover:-translate-y-1 hover:border-[#c5ebe8] hover:shadow-[0_22px_44px_rgba(15,23,42,0.12)] motion-reduce:hover:translate-y-0 md:h-[320px]"
               src={appPreviewImage}
-              alt="Vista de BudgetTrack en panel general"
+              alt="Vista de FinanzasTrack en panel general"
               loading="lazy"
             />
             <div
@@ -592,31 +610,31 @@ function HeroSection() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-[#dfe8ef] bg-white shadow-[0_16px_30px_rgba(15,23,42,0.1)]">
-            <div className="flex items-center justify-between border-b border-[#e7edf4] bg-[#f7fffe] px-4 py-3">
+          <div className="overflow-hidden rounded-2xl border border-[#dfe8ef] bg-white shadow-[0_16px_30px_rgba(15,23,42,0.1)] transition-all duration-300 hover:border-[#c5ddd9] hover:shadow-[0_22px_42px_rgba(15,23,42,0.12)]">
+            <div className="flex items-center justify-between border-b border-[#e7edf4] bg-[#f7fffe] px-4 py-3 transition-colors duration-300 hover:bg-[#eefcfb]">
               <div className="flex items-center gap-3">
                 <span className="inline-grid h-10 w-10 place-content-center rounded-full bg-[#14b8a6] text-white shadow-[0_8px_16px_rgba(20,184,166,0.35)]">
                   <Bot className="h-4 w-4" aria-hidden="true" />
                 </span>
                 <div>
-                  <p className="text-[16px] font-semibold leading-none text-[#0f172a]">IA de BudgetTrack</p>
+                  <p className="text-[16px] font-semibold leading-none text-[#0f172a]">IA de FinanzasTrack</p>
                   <p className="mt-1 text-[14px] text-[#0ea5a4]">Tu asesor financiero personal</p>
                 </div>
               </div>
               <span className="inline-flex items-center gap-2 text-[14px] font-medium text-[#0f766e]">
-                <span className="h-3 w-3 rounded-full bg-[#72ddd8]"></span>
+                <span className="h-3 w-3 rounded-full bg-[#72ddd8] motion-safe:animate-pulse motion-reduce:animate-none"></span>
                 En línea
               </span>
             </div>
 
             <div className="flex justify-end px-4 pt-4">
-              <span className="inline-flex max-w-[95%] rounded-full bg-[#d98104] px-5 py-2.5 text-[15px] font-semibold text-white shadow-[0_10px_22px_rgba(217,129,4,0.38),0_0_24px_rgba(217,129,4,0.35)]">
+              <span className="inline-flex max-w-[95%] rounded-full bg-[#d98104] px-5 py-2.5 text-[15px] font-semibold text-white shadow-[0_10px_22px_rgba(217,129,4,0.38),0_0_24px_rgba(217,129,4,0.35)] transition-transform duration-200 hover:scale-[1.02] motion-reduce:hover:scale-100">
                 ¿Cuales son mis principales fuentes de ingreso?
               </span>
             </div>
 
             <div className="mx-4 mt-4 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-[14px] leading-[1.45] text-[#0f172a]">
-              <p className="font-medium">¡Hola! Soy tu asesor de BudgetTrack. He analizado tus movimientos:</p>
+              <p className="font-medium">¡Hola! Soy tu asesor de FinanzasTrack. He analizado tus movimientos:</p>
               <ul className="mt-2 space-y-1 text-[#334155]">
                 <li>💰 Tus Fuentes de Ingreso</li>
                 <li>Tus ingresos totales suman S/ 2,100.00</li>
@@ -629,10 +647,10 @@ function HeroSection() {
               </p>
             </div>
 
-            <div className="mx-4 mb-4 mt-4 flex items-center gap-2 rounded-2xl border border-[#dbe5ee] bg-white px-4 py-3">
+            <div className="group/input mx-4 mb-4 mt-4 flex cursor-pointer items-center gap-2 rounded-2xl border border-[#dbe5ee] bg-white px-4 py-3 transition-all duration-200 hover:border-[#14b8a6]/40 hover:shadow-[0_8px_20px_rgba(20,184,166,0.12)]">
               <p className="flex-1 text-[16px] text-[#0f172a]">Pregunta sobre tus finanzas...</p>
-              <span className="inline-grid h-10 w-10 place-content-center rounded-xl bg-[#14b8a6] text-white">
-                <Send className="h-5 w-5" aria-hidden="true" />
+              <span className="inline-grid h-10 w-10 place-content-center rounded-xl bg-[#14b8a6] text-white transition-transform duration-200 group-hover/input:scale-110 group-hover/input:shadow-lg">
+                <Send className="h-5 w-5 transition-transform duration-200 group-hover/input:-translate-y-px group-hover/input:translate-x-0.5" aria-hidden="true" />
               </span>
             </div>
           </div>
@@ -654,7 +672,7 @@ function HeroSection() {
         </div>
       </section>
 
-      <section className="mx-auto mt-24 w-full max-w-6xl">
+      <section id="precio" className="mx-auto mt-24 w-full max-w-6xl scroll-mt-24">
         <div className="text-center">
           <h2 className="text-[30px] font-bold tracking-[-0.02em] text-[#0f172a] md:text-[42px]">
             Un precio,
@@ -665,7 +683,7 @@ function HeroSection() {
           </p>
         </div>
 
-        <article className="mx-auto mt-8 w-full max-w-4xl rounded-2xl border border-[#f3d58a] bg-[#fffdf5] p-5 shadow-[0_12px_26px_rgba(217,129,4,0.12)]">
+        <article className="mx-auto mt-8 w-full max-w-4xl rounded-2xl border border-[#f3d58a] bg-[#fffdf5] p-5 shadow-[0_12px_26px_rgba(217,129,4,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#e8c266] hover:shadow-[0_18px_36px_rgba(217,129,4,0.18)] motion-reduce:hover:translate-y-0">
           <div className="flex items-start gap-4">
             <span className="inline-grid h-11 w-11 place-content-center rounded-xl bg-[#f59e0b] text-white shadow-[0_10px_18px_rgba(245,158,11,0.3)]">
               <Gift className="h-5 w-5" aria-hidden="true" />
@@ -709,7 +727,7 @@ function HeroSection() {
           </div>
         </article>
 
-        <article className="mx-auto mt-8 w-full max-w-4xl rounded-3xl border border-[#dff0ef] bg-white p-8 shadow-[0_20px_35px_rgba(15,23,42,0.08)]">
+        <article className="mx-auto mt-8 w-full max-w-4xl rounded-3xl border border-[#dff0ef] bg-white p-8 shadow-[0_20px_35px_rgba(15,23,42,0.08)] transition-all duration-300 hover:border-[#b8e8e4] hover:shadow-[0_28px_50px_rgba(15,23,42,0.1)]">
           <p className="text-center text-[14px] text-[#0f172a]">∞ Acceso de por vida</p>
           <p className="mt-3 text-center text-[92px] font-bold leading-none text-[#14b8a6] md:text-[124px]">
             20
@@ -723,7 +741,7 @@ function HeroSection() {
             </p>
             <div className="mt-3 flex items-center justify-center gap-2">
               <div className="rounded-lg px-3 py-2 text-white">
-                <div className="rounded-lg bg-[#ef4444] p-5 text-white">
+                <div className="rounded-lg bg-[#ef4444] p-5 text-white transition-transform duration-300 hover:scale-105 motion-reduce:hover:scale-100">
                   <p className="text-[24px] font-bold leading-none tabular-nums">{countdownHours}</p>
                 </div>
                 <p className="mt-1 text-[12px] font-semibold text-red-600  uppercase">Horas</p>
@@ -731,7 +749,7 @@ function HeroSection() {
 
               <span className="text-[#ef4444] text-[34px] font-extrabold text-center">:</span>
               <div className="rounded-lg px-3 py-2 text-white">
-                <div className="rounded-lg bg-[#ef4444] p-5 text-white">
+                <div className="rounded-lg bg-[#ef4444] p-5 text-white transition-transform duration-300 hover:scale-105 motion-reduce:hover:scale-100">
                   <p className="text-[24px] font-bold leading-none tabular-nums">
                     {String(countdownMinutes).padStart(2, '0')}
                   </p>
@@ -741,7 +759,7 @@ function HeroSection() {
 
               <span className="text-[#ef4444] text-[34px] font-extrabold text-center">:</span>
               <div className="rounded-lg px-3 py-2 text-white">
-                <div className="rounded-lg bg-[#ef4444] p-5 text-white">
+                <div className="rounded-lg bg-[#ef4444] p-5 text-white transition-transform duration-300 hover:scale-105 motion-reduce:hover:scale-100">
                   <p className="text-[24px] font-bold leading-none tabular-nums">
                     {String(countdownSecs).padStart(2, '0')}
                   </p>
@@ -755,10 +773,10 @@ function HeroSection() {
             </p>
           </div>
 
-          <button className="mx-auto mt-6 flex w-fit items-center gap-2 rounded-2xl bg-linear-to-r from-[#fba14c] to-[#eb7ad9] px-8 py-4 text-[18px] font-semibold text-white shadow-[0_10px_20px_rgba(244,114,182,0.35)]">
-            <MessageCircle className="h-4 w-4" aria-hidden="true" />
+          <button className="group/cta mx-auto mt-6 flex w-fit items-center gap-2 rounded-2xl bg-linear-to-r from-[#fba14c] to-[#eb7ad9] px-8 py-4 text-[18px] font-semibold text-white shadow-[0_10px_20px_rgba(244,114,182,0.35)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(244,114,182,0.45)] hover:brightness-105 active:translate-y-0 active:scale-[0.98] motion-reduce:hover:translate-y-0">
+            <MessageCircle className="h-4 w-4 transition-transform duration-200 group-hover/cta:scale-110" aria-hidden="true" />
             Si, quiero mi acceso de por vida por 20 soles
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/cta:translate-x-1" aria-hidden="true" />
           </button>
           <p className="mt-3 text-center text-[13px] text-[#334155]">
             ⚡ Acceso inmediato • Contáctanos por WhatsApp
@@ -766,8 +784,14 @@ function HeroSection() {
 
           <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
             {pricingFeatures.map((feature) => (
-              <p key={feature} className="inline-flex items-center gap-2 text-[14px] text-[#0f172a]">
-                <CircleCheck className="h-4 w-4 fill-[#14b8a6] text-white stroke-2" aria-hidden="true" />
+              <p
+                key={feature}
+                className="group/feature inline-flex items-center gap-2 rounded-lg px-1 py-0.5 text-[14px] text-[#0f172a] transition-colors duration-200 hover:bg-[#f0fdfa] hover:text-[#0f766e]"
+              >
+                <CircleCheck
+                  className="h-4 w-4 fill-[#14b8a6] text-white stroke-2 transition-transform duration-200 group-hover/feature:scale-110"
+                  aria-hidden="true"
+                />
                 {feature}
               </p>
             ))}
@@ -786,14 +810,14 @@ function HeroSection() {
             <span className="ml-2 text-[#14b8a6]">nuestros usuarios</span>
           </h2>
           <p className="mx-auto mt-2 max-w-2xl text-[14px] text-[#334155]">
-            Miles de personas ya confían en BudgetTrack para gestionar sus finanzas personales y de negocio.
+            Miles de personas ya confían en FinanzasTrack para gestionar sus finanzas personales y de negocio.
           </p>
         </div>
 
         <div className="relative mt-10">
           <button
             type="button"
-            className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-[#e5e7eb] bg-white p-2 shadow-md transition hover:bg-[#f8fafc] md:inline-flex"
+            className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-[#e5e7eb] bg-white p-2 shadow-md transition-all duration-200 hover:scale-110 hover:border-[#c5ebe8] hover:bg-[#f0fdfa] hover:shadow-lg active:scale-95 motion-reduce:hover:scale-100 md:inline-flex"
             aria-label="Anterior"
             onClick={() =>
               setTestimonialIndex((i) => (i - 1 + testimonials.length) % testimonials.length)
@@ -803,7 +827,7 @@ function HeroSection() {
           </button>
           <button
             type="button"
-            className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-[#e5e7eb] bg-white p-2 shadow-md transition hover:bg-[#f8fafc] md:inline-flex"
+            className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-[#e5e7eb] bg-white p-2 shadow-md transition-all duration-200 hover:scale-110 hover:border-[#c5ebe8] hover:bg-[#f0fdfa] hover:shadow-lg active:scale-95 motion-reduce:hover:scale-100 md:inline-flex"
             aria-label="Siguiente"
             onClick={() => setTestimonialIndex((i) => (i + 1) % testimonials.length)}
           >
@@ -816,7 +840,7 @@ function HeroSection() {
               return (
                 <article
                   key={`${t.name}-${offset}`}
-                  className="col-span-12 rounded-2xl border border-[#e5e7eb] bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.06)] md:col-span-4"
+                  className="col-span-12 rounded-2xl border border-[#e5e7eb] bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d1fae5] hover:shadow-[0_18px_40px_rgba(15,23,42,0.1)] motion-reduce:hover:translate-y-0 md:col-span-4"
                 >
                   <div className="flex gap-0.5">
                     {Array.from({ length: 5 }).map((_, i) => (
@@ -843,7 +867,7 @@ function HeroSection() {
         <div className="mt-4 flex justify-center gap-3 md:hidden">
           <button
             type="button"
-            className="rounded-full border border-[#e5e7eb] bg-white p-6 shadow-md"
+            className="rounded-full border border-[#e5e7eb] bg-white p-2 shadow-md transition-all duration-200 hover:scale-110 hover:border-[#c5ebe8] hover:bg-[#f0fdfa] active:scale-95 motion-reduce:hover:scale-100"
             aria-label="Anterior"
             onClick={() =>
               setTestimonialIndex((i) => (i - 1 + testimonials.length) % testimonials.length)
@@ -853,7 +877,7 @@ function HeroSection() {
           </button>
           <button
             type="button"
-            className="rounded-full border border-[#e5e7eb] bg-white p-2 shadow-md"
+            className="rounded-full border border-[#e5e7eb] bg-white p-2 shadow-md transition-all duration-200 hover:scale-110 hover:border-[#c5ebe8] hover:bg-[#f0fdfa] active:scale-95 motion-reduce:hover:scale-100"
             aria-label="Siguiente"
             onClick={() => setTestimonialIndex((i) => (i + 1) % testimonials.length)}
           >
@@ -865,16 +889,18 @@ function HeroSection() {
           {trustStats.map((item) => (
             <article
               key={item.label}
-              className="col-span-12 rounded-2xl border border-[#e5e7eb] bg-white p-5 text-center shadow-[0_8px_20px_rgba(15,23,42,0.05)] sm:col-span-6 lg:col-span-3"
+              className="group/trust col-span-12 rounded-2xl border border-[#e5e7eb] bg-white p-5 text-center shadow-[0_8px_20px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#c5ebe8] hover:shadow-[0_16px_32px_rgba(20,184,166,0.12)] motion-reduce:hover:translate-y-0 sm:col-span-6 lg:col-span-3"
             >
-              <p className="text-[28px] font-bold text-[#14b8a6] md:text-[34px]">{item.value}</p>
+              <p className="text-[28px] font-bold text-[#14b8a6] transition-transform duration-300 group-hover/trust:scale-105 md:text-[34px]">
+                {item.value}
+              </p>
               <p className="mt-1 text-[13px] text-[#334155]">{item.label}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto mt-24 w-full max-w-4xl">
+      <section id="faq" className="mx-auto mt-24 w-full max-w-4xl scroll-mt-24">
         <div className="text-center">
           <p className="inline-flex items-center gap-2 text-[13px] text-[#334155]">
             <CircleHelp className="h-4 w-4" aria-hidden="true" />
@@ -884,7 +910,7 @@ function HeroSection() {
             Preguntas
             <span className="ml-2 text-[#14b8a6]">Frecuentes</span>
           </h2>
-          <p className="mt-2 text-[14px] text-[#334155]">Resolvemos tus dudas sobre BudgetTrack</p>
+          <p className="mt-2 text-[14px] text-[#334155]">Resolvemos tus dudas sobre FinanzasTrack</p>
         </div>
 
         <div className="mt-8 space-y-3">
@@ -894,11 +920,11 @@ function HeroSection() {
             return (
               <article
                 key={item.question}
-                className="rounded-2xl border border-[#e5e7eb] bg-white shadow-[0_8px_18px_rgba(15,23,42,0.06)]"
+                className="rounded-2xl border border-[#e5e7eb] bg-white shadow-[0_8px_18px_rgba(15,23,42,0.06)] transition-all duration-300 hover:border-[#c5ebe8] hover:shadow-[0_14px_28px_rgba(15,23,42,0.08)]"
               >
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between gap-4 px-7 py-7 text-left"
+                  className="flex w-full items-center justify-between gap-4 px-7 py-7 text-left transition-colors duration-200 hover:bg-[#fafafa] rounded-2xl"
                   onClick={() => setOpenFaq(isOpen ? -1 : index)}
                 >
                   <span className="inline-flex items-center gap-3">
