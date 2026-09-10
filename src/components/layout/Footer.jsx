@@ -1,62 +1,179 @@
-import { CircleHelp, Gift, Heart, LayoutGrid, Tag } from 'lucide-react'
+import {
+  ArrowRight,
+  ExternalLink,
+  Lock,
+  MessageCircle,
+  ShieldCheck,
+  Smartphone,
+  Sparkles,
+  Zap,
+} from 'lucide-react'
 
-const footerLinks = [
-  { label: 'Beneficios', href: '#beneficios', Icon: Gift },
-  { label: 'Funcionalidades', href: '#funcionalidades', Icon: LayoutGrid },
-  { label: 'Precio', href: '#precio', Icon: Tag },
-  { label: 'FAQ', href: '#faq', Icon: CircleHelp },
+const navLinks = [
+  { label: 'Beneficios', href: '#beneficios' },
+  { label: 'Funcionalidades', href: '#funcionalidades' },
+  { label: 'Precio', href: '#precio' },
+  { label: 'Preguntas Frecuentes', href: '#faq' },
 ]
 
 function Footer() {
   return (
-    <footer className="border-t border-[#ececec]">
-      <div className="mx-auto max-w-6xl px-6 py-8">
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <a
-            className="group flex items-center gap-2 rounded-lg outline-offset-4 transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] motion-reduce:hover:scale-100"
-            href="#inicio"
-          >
-            <span className="grid h-9 w-9 place-content-center rounded-lg bg-linear-to-br from-emerald-300 to-cyan-500 text-lg font-bold text-[#03383a] shadow-sm transition-shadow duration-300 group-hover:shadow-md group-hover:shadow-emerald-200/50">
-              B
-            </span>
-            <span className="text-[22px] font-bold leading-none tracking-[-0.03em] text-[#111827] transition-colors duration-200 group-hover:text-[#0f766e]">
-              FinanzasTrack
-            </span>
-          </a>
+    <footer className="relative overflow-hidden border-t border-slate-800/80 bg-[#080d1a] text-slate-300">
+      {/* Luces ambientales de fondo */}
+      <div
+        className="pointer-events-none absolute -top-24 left-1/2 h-48 w-full max-w-5xl -translate-x-1/2 bg-gradient-to-b from-indigo-500/15 via-teal-500/10 to-transparent blur-3xl"
+        aria-hidden="true"
+      />
 
-          <nav>
-            <ul className="flex flex-wrap items-center gap-x-8 gap-y-3 text-[14px] text-[#111827]">
-              {footerLinks.map(({ label, href, Icon }) => (
-                <li key={label}>
-                  <a
-                    className="group/link inline-flex items-center gap-2 rounded-md px-1 py-0.5 transition-colors duration-200 hover:text-[#d97706]"
-                    href={href}
-                  >
-                    <Icon
-                      className="h-4 w-4 stroke-2 transition-transform duration-200 group-hover/link:-translate-y-px group-hover/link:scale-110"
-                      aria-hidden="true"
-                    />
-                    <span className="relative after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-200 group-hover/link:after:scale-x-100">
-                      {label}
-                    </span>
-                  </a>
+      {/* Línea superior con gradiente de neón */}
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-indigo-500 via-teal-400 to-transparent opacity-80" />
+
+      <div className="mx-auto max-w-6xl px-6 py-8">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8 items-start">
+          {/* 1. Columna Marca y Propuesta */}
+          <div className="lg:col-span-4">
+            <a
+              className="group inline-flex items-center gap-2 outline-offset-4 transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              href="#inicio"
+            >
+              <img
+                src="/v4.svg"
+                alt="FinanzasTrack"
+                className="h-7 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+              />
+              <div className="flex items-center gap-2">
+                <span className="text-lg font-black tracking-tight text-white">
+                  FinanzasTrack
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  v2.0
+                </span>
+              </div>
+            </a>
+
+            <p className="mt-2 text-xs leading-relaxed text-slate-400">
+              Control financiero inteligente, presupuestos, metas de ahorro y asesoría con Inteligencia Artificial conectada a tus datos reales.
+            </p>
+
+            {/* Badges de Certificación */}
+            <div className="mt-3 flex flex-wrap items-center gap-2 text-[11px] text-slate-300">
+              <span className="inline-flex items-center gap-1.5 rounded-md border border-slate-800 bg-slate-900/90 px-2 py-1 shadow-sm">
+                <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
+                <span className="font-medium">100% Seguro & Privado</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-md border border-slate-800 bg-slate-900/90 px-2 py-1 shadow-sm">
+                <Smartphone className="h-3.5 w-3.5 text-indigo-400" />
+                <span className="font-medium">PWA Web & Móvil</span>
+              </span>
+            </div>
+          </div>
+
+          {/* 2 & 3. Columnas Horizontales: Navegación Rápida y Garantía & Acceso */}
+          <div className="grid grid-cols-2 gap-5 sm:gap-8 lg:col-span-5">
+            {/* 2. Navegación Rápida */}
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-200">
+                Navegación
+              </h3>
+              <ul className="mt-2.5 space-y-1.5 text-xs">
+                {navLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="inline-block text-slate-400 transition-all duration-200 hover:text-white hover:translate-x-1"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* 3. Garantía y Métodos */}
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-200">
+                Garantía & Acceso
+              </h3>
+              <ul className="mt-2.5 space-y-1.5 text-xs text-slate-400">
+                <li className="flex items-center gap-1.5">
+                  <Lock className="h-3.5 w-3.5 text-teal-400 shrink-0" />
+                  <span className="truncate">Sin vincular tarjetas</span>
                 </li>
-              ))}
-            </ul>
-          </nav>
+                <li className="flex items-center gap-1.5">
+                  <Sparkles className="h-3.5 w-3.5 text-indigo-400 shrink-0" />
+                  <span className="truncate">Asesor Financiero con IA</span>
+                </li>
+                <li className="flex items-center gap-1.5">
+                  <Zap className="h-3.5 w-3.5 text-amber-400 shrink-0" />
+                  <span className="truncate">Acceso de por vida • S/ 25</span>
+                </li>
+              </ul>
+
+              <div className="mt-3">
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="rounded border border-purple-500/30 bg-purple-500/10 px-1.5 py-0.5 text-[10px] font-bold text-purple-300">
+                    💜 Yape
+                  </span>
+                  <span className="rounded border border-cyan-500/30 bg-cyan-500/10 px-1.5 py-0.5 text-[10px] font-bold text-cyan-300">
+                    💙 Plin
+                  </span>
+                  <span className="rounded border border-slate-700 bg-slate-800/80 px-1.5 py-0.5 text-[10px] font-medium text-slate-300">
+                    🏦 Transferencias
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 4. Columna Accesos Directos a la App */}
+          <div className="lg:col-span-3">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-200">
+              Accesos Directos
+            </h3>
+
+            <div className="mt-2.5 flex flex-col gap-2">
+              <a
+                href="https://finanzastrack.site/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between rounded-lg border border-indigo-500/30 bg-gradient-to-r from-indigo-500/20 to-teal-500/10 px-3.5 py-2 text-xs font-bold text-indigo-200 transition-all duration-200 hover:border-indigo-400 hover:bg-indigo-500/30 hover:text-white"
+              >
+                <span>Ingresar a FinanzasTrack</span>
+                <ExternalLink className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+
+              <a
+                href="https://wa.me/51926289293?text=Hola%2C%20tengo%20una%20consulta%20sobre%20FinanzasTrack"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between rounded-lg border border-slate-800 bg-slate-900/90 px-3.5 py-2 text-xs font-medium text-slate-300 transition-all duration-200 hover:border-emerald-500/40 hover:bg-emerald-500/10 hover:text-emerald-300"
+              >
+                <span className="flex items-center gap-1.5">
+                  <MessageCircle className="h-3.5 w-3.5 text-emerald-400" />
+                  <span>Soporte por WhatsApp</span>
+                </span>
+                <ArrowRight className="h-3.5 w-3.5 opacity-60 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:opacity-100" />
+              </a>
+            </div>
+          </div>
         </div>
 
-        <hr className="my-6 border-[#ececec]" />
+        {/* Separador */}
+        <hr className="my-5 border-slate-800/80" />
 
-        <div className="flex flex-col gap-3 text-[13px] text-[#64748b] md:flex-row md:items-center md:justify-between">
-          <p className="inline-flex items-center gap-1">
-            Hecho con
-            <Heart className="h-3.5 w-3.5 fill-red-500 text-red-500" aria-hidden="true" />
-            en Perú
+        {/* Barra Inferior de Derechos */}
+        <div className="flex flex-col items-center justify-between gap-2 text-xs text-slate-500 sm:flex-row">
+          <p className="inline-flex items-center gap-1.5 text-slate-400 text-[11px]">
+            <Sparkles className="h-3 w-3 text-teal-400" aria-hidden="true" />
+            <span>Tecnología inteligente para el control total de tu dinero</span>
           </p>
-          <p className="text-center md:text-right">
-            © 2026 FinanzasTrack. Todos los derechos reservados. • Website Builder
-          </p>
+
+          <div className="flex items-center gap-4 text-[11px]">
+            <span className="text-slate-400 font-medium">© 2026 FinanzasTrack</span>
+            <span className="text-slate-600">•</span>
+            <span className="text-slate-400">Todos los derechos reservados</span>
+          </div>
         </div>
       </div>
     </footer>
@@ -64,3 +181,5 @@ function Footer() {
 }
 
 export default Footer
+
+

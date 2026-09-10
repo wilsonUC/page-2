@@ -1,20 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --animate-ai-badge-float: ai-badge-float 2.8s ease-in-out infinite;
+  --animate-fade-in-up: fade-in-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-in: fade-in 0.45s ease-out both;
+  --animate-scale-in: scale-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
 
 html {
   scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f1f5f9;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-}
-
-@theme {
-  --animate-ai-badge-float: ai-badge-float 2.8s ease-in-out infinite;
-  --animate-fade-in-up: fade-in-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
-  --animate-fade-in: fade-in 0.45s ease-out both;
-  --animate-scale-in: scale-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes ai-badge-float {
@@ -57,3 +68,42 @@ html {
     transform: scale(1);
   }
 }
+
+@keyframes logo-shine {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  25%, 100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+@keyframes logo-glow {
+  0%, 100% {
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4), 0 0 10px rgba(59, 130, 246, 0.25);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.65), 0 0 18px rgba(96, 165, 250, 0.5);
+  }
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.7);
+}
+

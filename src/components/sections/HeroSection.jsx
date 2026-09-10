@@ -1,326 +1,477 @@
 import { useEffect, useState } from 'react'
 import StatCard from '../ui/StatCard'
 import {
+  Activity,
   ArrowRight,
   BarChart3,
   Bot,
-  CalendarDays,
+  Check,
   ChevronDown,
-  ChevronLeft,
-  ChevronRight,
-  CircleHelp,
-  CircleCheck,
   CircleX,
+  FileSpreadsheet,
   FileText,
-  Gift,
+  BookOpen,
   Lightbulb,
   MessageCircle,
-  Send,
-  Square,
+  PieChart,
+  PiggyBank,
+  RefreshCw,
+  ShieldCheck,
+  Smartphone,
+  Sparkles,
   Star,
-  User,
-  VolumeX,
+  Target,
+  TrendingUp,
+  Wallet,
+  Zap,
 } from 'lucide-react'
 
 const stats = [
-  { value: '500+', label: 'Usuarios activos', sublabel: '' },
-  { value: '20', label: 'soles', sublabel: 'Pago unico' },
-  { value: '100%', label: 'Seguro', sublabel: '' },
-  { value: '24/7', label: 'Disponible', sublabel: '' },
+  { value: 'S/ 25', label: 'Acceso completo', sublabel: 'Pago único', variant: 'emerald' },
+  { value: '100%', label: 'Seguro y Privado', sublabel: 'Cifrado bancario', variant: 'primary' },
+  { value: '24/7', label: 'Siempre Disponible', sublabel: 'Nube en tiempo real', variant: 'emerald' },
 ]
 
 const benefits = [
   {
-    title: 'Descubre los "gastos hormiga" que te roban dinero',
+    title: 'Descubre los "gastos hormiga" que drenan tu dinero',
     description:
-      'Identifica en segundos donde se escapa tu dinero. Un cafe aqui, un taxi alla y veras la historia completa de tus gastos diarios.',
+      'Identifica al instante a dónde se va cada centavo. Registra gastos diarios por categoría con notas y obtén la radiografía exacta de tus fugas.',
+    badge: 'Control Diario',
+    badgeColor: 'bg-rose-100/90 text-rose-800 border-rose-300/80',
+    icon: Zap,
+    iconColor: 'text-rose-600 bg-white border border-rose-200/90 shadow-sm',
+    cardBg: 'bg-gradient-to-b from-rose-100/85 via-rose-50/70 to-rose-50/50 border-rose-200 hover:border-rose-300 hover:shadow-rose-500/10',
   },
   {
-    title: 'Multiplica tus ingresos sin trabajar mas horas',
+    title: 'Multiplica tu capacidad de ahorro cada mes',
     description:
-      'Visualiza patrones ocultos en tus fuentes de ingreso y descubre oportunidades que estaban frente a ti todo el tiempo.',
+      'Aparta excedentes en tu Pool de Ahorro global. Protege tu liquidez y traslada fondos a tus metas sin alterar tu balance operativo.',
+    badge: 'Ahorro Real',
+    badgeColor: 'bg-emerald-100/90 text-emerald-800 border-emerald-300/80',
+    icon: PiggyBank,
+    iconColor: 'text-emerald-600 bg-white border border-emerald-200/90 shadow-sm',
+    cardBg: 'bg-gradient-to-b from-emerald-100/85 via-emerald-50/70 to-emerald-50/50 border-emerald-200 hover:border-emerald-300 hover:shadow-emerald-500/10',
   },
   {
-    title: 'Evita perder ventas por quedarte sin inventario',
+    title: 'Presupuestos inteligentes que evitan sobregiros',
     description:
-      'Recibe alertas inteligentes antes de que se agote tu producto estrella. Nunca mas pierdas dinero por falta de stock.',
+      'Establece límites mensuales por categoría, sigue barras de consumo visuales y registra gastos en 1 clic para no exceder tus topes.',
+    badge: 'Presupuestos',
+    badgeColor: 'bg-amber-100/90 text-amber-800 border-amber-300/80',
+    icon: Wallet,
+    iconColor: 'text-amber-600 bg-white border border-amber-200/90 shadow-sm',
+    cardBg: 'bg-gradient-to-b from-amber-100/85 via-amber-50/70 to-amber-50/50 border-amber-200 hover:border-amber-300 hover:shadow-amber-500/10',
   },
   {
-    title: 'Entiende tu negocio en 3 segundos, no en 3 horas',
+    title: 'Entiende tus finanzas en 3 segundos, no en 3 horas',
     description:
-      'Graficos tan claros que tu situacion financiera salta a la vista. Toma decisiones con confianza, no con dudas.',
+      'Panel central con 5 métricas clave en tiempo real: Balance disponible, Balance total, Ingresos, Gastos y Ahorro acumulado con filtros por periodo.',
+    badge: 'Visual & Rápido',
+    badgeColor: 'bg-indigo-100/90 text-indigo-800 border-indigo-300/80',
+    icon: BarChart3,
+    iconColor: 'text-indigo-600 bg-white border border-indigo-200/90 shadow-sm',
+    cardBg: 'bg-gradient-to-b from-indigo-100/85 via-indigo-50/70 to-indigo-50/50 border-indigo-200 hover:border-indigo-300 hover:shadow-indigo-500/10',
   },
   {
-    title: 'Ahorra sin sentir que te estas sacrificando',
+    title: 'Metas con seguimiento de avance en vivo',
     description:
-      'Alertas inteligentes te avisan antes de gastar de mas. Ahorra tus metas financieras sin renunciar a lo que amas.',
+      'Fija objetivos para viajes, compras o emergencias. Asigna dinero del fondo de ahorros de forma libre o directa con fecha estimada.',
+    badge: 'Objetivos',
+    badgeColor: 'bg-violet-100/90 text-violet-800 border-violet-300/80',
+    icon: Target,
+    iconColor: 'text-violet-600 bg-white border border-violet-200/90 shadow-sm',
+    cardBg: 'bg-gradient-to-b from-violet-100/85 via-violet-50/70 to-violet-50/50 border-violet-200 hover:border-violet-300 hover:shadow-violet-500/10',
   },
   {
-    title: 'Proteccion bancaria para tus datos mas sensibles',
+    title: 'Control de gastos fijos y cuentas atrasadas',
     description:
-      'Encriptacion de nivel militar. Tus numeros estan mas seguros aqui que en una boveda fisica.',
+      'Gestiona suscripciones y pagos mensuales con día de corte, abonos parciales y alertas automáticas de cobros pendientes en el dashboard.',
+    badge: 'Recurrentes',
+    badgeColor: 'bg-purple-100/90 text-purple-800 border-purple-300/80',
+    icon: RefreshCw,
+    iconColor: 'text-purple-600 bg-white border border-purple-200/90 shadow-sm',
+    cardBg: 'bg-gradient-to-b from-purple-100/85 via-purple-50/70 to-purple-50/50 border-purple-200 hover:border-purple-300 hover:shadow-purple-500/10',
   },
   {
-    title: 'Aprende de tus errores sin repetirlos',
+    title: 'Historial de 6 meses y reportes con gráficos',
     description:
-      'Revive cualquier momento de tu historia financiera. Descubre que funciono y que no para mejorar cada mes.',
+      'Gráficos de dona interactivos con distribución porcentual de gastos e ingresos, comparativa semestral y tablas exportables.',
+    badge: 'Reportes',
+    badgeColor: 'bg-sky-100/90 text-sky-800 border-sky-300/80',
+    icon: PieChart,
+    iconColor: 'text-sky-600 bg-white border border-sky-200/90 shadow-sm',
+    cardBg: 'bg-gradient-to-b from-sky-100/85 via-sky-50/70 to-sky-50/50 border-sky-200 hover:border-sky-300 hover:shadow-sky-500/10',
   },
   {
-    title: 'Tu contador personal en el bolsillo 24/7',
+    title: 'Score de salud financiera y consejos por impacto',
     description:
-      'Desde el sofa, la oficina o la playa. Gestiona todo desde tu celular sin depender de nadie.',
+      'Diagnóstico automatizado de 0 a 100 puntos con recomendaciones prácticas clasificadas en Alerta, Ahorro e Inversión con caché de 24h.',
+    badge: 'Health Score',
+    badgeColor: 'bg-teal-100/90 text-teal-800 border-teal-300/80',
+    icon: Activity,
+    iconColor: 'text-teal-600 bg-white border border-teal-200/90 shadow-sm',
+    cardBg: 'bg-gradient-to-b from-teal-100/85 via-teal-50/70 to-teal-50/50 border-teal-200 hover:border-teal-300 hover:shadow-teal-500/10',
   },
   {
-    title: 'Categorias que reflejan tu vida, no plantillas genericas',
+    title: 'Disponible en tu celular, tablet y computadora',
     description:
-      'Personaliza cada detalle segun tu realidad. Porque tu negocio es unico y merece un sistema unico.',
+      'App instalable (PWA) con navegación táctil nativa, soporte completo para Modo Oscuro/Claro y visualización compacta opcional.',
+    badge: 'Multi-dispositivo',
+    badgeColor: 'bg-slate-200 text-slate-800 border-slate-300',
+    icon: Smartphone,
+    iconColor: 'text-slate-700 bg-white border border-slate-200/90 shadow-sm',
+    cardBg: 'bg-gradient-to-b from-slate-200/85 via-slate-100/70 to-slate-100/50 border-slate-300 hover:border-slate-400 hover:shadow-slate-500/10',
   },
   {
-    title: 'Reportes profesionales que impresionan en segundos',
+    title: 'Asistente financiero con Inteligencia Artificial',
     description:
-      'Genera documentos detallados para tu contador, socio o banco. Luce profesional sin contratar a nadie.',
+      'Chatea con un asesor inteligente conectado en tiempo real a tus transacciones y balances reales para guiarte en cada decisión financiera.',
+    badge: 'Potenciado por IA',
+    badgeColor: 'bg-indigo-100/90 text-indigo-800 border-indigo-300/80',
+    icon: Bot,
+    iconColor: 'text-indigo-600 bg-white border border-indigo-200/90 shadow-sm',
+    cardBg: 'bg-gradient-to-b from-blue-100/85 via-indigo-50/70 to-indigo-50/50 border-indigo-200 hover:border-indigo-300 hover:shadow-indigo-500/10',
   },
 ]
 
 const comparisonRows = [
-  { feature: 'Acceso desde cualquier dispositivo', finanzasTrack: true, excel: true, notebook: false },
-  { feature: 'Graficos y visualizaciones automaticas', finanzasTrack: true, excel: true, notebook: false },
-  { feature: 'Alertas y recordatorios inteligentes', finanzasTrack: true, excel: false, notebook: false },
-  { feature: 'Categorizacion automatica', finanzasTrack: true, excel: false, notebook: false },
-  { feature: 'Reportes profesionales en PDF', finanzasTrack: true, excel: true, notebook: false },
-  { feature: 'Metas de ahorro con seguimiento', finanzasTrack: true, excel: false, notebook: false },
-  { feature: 'Transacciones recurrentes', finanzasTrack: true, excel: false, notebook: false },
-  { feature: 'Respaldo automatico en la nube', finanzasTrack: true, excel: true, notebook: false },
-  { feature: 'Analisis de tendencias', finanzasTrack: true, excel: false, notebook: false },
-  { feature: 'Interfaz intuitiva y moderna', finanzasTrack: true, excel: false, notebook: false },
-  { feature: 'Actualizaciones en tiempo real', finanzasTrack: true, excel: false, notebook: false },
-  { feature: 'Seguridad bancaria', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Acceso desde celular, tablet y PC (PWA instalable)', finanzasTrack: true, excel: true, notebook: false },
+  { feature: 'Dashboard en vivo con 5 métricas de balance automático', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Control de presupuestos y gasto rápido en 1 clic', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Metas de ahorro con pool global y fechas estimadas', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Gastos e ingresos fijos con alertas de corte mensual', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Asistente financiero con IA conectado a tus datos en vivo', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Score de salud financiera (0-100) y consejos prácticos', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Reportes semestrales y gráficos de dona interactivos', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Interfaz moderna con soporte para Modo Oscuro y Claro', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Registro ágil en menos de 5 segundos sin fórmulas', finanzasTrack: true, excel: false, notebook: true },
+  { feature: 'Respaldo automático en la nube 24/7 y máxima privacidad', finanzasTrack: true, excel: false, notebook: false },
+  { feature: 'Actualizaciones continuas de por vida incluidas', finanzasTrack: true, excel: false, notebook: false },
 ]
 
 const demoVideoUrl = 'https://drive.google.com/file/d/1lZOXHgS1GUbnDNI0qeovX4ogqAC_FRg6/preview'
-const appPreviewImage = '/captura-app-336.png'
 
 const appSections = [
   {
+    id: 'dashboard',
     tag: 'Dashboard Completo',
-    tagColor: 'bg-[#e8f9f8] text-[#0f766e]',
-    title: 'Dashboard Completo',
+    tagColor: 'bg-[#e8f9f8] text-[#0f766e] border border-teal-200/80',
+    title: 'Vista General de tu Mes y Balance en Vivo',
     description:
-      'Visualiza tu balance, ingresos y gastos en tiempo real. Graficos interactivos de resumen mensual y categorias de gastos.',
-    bullets: ['Balance en tiempo real', 'Graficos de categorias', 'Resumen mensual', 'Indicador de ahorro'],
-    imageLeft: false,
+      'Visualiza tus 5 métricas clave en tiempo real: Balance disponible, Balance total, Ingresos, Gastos y Ahorro acumulado. Gráficos interactivos de evolución a 6 meses y resumen mensual de categorías.',
+    bullets: [
+      '5 métricas en tiempo real',
+      'Gráficos de 6 meses (Recharts)',
+      'Desglose de gastos por categoría',
+      'Movimientos recientes y alertas',
+    ],
+    bulletDot: 'bg-[#10b981]',
     bulletColor: 'text-[#10b981]',
+    imageLeft: false,
+    imageSrc: '/capturas/1-dashboard.gif',
+    previewBadge: 'Panel Principal • 5 Métricas',
+    previewGradient: 'from-teal-500/10 via-slate-900/5 to-indigo-500/10',
   },
   {
-    tag: 'Gestion de Ingresos',
-    tagColor: 'bg-[#dcfce7] text-[#15803d]',
-    title: 'Gestion de Ingresos',
+    id: 'ingresos',
+    tag: 'Gestión de Ingresos',
+    tagColor: 'bg-[#dcfce7] text-[#15803d] border border-emerald-200/80',
+    title: 'Registro Ágil y Control de Fuentes de Entrada',
     description:
-      'Registra todas tus fuentes de ingreso con categorias personalizadas. Historial completo y totales mensuales.',
-    bullets: ['Multiples categorias', 'Historial detallado', 'Totales automaticos', 'Edicion rapida'],
-    imageLeft: true,
+      'Registra todas tus fuentes de ingresos (Trabajo, Negocio, Comisiones, Inversiones, Regalos, Reembolsos) con categorías personalizadas, notas descriptivas y totales mensuales automáticos.',
+    bullets: [
+      'Múltiples categorías oficiales',
+      'Totales mensuales automáticos',
+      'Historial detallado y filtros',
+      'Edición y registro en 5 segundos',
+    ],
+    bulletDot: 'bg-[#22c55e]',
     bulletColor: 'text-[#22c55e]',
+    imageLeft: true,
+    imageSrc: '/capturas/2-ingresos.gif',
+    previewBadge: 'Entradas • Categorías Reales',
+    previewGradient: 'from-emerald-500/10 via-slate-900/5 to-teal-500/10',
   },
   {
+    id: 'gastos',
     tag: 'Control de Gastos',
-    tagColor: 'bg-[#fee2e2] text-[#dc2626]',
-    title: 'Control de Gastos',
+    tagColor: 'bg-[#fee2e2] text-[#dc2626] border border-rose-200/80',
+    title: 'Monitoreo de Salidas y Eliminación de Gastos Fuga',
     description:
-      'Monitorea cada gasto por categoria. Visualiza tus top categorias con barras de progreso y edita transacciones facilmente.',
-    bullets: ['Categorias con iconos', 'Top gastos visual', 'Barras de progreso', 'Historial completo'],
-    imageLeft: false,
+      'Controla cada egreso clasificado en Hogar, Alimentación, Transporte, Salud, Educación, Entretenimiento o Negocio. Monitorea el impacto inmediato en tu balance disponible.',
+    bullets: [
+      'Categorías con íconos visuales',
+      'Top de gastos del periodo',
+      'Impacto inmediato en balance',
+      'Historial completo editable',
+    ],
+    bulletDot: 'bg-[#f87171]',
     bulletColor: 'text-[#f87171]',
+    imageLeft: false,
+    imageSrc: '/capturas/3-gastos.gif',
+    previewBadge: 'Egresos • Radiografía Financiera',
+    previewGradient: 'from-rose-500/10 via-slate-900/5 to-amber-500/10',
   },
   {
-    tag: 'Personalizacion de Datos',
-    tagColor: 'bg-[#e0e7ff] text-[#4f46e5]',
-    title: 'Personaliza tus Gastos e Ingresos',
+    id: 'presupuestos',
+    tag: 'Presupuestos & Límites',
+    tagColor: 'bg-[#e0e7ff] text-[#4f46e5] border border-indigo-200/80',
+    title: 'Límites por Categoría con Botón de Gasto Rápido',
     description:
-      'Crea categorias personalizadas para tus gastos e ingresos segun tus necesidades. Organiza tu informacion de manera clara y obten datos mas precisos sobre tus finanzas.',
-    bullets: ['Categorias personalizadas', 'Etiquetas unicas', 'Datos mas claros', 'Organizacion flexible'],
-    imageLeft: true,
+      'Planifica topes mensuales por categoría y monitorea el consumo con barras de progreso visuales. Incluye botón de gasto rápido con 1 solo clic para agilizar tus registros diarios.',
+    bullets: [
+      'Límites mensuales configurables',
+      'Barras de consumo visuales',
+      'Botón de gasto rápido en 1 clic',
+      'Alertas de sobregiro antes de exceder',
+    ],
+    bulletDot: 'bg-[#818cf8]',
     bulletColor: 'text-[#818cf8]',
+    imageLeft: true,
+    imageSrc: '/capturas/4-presupuestos.gif',
+    previewBadge: 'Presupuestos • 1 Clic',
+    previewGradient: 'from-amber-500/10 via-slate-900/5 to-orange-500/10',
   },
   {
+    id: 'metas',
     tag: 'Metas de Ahorro',
-    tagColor: 'bg-[#dbeafe] text-[#2563eb]',
-    title: 'Metas de Ahorro',
+    tagColor: 'bg-[#dbeafe] text-[#2563eb] border border-blue-200/80',
+    title: 'Objetivos Financieros con Pool Global de Ahorros',
     description:
-      'Define objetivos financieros y haz seguimiento de tu progreso. Alcanza tus metas con indicadores visuales motivadores.',
-    bullets: ['Objetivos personalizados', 'Progreso en tiempo real', 'Multiples metas', 'Agregar fondos facil'],
-    imageLeft: false,
+      'Define metas a plazo (viajes, compras, fondo de emergencia) con monto objetivo y fecha límite. Asigna dinero desde el pool de ahorro global de forma libre o vinculada.',
+    bullets: [
+      'Pool global de ahorro acumulado',
+      'Asignación libre o directa',
+      'Progreso porcentual en vivo',
+      'Cálculo de fecha y tiempo restante',
+    ],
+    bulletDot: 'bg-[#60a5fa]',
     bulletColor: 'text-[#60a5fa]',
-  },
-  {
-    tag: 'Transacciones Recurrentes',
-    tagColor: 'bg-[#f3e8ff] text-[#9333ea]',
-    title: 'Transacciones Recurrentes',
-    description:
-      'Automatiza gastos e ingresos fijos. Recordatorios diarios y registro con un solo clic.',
-    bullets: ['Gastos automaticos', 'Recordatorios', 'Un clic para registrar', 'Resumen diario'],
-    imageLeft: true,
-    bulletColor: 'text-[#c084fc]',
-  },
-  {
-    tag: 'Reportes Detallados',
-    tagColor: 'bg-[#ffedd5] text-[#ea580c]',
-    title: 'Reportes Detallados',
-    description:
-      'Analiza tus finanzas con reportes mensuales. Exporta a PDF y visualiza ingresos y gastos por categoria.',
-    bullets: ['Exportar a PDF', 'Analisis por categoria', 'Tasa de ahorro', 'Filtros por periodo'],
     imageLeft: false,
-    bulletColor: 'text-[#fb923c]',
+    imageSrc: '/capturas/5-metas.gif',
+    previewBadge: 'Metas • Pool de Ahorro',
+    previewGradient: 'from-violet-500/10 via-slate-900/5 to-purple-500/10',
   },
   {
-    tag: 'Personalizacion Total',
-    tagColor: 'bg-[#ccfbf1] text-[#0f766e]',
-    title: 'Personalizacion Total',
+    id: 'recurrentes',
+    tag: 'Transacciones Recurrentes',
+    tagColor: 'bg-[#f3e8ff] text-[#9333ea] border border-purple-200/80',
+    title: 'Automatización de Pagos Fijos y Cuentas Atrasadas',
     description:
-      'Configura tu perfil, cambia el tema de colores y personaliza tu experiencia segun tus preferencias.',
-    bullets: ['Foto de perfil', '5 temas de colores', 'Datos personales', 'Interfaz adaptable'],
+      'Gestiona suscripciones, servicios y alquiler con su día de corte mensual. Permite ajustes por mes, pagos parciales y te notifica de inmediato en el dashboard si tienes pagos pendientes.',
+    bullets: [
+      'Día de corte mensual automático',
+      'Alertas de cuentas atrasadas',
+      'Soporte para abonos parciales',
+      'Avisos visuales en el Dashboard',
+    ],
+    bulletDot: 'bg-[#c084fc]',
+    bulletColor: 'text-[#c084fc]',
     imageLeft: true,
+    imageSrc: '/capturas/6-recurrentes.gif',
+    previewBadge: 'Recurrentes • Días de Corte',
+    previewGradient: 'from-purple-500/10 via-slate-900/5 to-indigo-500/10',
+  },
+  {
+    id: 'reportes',
+    tag: 'Reportes Detallados',
+    tagColor: 'bg-[#ffedd5] text-[#ea580c] border border-orange-200/80',
+    title: 'Gráficos de Distribución, Dona y Exportación',
+    description:
+      'Analiza gráficos de dona interactivos con la distribución porcentual de tus ingresos y gastos. Compara meses anteriores, analiza tu tasa de ahorro y exporta la información.',
+    bullets: [
+      'Gráficos de dona interactivos',
+      'Distribución porcentual por rubro',
+      'Historial comparativo semestral',
+      'Filtros por periodo y exportación',
+    ],
+    bulletDot: 'bg-[#fb923c]',
+    bulletColor: 'text-[#fb923c]',
+    imageLeft: false,
+    imageSrc: '/capturas/7-reportes.gif',
+    previewBadge: 'Reportes • Donut Charts',
+    previewGradient: 'from-blue-500/10 via-slate-900/5 to-cyan-500/10',
+  },
+  {
+    id: 'consejos',
+    tag: 'Consejos & Health Score',
+    tagColor: 'bg-[#ccfbf1] text-[#0f766e] border border-teal-200/80',
+    title: 'Score de Salud Financiera (0-100) y Consejos IA',
+    description:
+      'Recibe un diagnóstico automatizado de 0 a 100 puntos con recomendaciones clasificadas por impacto (Alerta, Ahorro, Inversión, General) generadas con inteligencia artificial y caché de 24h.',
+    bullets: [
+      'Score de salud financiera (0-100)',
+      'Consejos por impacto (Alto / Medio)',
+      'Recomendaciones de ahorro e inversión',
+      'Caché optimizado de 24 horas',
+    ],
+    bulletDot: 'bg-[#2dd4bf]',
     bulletColor: 'text-[#2dd4bf]',
+    imageLeft: true,
+    imageSrc: '/capturas/8-consejos.gif',
+    previewBadge: 'Salud Financiera • Score 0-100',
+    previewGradient: 'from-teal-500/10 via-slate-900/5 to-emerald-500/10',
+  },
+  {
+    id: 'movil',
+    tag: 'Acceso Móvil & PWA',
+    tagColor: 'bg-[#e0e7ff] text-[#3730a3] border border-indigo-200/80',
+    title: 'Experiencia Nativa en tu Celular (Android & iOS)',
+    description:
+      'Lleva FinanzasTrack a donde vayas. Gracias a la tecnología PWA instalable, úsala en tu smartphone o tablet como una aplicación nativa con carga instantánea, interfaz táctil optimizada y modo oscuro/claro.',
+    bullets: [
+      'Instalable en pantalla de inicio',
+      'Navegación táctil rápida y fluida',
+      'Compatible con Android, iPhone y iPad',
+      'Sin ocupar espacio de almacenamiento',
+    ],
+    bulletDot: 'bg-[#6366f1]',
+    bulletColor: 'text-[#6366f1]',
+    imageLeft: false,
+    imageSrc: '/capturas/pwa-mobile.jpg',
+    previewBadge: 'PWA • Android / iOS',
+    previewGradient: 'from-indigo-500/15 via-blue-900/10 to-teal-500/15',
   },
 ]
 
 const aiCards = [
   {
-    title: 'Resumen de gastos',
-    description: 'Obten un analisis completo de todos tus gastos organizados por categoria en segundos.',
-    Icon: FileText,
-  },
-  {
-    title: 'Consejos personalizados',
-    description: 'Recibe recomendaciones inteligentes sobre donde puedes ahorrar mas dinero.',
-    Icon: Lightbulb,
-  },
-  {
-    title: 'Analisis de ingresos',
-    description: 'Identifica cual es tu menor fuente de ingreso y como puedes fortalecerla.',
+    title: 'Diagnóstico y Salud Financiera',
+    description: 'Obtén un score de 0 a 100 puntos sobre tus hábitos de gasto, capacidad de ahorro y estabilidad.',
     Icon: BarChart3,
+    badge: 'Score 0-100',
   },
   {
-    title: 'Chat conversacional',
-    description: 'Pregunta lo que quieras sobre tus finanzas como si hablaras con un asesor real.',
+    title: 'Consejos Inteligentes Personalizados',
+    description: 'Recomendaciones automáticas clasificadas por impacto (Alertas, Ahorro, Inversión) generadas con IA.',
+    Icon: Lightbulb,
+    badge: 'Caché 24h',
+  },
+  {
+    title: 'Chat Financiero Conversacional',
+    description: 'Pregúntale a la IA sobre tu presupuesto: analiza tus transacciones reales y sugiere ajustes concretos.',
     Icon: MessageCircle,
+    badge: 'IA en Vivo',
+  },
+  {
+    title: 'Oportunidades de Inversión',
+    description: 'Aprende alternativas de inversión seguras acordes a tu excedente mensual acumulado.',
+    Icon: TrendingUp,
+    badge: 'Estrategias',
   },
 ]
 
 const pricingFeatures = [
-  'Control completo de gastos e ingresos',
-  'Gestion de inventario ilimitada',
-  'Metricas y graficos avanzados',
-  'Reportes mensuales y anuales',
-  'Presupuestos personalizados',
-  'Historial de transacciones',
-  'Acceso desde cualquier dispositivo',
-  'Soporte tecnico prioritario',
-  'Actualizaciones gratuitas',
-  'Respaldo automatico de datos',
-  'Acceso de por vida',
-  'Descarga reportes en PDF o Excel',
+  'Acceso completo a todos los módulos del sistema',
+  'Control ilimitado de ingresos, gastos y ahorros',
+  'Dashboard en tiempo real con gráficos interactivos',
+  'Módulo de presupuestos con gasto rápido',
+  'Metas de ahorro con pool y asignación de fondos',
+  'Gestión de transacciones y pagos recurrentes',
+  'Asistente financiero con Inteligencia Artificial integrada',
+  'Reportes y distribución porcentual por categoría',
+  'Modo oscuro, claro y personalización de preferencias',
+  'Acceso desde cualquier dispositivo (Web Responsive)',
+  'Respaldo automático en la nube 24/7',
+  'Soporte técnico prioritario y actualizaciones continuas',
 ]
 
 const faqItems = [
   {
-    question: '¿Como funciona FinanzasTrack?',
+    question: '¿El precio de S/ 25 es mensual o es un pago único de por vida?',
     answer:
-      'FinanzasTrack es una aplicación web que te permite registrar y gestionar tus ingresos, gastos e inventario de manera simple. Solo necesitas crear una cuenta, configurar tus categorías y empezar a registrar tus transacciones. La plataforma genera automáticamente gráficos y reportes para que puedas visualizar tu situación financiera en tiempo real.',
+      'Es un pago único. Con un solo abono de S/ 25 obtienes acceso completo y permanente a la plataforma. No cobramos mensualidades, renovaciones obligatorias ni tarifas ocultas.',
   },
   {
-    question: '¿Que incluye el precio de 20 soles pago unico?',
+    question: '¿Tengo que conectar mis tarjetas o claves bancarias a la plataforma?',
     answer:
-      'El pago único de 20 soles te da acceso de por vida a todas las funcionalidades de FinanzasTrack: control de gastos e ingresos, gestión de inventario, métricas avanzadas, reportes en PDF, presupuestos personalizados, respaldo automático, soporte técnico y todas las actualizaciones futuras sin costo adicional.',
+      'No, en ningún momento. FinanzasTrack nunca te pedirá números de tarjeta, contraseñas de banco ni accesos financieros. Tú registras tus movimientos de forma 100% privada, manual y en menos de 5 segundos, garantizando tu total seguridad.',
   },
   {
-    question: '¿Puedo descargar los reportes?',
+    question: '¿Cómo funciona el Asistente Financiero con Inteligencia Artificial (IA)?',
     answer:
-      'Sí, puedes exportar tus reportes financieros en formato PDF o Excel. Los reportes incluyen análisis detallados de ingresos, gastos por categoría, tendencias mensuales y tu tasa de ahorro. Perfectos para presentar a tu contador o para tu análisis personal.',
+      'La IA está conectada en tiempo real a tus transacciones y balances. Puedes chatear con ella en cualquier momento para pedirle que analice tus gastos del mes, identifique fugas de dinero, calcule cuánto puedes ahorrar o te sugiera un plan para salir de deudas.',
   },
   {
-    question: '¿Puedo acceder desde mi celular?',
+    question: '¿Cómo se instala en mi celular (Android / iPhone) y computadora?',
     answer:
-      'Absolutamente. FinanzasTrack es una aplicación web responsive que funciona perfectamente en cualquier dispositivo: computadora, tablet o celular. Solo necesitas un navegador web e internet para acceder desde cualquier lugar y en cualquier momento.',
+      'FinanzasTrack es una Aplicación Web Progresiva (PWA). Al ingresar desde Chrome en Android o Safari en iPhone, seleccionas "Agregar a la pantalla principal" o "Instalar App". Funciona como una aplicación nativa, con carga ultra rápida y sin ocupar espacio en la memoria de tu teléfono.',
   },
   {
-    question: '¿Mis datos estan seguros?',
+    question: '¿Cómo me ayuda el sistema a no gastar de más en el mes?',
     answer:
-      'Sí, la seguridad es nuestra prioridad. Utilizamos encriptación de nivel bancario para proteger toda tu información financiera. Además, realizamos respaldos automáticos en la nube para que nunca pierdas tus datos. Tu información está más segura con nosotros que en hojas de cálculo locales.',
+      'El sistema calcula automáticamente tu "Balance Disponible", descontando tus gastos fijos y el dinero que decides apartar en Ahorros y Metas. Además, cada categoría de Presupuesto tiene barras de progreso visuales y alertas que te avisan antes de que superes tu límite mensual.',
   },
   {
-    question: '¿Como realizo el pago?',
+    question: '¿Cómo gestiona los pagos fijos y suscripciones recurrentes?',
     answer:
-      'El proceso es muy simple. Haz clic en el botón de WhatsApp en la sección de precios y te contactaremos inmediatamente. Aceptamos transferencias bancarias, Yape y Plin. Una vez confirmado el pago, recibirás tu acceso en minutos.',
+      'En el módulo de Recurrentes configuras tus gastos periódicos (alquiler, luz, agua, internet, streaming) con su día de corte. La app te alerta en el Dashboard cuando una cuenta está próxima a vencer o atrasada, y te permite marcarlas como pagadas o registrar abonos parciales.',
   },
   {
-    question: '¿Que pasa si necesito ayuda?',
+    question: '¿Qué diferencia a FinanzasTrack de una plantilla de Excel o Google Sheets?',
     answer:
-      'Contamos con soporte técnico prioritario para todos nuestros usuarios. Puedes contactarnos por WhatsApp, correo electrónico o a través del chat en la aplicación. Nuestro equipo responde rápidamente y está disponible para ayudarte con cualquier duda o problema que tengas.',
+      'En Excel debes crear y mantener fórmulas complejas, es incómodo de usar en celular y no te da alertas automáticas. FinanzasTrack calcula todo en tiempo real, cuenta con botón de gasto rápido en 1 clic, gráficos interactivos de 6 meses y un asesor IA disponible 24/7.',
   },
   {
-    question: '¿Es realmente un pago unico?',
+    question: '¿Cómo realizo el pago y cuánto demora la activación de mi cuenta?',
     answer:
-      'Sí, es 100% un pago único. No hay suscripciones mensuales ni costos ocultos. Pagas 20 soles una sola vez y obtienes acceso de por vida a FinanzasTrack, incluyendo todas las actualizaciones y nuevas funcionalidades que agreguemos en el futuro.',
-  },
-  {
-    question: '¿Sirve para negocios o solo uso personal?',
-    answer:
-      'FinanzasTrack es perfecto para ambos. Puedes usarlo para gestionar tus finanzas personales, tu negocio pequeño, tu emprendimiento o incluso para llevar las cuentas de varios proyectos. Las categorías personalizables y la gestión de inventario lo hacen ideal tanto para uso personal como profesional.',
+      'El proceso toma menos de 5 minutos. Haces clic en el botón de WhatsApp, coordinamos el pago por Yape o Transferencia Bancaria, te generamos tus credenciales de acceso y puedes empezar a ordenar tus finanzas de inmediato.',
   },
 ]
 
 const testimonials = [
   {
     quote:
-      'FinanzasTrack cambio completamente mi forma de manejar las finanzas de mi negocio. Ahora tengo control total de mis gastos e ingresos, y los reportes mensuales me ayudan a tomar mejores decisiones.',
-    name: 'Maria Garcia',
-    role: 'Emprendedora',
+      'Llevaba años peleando con plantillas de Excel que siempre dejaba a medias. Con FinanzasTrack anoto mis compras diarias en 5 segundos desde el celular. El cálculo automático de mi Balance Disponible me salvó de sobregirarme a fin de mes.',
+    name: 'Rodrigo Salazar',
+    role: 'Diseñador UI / Freelance',
+    avatarBg: 'bg-emerald-100 text-emerald-700',
+    highlight: 'Control de gastos diario',
   },
   {
     quote:
-      'Como freelancer, necesitaba algo simple pero potente. FinanzasTrack es exactamente eso. La gestion de inventario y las metricas avanzadas me han ahorrado horas de trabajo cada semana.',
-    name: 'Carlos Mendoza',
-    role: 'Freelancer',
+      'Lo que más me encanta es el módulo de Metas conectado al Pool de Ahorro y el Asistente IA integrado. Le pregunto cómo voy con mi presupuesto de viaje a Cusco y me da consejos financieros exactos con mis números reales.',
+    name: 'Valeria Cárdenas',
+    role: 'Coordinadora de Marketing',
+    avatarBg: 'bg-indigo-100 text-indigo-700',
+    highlight: 'Metas de ahorro e IA',
   },
   {
     quote:
-      'El mejor S/25 que he invertido. Antes usaba Excel y perdia mucho tiempo. Ahora todo esta automatizado y puedo ver mis finanzas desde el celular en cualquier momento.',
-    name: 'Ana Lucia Torres',
-    role: 'Dueña de tienda',
+      'Tengo 8 pagos fijos entre alquiler, internet y préstamos. El sistema de transacciones recurrentes con alertas de corte y atrasos me quitó un peso enorme de encima. Pagué los S/ 25 una sola vez y valió totalmente la pena.',
+    name: 'Jorge Luis Huamán',
+    role: 'Ingeniero de Sistemas',
+    avatarBg: 'bg-purple-100 text-purple-700',
+    highlight: 'Gestión de recurrentes',
   },
 ]
 
 const trustStats = [
-  { value: '2,500+', label: 'Usuarios activos' },
-  { value: '4.9/5', label: 'Calificación promedio' },
-  { value: '98%', label: 'Satisfacción' },
-  { value: '24/7', label: 'Soporte disponible' },
+  { value: '4.9 / 5', label: 'Calificación promedio' },
+  { value: '98%', label: 'Satisfacción garantizada' },
+  { value: '24/7', label: 'Disponibilidad en la nube' },
 ]
 
 function ComparisonStatus({ enabled }) {
   if (enabled) {
     return (
-      <CircleCheck
-        className="mx-auto h-5 w-5 fill-[#22c55e] text-white stroke-3 transition-transform duration-200 group-hover/row:scale-110 motion-reduce:group-hover/row:scale-100"
-        aria-hidden="true"
-      />
+      <span className="mx-auto grid h-7 w-7 place-content-center rounded-full bg-emerald-100/90 text-emerald-600 shadow-sm border border-emerald-200/60 transition-transform duration-200 hover:scale-110">
+        <Check className="h-4 w-4 stroke-[3]" />
+      </span>
     )
   }
-
   return (
-    <CircleX
-      className="mx-auto h-5 w-5 fill-[#f87171] text-white stroke-3 transition-transform duration-200 group-hover/row:scale-105 motion-reduce:group-hover/row:scale-100"
-      aria-hidden="true"
-    />
+    <span className="mx-auto grid h-7 w-7 place-content-center rounded-full bg-slate-100/80 text-slate-400 border border-slate-200/60">
+      <CircleX className="h-4 w-4 stroke-[2]" />
+    </span>
   )
 }
 
-/** Cuenta atrás inicial 24:59:59 (ajustable) */
 const PRICING_COUNTDOWN_START_SECONDS = 24 * 3600 + 59 * 60 + 59
 
 function HeroSection() {
   const [openFaq, setOpenFaq] = useState(0)
-  const [testimonialIndex, setTestimonialIndex] = useState(0)
   const [countdownSeconds, setCountdownSeconds] = useState(PRICING_COUNTDOWN_START_SECONDS)
 
   useEffect(() => {
@@ -335,164 +486,201 @@ function HeroSection() {
   const countdownSecs = countdownSeconds % 60
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-6 pb-24 pt-8">
+    <main className="mx-auto w-full px-4 pb-20 pt-8 sm:px-6 md:pt-14">
+      {/* 1. HERO PRINCIPAL */}
       <section id="inicio" className="mx-auto max-w-5xl scroll-mt-24 text-center">
-        <p className="mx-auto inline-flex items-center gap-2 rounded-full border border-[#d8bf80] bg-white px-5 py-2 text-[14px] text-[#6b7280] shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-all duration-300 motion-safe:animate-fade-in-up motion-reduce:animate-none hover:-translate-y-0.5 hover:border-[#c9a84d] hover:shadow-[0_12px_28px_rgba(0,0,0,0.1)] motion-reduce:hover:translate-y-0">
-          <Square className="h-3 w-3 text-[#d98104] transition-transform duration-300 hover:rotate-12" aria-hidden="true" />
-          ¿No sabes donde se fue tu dinero este mes?
-        </p>
+        <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200/80 bg-indigo-50/80 px-4 py-1.5 text-xs font-bold text-indigo-700 shadow-sm backdrop-blur-md">
+          <Sparkles className="h-3.5 w-3.5 text-indigo-600" />
+          <span>GESTIÓN FINANCIERA INTELIGENTE • VERSIÓN 2026</span>
+        </div>
 
-        <h1 className="mx-auto mt-9 w-fit whitespace-nowrap text-center text-[clamp(2rem,3.8vw,4.5rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-black motion-safe:animate-fade-in-up motion-safe:[animation-delay:80ms] motion-reduce:animate-none">
-          Tu dinero bajo control con FinanzasTrack
+        <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl md:leading-[1.15]">
+          Toma el control total de tu dinero con{' '}
+          <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-teal-500 bg-clip-text text-transparent">
+            FinanzasTrack
+          </span>
         </h1>
 
-        <p className="mx-auto mt-5 max-w-4xl text-[17px] leading-[1.4] text-[#1f2937] md:text-[20px] motion-safe:animate-fade-in-up motion-safe:[animation-delay:160ms] motion-reduce:animate-none">
-          Gestiona ingresos, gastos e inventario en un solo lugar. Metricas inteligentes
-          que te ayudan a tomar mejores decisiones financieras.
+        <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
+          La plataforma intuitiva para registrar gastos, fijar presupuestos, alcanzar metas de ahorro y recibir asesoría inteligente con IA.
         </p>
 
-        <button className="group mt-10 inline-flex items-center gap-2 rounded-2xl bg-[#d98104] px-8 py-2.5 text-[16px] font-semibold text-white shadow-[0_8px_18px_rgba(217,129,4,0.35)] transition-all duration-200 motion-safe:animate-fade-in-up motion-safe:[animation-delay:240ms] motion-reduce:animate-none hover:-translate-y-0.5 hover:bg-[#c87400] hover:shadow-[0_14px_28px_rgba(217,129,4,0.42)] active:translate-y-0 active:scale-[0.98] motion-reduce:hover:translate-y-0 md:text-[18px]">
-          Organiza tu dinero en 5 minutos
-          <Square
-            className="h-4 w-4 stroke-[2.5] transition-transform duration-200 group-hover:translate-x-1"
-            aria-hidden="true"
-          />
-        </button>
+        <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row sm:gap-4">
+          <a
+            href="#precio"
+            className="group flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-8 py-3.5 text-base font-semibold text-white shadow-[0_4px_16px_rgba(79,70,229,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-[0_8px_24px_rgba(79,70,229,0.45)] sm:w-auto"
+          >
+            <span>Obtener Acceso Completo</span>
+            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+          </a>
+          <a
+            href="#funcionalidades"
+            className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300/90 bg-white px-7 py-3.5 text-base font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:border-slate-400 hover:bg-slate-50 sm:w-auto"
+          >
+            <span>Explorar Funcionalidades</span>
+          </a>
+        </div>
       </section>
 
-      <section className="mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {/* 2. STATS CARDS */}
+      <section className="mx-auto mt-14 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
         {stats.map((stat) => (
           <StatCard
-            key={`${stat.value}-${stat.label}`}
+            key={stat.label}
             value={stat.value}
             label={stat.label}
             sublabel={stat.sublabel}
+            variant={stat.variant}
           />
         ))}
       </section>
 
-      <section className="group mx-auto mt-16 w-full max-w-5xl rounded-[26px] border border-[#dce8ea] bg-[#f7fbfb] p-5 shadow-[0_0_0_1px_rgba(220,232,234,0.7),0_10px_22px_rgba(15,23,42,0.08),0_0_24px_rgba(20,184,166,0.1)] transition-all duration-300 ease-out hover:scale-[1.01] hover:border-[#b8e0e4] hover:shadow-[0_0_0_1px_rgba(184,224,228,0.9),0_18px_36px_rgba(15,23,42,0.1),0_0_32px_rgba(20,184,166,0.14)] motion-reduce:hover:scale-100 md:p-6">
-        <div className="mb-6 flex flex-col gap-4 md:mb-8 md:flex-row md:items-start md:justify-between">
-          <div className="flex items-start gap-4">
-            <span className="mt-1 grid h-12 w-12 place-content-center rounded-full bg-[#14b8a6] text-white shadow-[0_10px_22px_rgba(20,184,166,0.35)] transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_12px_28px_rgba(20,184,166,0.45)]">
-              <Square className="h-4 w-4 stroke-[2.5]" aria-hidden="true" />
+      {/* 3. DEMO VIDEO CARD */}
+      <section className="group mx-auto mt-14 w-full max-w-5xl rounded-3xl border border-slate-200/90 bg-white p-5 shadow-xl shadow-slate-200/50 transition-all duration-300 hover:border-indigo-200 hover:shadow-2xl hover:shadow-indigo-500/10 md:p-7">
+        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center gap-3.5 min-w-0">
+            <span className="relative flex h-12 w-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#1d4ed8] via-[#0284c7] to-[#2dd4bf] p-2.5 shadow-md shadow-teal-500/25">
+              <span
+                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[logo-shine_3.5s_infinite]"
+                aria-hidden="true"
+              />
+              <img
+                src="/v4.svg"
+                alt="FinanzasTrack"
+                className="relative z-10 h-7 w-7 object-contain drop-shadow-sm shrink-0"
+              />
             </span>
-
-            <div>
-              <h2 className="text-[20px] font-semibold leading-none tracking-[-0.01em] text-[#111827] md:text-[24px]">
-                Ver Video
+            <div className="min-w-0">
+              <h2 className="text-xl font-bold tracking-tight text-slate-900 md:text-2xl">
+                Demostración en Video
               </h2>
-              <p className="mt-1 text-[14px] text-[#374151] md:text-[16px]">
-                Descubre todos los detalles de nuestro aplicativo
+              <p className="text-xs sm:text-sm text-slate-500">
+                Conoce la interfaz fluida y las funciones clave de FinanzasTrack en acción
               </p>
             </div>
           </div>
-
-          <button className="group/sound inline-flex w-fit items-center gap-2 rounded-full bg-[#14b8a6] px-8 py-3 text-[15px] font-semibold text-[#053b3b] shadow-[0_10px_20px_rgba(20,184,166,0.25)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#0d9488] hover:shadow-[0_14px_26px_rgba(20,184,166,0.35)] active:scale-[0.98] motion-reduce:hover:translate-y-0">
-            <VolumeX
-              className="h-4 w-4 stroke-[2.5] transition-transform duration-200 group-hover/sound:scale-110"
-              aria-hidden="true"
-            />
-            Sonido
-          </button>
+          <span className="inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1 text-xs font-bold text-emerald-700">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+            </span>
+            Tour de la Plataforma
+          </span>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border border-[#d1d5db] bg-[#9a9a9a] transition-all duration-300 ease-out group-hover:scale-[1.01] group-hover:border-[#94a3b8] group-hover:shadow-inner motion-reduce:group-hover:scale-100">
-          <div className="relative min-h-[300px] w-full pb-[56.25%]">
-            <iframe
-              className="absolute inset-0 h-full w-full"
-              src={demoVideoUrl}
-              title="Demo de FinanzasTrack"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            />
+        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-inner">
+          <div className="relative w-full aspect-video bg-slate-950 flex items-center justify-center">
+            <video
+              className="h-full w-full object-contain rounded-2xl"
+              controls
+              playsInline
+              preload="metadata"
+            >
+              <source src="/demo.mp4" type="video/mp4" />
+              Tu navegador no soporta la reproducción de video HTML5.
+            </video>
           </div>
         </div>
       </section>
 
-      <section id="beneficios" className="mx-auto mt-20 w-full max-w-6xl scroll-mt-24">
+      {/* 4. BENEFICIOS */}
+      <section id="beneficios" className="mx-auto mt-24 w-full max-w-6xl scroll-mt-24">
         <div className="text-center">
-          <h2 className="text-[30px] font-bold leading-[1.1] tracking-[-0.02em] text-[#0f172a] md:text-[42px]">
-            Di adios al estres financiero.
-            <span className="ml-2 text-[#0ea5a4]">Todo tu dinero organizado en minutos</span>
+          <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Beneficios Claros</p>
+          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            Di adiós al desorden financiero.{' '}
+            <span className="text-indigo-600">Tus cuentas bajo control en minutos.</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-[14px] text-[#4b5563] md:text-[17px]">
-            Resultados reales que transforman tu relacion con el dinero
+          <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
+            Herramientas diseñadas para que ahorrar y ordenar tus gastos sea fácil y motivador.
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {benefits.map((benefit) => (
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          {benefits.map((b) => (
             <article
-              key={benefit.title}
-              className="group/benefit rounded-2xl border border-[#e5e7eb] bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#c5ebe8] hover:shadow-[0_18px_40px_rgba(15,23,42,0.1)] motion-reduce:hover:translate-y-0"
+              key={b.title}
+              className={`group rounded-2xl border p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${b.cardBg}`}
             >
-              <span className="mb-5 inline-grid h-10 w-10 place-content-center rounded-xl bg-[#14b8a6] text-white shadow-[0_10px_20px_rgba(20,184,166,0.35)] transition-transform duration-300 group-hover/benefit:scale-110 group-hover/benefit:shadow-[0_12px_24px_rgba(20,184,166,0.45)]">
-                <Square className="h-3.5 w-3.5 stroke-[2.5]" aria-hidden="true" />
-              </span>
-              <h3 className="text-[17px] font-semibold leading-[1.35] text-[#0f172a]">
-                {benefit.title}
+              <div className="flex items-center justify-between">
+                <span className={`grid h-10 w-10 place-content-center rounded-xl ${b.iconColor} shadow-sm transition-transform duration-300 group-hover:scale-110`}>
+                  <b.icon className="h-5 w-5" />
+                </span>
+                <span className={`rounded-full border px-2.5 py-0.5 text-[10px] font-bold tracking-wide ${b.badgeColor}`}>
+                  {b.badge}
+                </span>
+              </div>
+              <h3 className="mt-4 text-base font-bold leading-snug text-slate-900">
+                {b.title}
               </h3>
-              <p className="mt-3 text-[13px] leading-[1.45] text-[#4b5563]">{benefit.description}</p>
+              <p className="mt-2 text-xs leading-relaxed text-slate-600">
+                {b.description}
+              </p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto mt-20 w-full max-w-6xl">
+      {/* 5. TABLA COMPARATIVA */}
+      <section className="mx-auto mt-24 w-full max-w-6xl">
         <div className="text-center">
-          <p className="text-sm font-medium text-[#111827]">Comparacion</p>
-          <h2 className="mt-2 text-[30px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0f172a] md:text-[42px]">
-            ¿Por que elegir
-            <span className="ml-2 text-[#0ea5a4]">FinanzasTrack?</span>
+          <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Comparativa Directa</p>
+          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            ¿Por qué elegir <span className="text-indigo-600">FinanzasTrack</span>?
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-[14px] text-[#4b5563] md:text-[17px]">
-            Compara y descubre por que miles de personas ya dejaron atras los metodos
-            tradicionales
+          <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
+            Comprueba por qué miles de usuarios dejaron atrás las libretas y hojas de Excel complicadas.
           </p>
         </div>
 
-        <div className="mt-10 overflow-x-auto rounded-[22px] border border-[#e5e7eb] bg-white shadow-[0_20px_35px_rgba(15,23,42,0.08)] transition-shadow duration-300 hover:shadow-[0_24px_48px_rgba(15,23,42,0.12)]">
-          <table className="w-full min-w-[920px] border-collapse">
+        <div className="mt-10 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-200/40">
+          <table className="w-full min-w-[760px] border-collapse">
             <thead>
               <tr>
-                <th className="w-[40%] border-b border-r border-[#eef2f7] px-5 py-7 text-left text-[22px] font-semibold text-[#0f172a]">
-                  Caracteristicas
+                <th className="w-[42%] border-b border-r border-slate-200 px-6 py-5 text-left text-base font-bold text-slate-900">
+                  Funcionalidades Clave
                 </th>
-                <th className="w-[20%] border-b border-r border-[#eef2f7] px-5 py-7 text-center">
-                  <span className="mx-auto mb-3 grid h-10 w-10 place-content-center rounded-xl border border-[#f3f4f6] bg-white shadow-[0_6px_14px_rgba(15,23,42,0.08)]">
-                    <Square className="h-4 w-4 stroke-[2.5] text-[#9ca3af]" aria-hidden="true" />
+                <th className="w-[26%] border-b border-r border-indigo-200/80 bg-indigo-50/60 px-6 py-5 text-center">
+                  <span className="relative mx-auto mb-2 grid h-10 w-10 place-content-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#1d4ed8] via-[#0284c7] to-[#2dd4bf] p-2 shadow-md shadow-teal-500/25">
+                    <span
+                      className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[logo-shine_3.5s_infinite]"
+                      aria-hidden="true"
+                    />
+                    <img
+                      src="/v4.svg"
+                      alt="FinanzasTrack"
+                      className="relative z-10 h-6 w-6 object-contain drop-shadow-sm"
+                    />
                   </span>
-                  <p className="text-[24px] font-semibold text-[#0f172a]">FinanzasTrack</p>
+                  <p className="text-lg font-bold text-indigo-900">FinanzasTrack</p>
                 </th>
-                <th className="w-[20%] border-b border-r border-[#eef2f7] bg-[#f1fff7] px-5 py-7 text-center">
-                  <span className="mx-auto mb-3 grid h-10 w-10 place-content-center rounded-xl bg-[#16a34a] shadow-[0_6px_14px_rgba(22,163,74,0.25)]">
-                    <Square className="h-4 w-4 stroke-[2.5] text-white" aria-hidden="true" />
+                <th className="w-[16%] border-b border-r border-slate-200 px-5 py-5 text-center">
+                  <span className="mx-auto mb-2 grid h-10 w-10 place-content-center rounded-2xl border border-emerald-200/80 bg-emerald-50 text-emerald-600 shadow-sm transition-transform duration-200 hover:scale-105">
+                    <FileSpreadsheet className="h-5 w-5 stroke-[2]" />
                   </span>
-                  <p className="text-[24px] font-semibold text-[#0f172a]">Excel</p>
+                  <p className="text-base font-semibold text-slate-700">Excel / Sheets</p>
                 </th>
-                <th className="w-[20%] border-b border-[#eef2f7] px-5 py-7 text-center">
-                  <span className="mx-auto mb-3 grid h-10 w-10 place-content-center rounded-xl bg-[#4b5563] shadow-[0_6px_14px_rgba(75,85,99,0.25)]">
-                    <Square className="h-4 w-4 stroke-[2.5] text-white" aria-hidden="true" />
+                <th className="w-[16%] border-b border-slate-200 px-5 py-5 text-center">
+                  <span className="mx-auto mb-2 grid h-10 w-10 place-content-center rounded-2xl border border-amber-200/80 bg-amber-50 text-amber-600 shadow-sm transition-transform duration-200 hover:scale-105">
+                    <BookOpen className="h-5 w-5 stroke-[2]" />
                   </span>
-                  <p className="text-[24px] font-semibold text-[#0f172a]">Cuaderno</p>
+                  <p className="text-base font-semibold text-slate-700">Cuaderno</p>
                 </th>
               </tr>
             </thead>
-
             <tbody>
               {comparisonRows.map((row) => (
-                <tr key={row.feature} className="group/row transition-colors duration-200 hover:bg-[#f9fafb]">
-                  <td className="border-b border-r border-[#eef2f7] px-5 py-4 text-[17px] text-[#0f172a]">
+                <tr key={row.feature} className="transition-colors hover:bg-slate-50/60">
+                  <td className="border-b border-r border-slate-200 px-6 py-3.5 text-sm font-medium text-slate-800">
                     {row.feature}
                   </td>
-                  <td className="border-b border-r border-[#eef2f7] px-5 py-4 text-center">
+                  <td className="border-b border-r border-indigo-100 bg-indigo-50/30 px-6 py-3.5 text-center">
                     <ComparisonStatus enabled={row.finanzasTrack} />
                   </td>
-                  <td className="border-b border-r border-[#eef2f7] bg-[#f1fff7] px-5 py-4 text-center">
+                  <td className="border-b border-r border-slate-200 px-5 py-3.5 text-center">
                     <ComparisonStatus enabled={row.excel} />
                   </td>
-                  <td className="border-b border-[#eef2f7] px-5 py-4 text-center">
+                  <td className="border-b border-slate-200 px-5 py-3.5 text-center">
                     <ComparisonStatus enabled={row.notebook} />
                   </td>
                 </tr>
@@ -502,63 +690,88 @@ function HeroSection() {
         </div>
       </section>
 
-      <section className="mx-auto mt-12 w-full max-w-4xl rounded-[22px] border border-[#e9eef2] bg-white px-6 py-5 shadow-[0_10px_26px_rgba(15,23,42,0.05)] transition-all duration-300 hover:border-[#d0e8e6] hover:shadow-[0_16px_36px_rgba(15,23,42,0.08)] md:px-8">
-        <h3 className="text-[22px] font-semibold leading-none tracking-[-0.02em] text-[#0f172a] md:text-[24px]">
-          ¿Listo para el cambio?
-        </h3>
-        <p className="mt-2 text-[13px] text-[#334155] md:text-[14px]">
-          Unete a miles de usuarios que ya transformaron su forma de gestionar el dinero
-        </p>
-      </section>
-
-      <section id="funcionalidades" className="mx-auto mt-20 w-full max-w-6xl scroll-mt-24">
+      {/* 6. FUNCIONALIDADES DETALLADAS (SHOWCASE ZIG-ZAG) */}
+      <section id="funcionalidades" className="mx-auto mt-28 w-full max-w-6xl scroll-mt-24">
         <div className="text-center">
-          <p className="text-sm font-medium text-[#111827]">Conoce la App</p>
-          <h2 className="mt-2 text-[30px] font-bold leading-[1.12] tracking-[-0.02em] text-[#0f172a] md:text-[42px]">
-            Descubre todo lo que puedes hacer con
-            <span className="ml-2 text-[#0ea5a4]">FinanzasTrack</span>
+          <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Módulos de la Plataforma</p>
+          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            Todo lo que necesitas para tu <span className="text-indigo-600">salud financiera</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-[14px] text-[#4b5563] md:text-[17px]">
-            Una plataforma completa diseñada para que tengas el control total de tus finanzas
-            personales o de negocio.
+          <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
+            Una plataforma completa diseñada con los módulos reales de FinanzasTrack para que tengas el control total de tu dinero.
           </p>
         </div>
 
-        <div className="mt-12 space-y-12">
-          {appSections.map((item) => (
+        <div className="mt-14 space-y-16 md:space-y-20">
+          {appSections.map((sec) => (
             <article
-              key={item.title}
-              className={`grid items-center gap-8 lg:grid-cols-2 ${item.imageLeft ? '' : 'lg:[&>*:first-child]:order-2'}`}
+              key={sec.id}
+              className={`grid items-center gap-8 lg:grid-cols-2 lg:gap-12 ${sec.imageLeft ? '' : 'lg:[&>*:first-child]:order-2'
+                }`}
             >
-              <div className="overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white shadow-[0_16px_30px_rgba(15,23,42,0.12)]">
-                <img
-                  className="h-full w-full object-cover"
-                  src={appPreviewImage}
-                  alt={`Vista de ${item.title}`}
-                  loading="lazy"
-                />
+              {/* Contenedor Mockup / Espacio de Imagen */}
+              <div className="group/mockup relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-[0_16px_35px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-[0_20px_45px_rgba(79,70,229,0.12)]">
+                {/* Cabecera estilo navegador / app */}
+                <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50/90 px-4 py-2.5">
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-2.5 w-2.5 rounded-full bg-rose-400/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
+                  </div>
+                  <div className="flex items-center gap-1.5 rounded-lg border border-slate-200/70 bg-white px-3 py-0.5 text-[11px] font-medium text-slate-600 shadow-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span>finanzastrack.site/{sec.id}</span>
+                  </div>
+                  <span className="hidden sm:inline-block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                    {sec.previewBadge}
+                  </span>
+                </div>
+
+                {/* Espacio reservado para la captura de pantalla */}
+                <div className={`relative flex min-h-[260px] sm:min-h-[310px] w-full items-center justify-center overflow-hidden bg-gradient-to-br ${sec.previewGradient} bg-slate-50`}>
+                  <img
+                    src={sec.imageSrc}
+                    alt={`Vista de ${sec.title}`}
+                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover/mockup:scale-[1.02]"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      if (e.currentTarget.nextElementSibling) {
+                        e.currentTarget.nextElementSibling.classList.remove('hidden');
+                        e.currentTarget.nextElementSibling.classList.add('flex');
+                      }
+                    }}
+                  />
+                  {/* Placeholder elegante en caso de no cargar la imagen todavía */}
+                  <div className="hidden flex-col items-center justify-center gap-3 p-8 text-center text-slate-400">
+                    <span className="grid h-14 w-14 place-content-center rounded-2xl bg-white text-indigo-600 border border-indigo-100 shadow-md">
+                      <TrendingUp className="h-7 w-7 stroke-[2.5]" />
+                    </span>
+                    <div>
+                      <p className="text-sm font-bold text-slate-800">Captura: {sec.tag}</p>
+                      <p className="text-xs text-slate-500 mt-0.5">Espacio reservado para imagen: <code className="text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded">{sec.imageSrc}</code></p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div>
-                <p
-                  className={`inline-flex rounded-full px-4 py-1.5 text-[14px] font-semibold transition-transform duration-200 group-hover/app:-translate-y-px ${item.tagColor}`}
-                >
-                  {item.tag}
-                </p>
-                <h3 className="mt-4 text-[24px] font-bold leading-tight text-[#0f172a] md:text-[32px]">
-                  {item.title}
+              {/* Información Descriptiva del Módulo */}
+              <div className="flex flex-col justify-center">
+                <span className={`inline-flex w-fit rounded-full px-3.5 py-1 text-xs font-bold ${sec.tagColor}`}>
+                  {sec.tag}
+                </span>
+                <h3 className="mt-3.5 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
+                  {sec.title}
                 </h3>
-                <p className="mt-4 max-w-xl text-[14px] leading-[1.45] text-[#334155] md:text-[17px]">
-                  {item.description}
+                <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
+                  {sec.description}
                 </p>
 
-                <ul className="mt-5 grid max-w-xl grid-cols-2 gap-x-6 gap-y-2">
-                  {item.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-center gap-2 text-[13px] text-[#0f172a] md:text-[16px]">
-                      <span
-                        className={`inline-block h-2.5 w-2.5 rounded-full bg-current ${item.bulletColor}`}
-                      ></span>
-                      {bullet}
+                <ul className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+                  {sec.bullets.map((bullet) => (
+                    <li key={bullet} className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 md:text-sm">
+                      <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${sec.bulletDot}`} />
+                      <span>{bullet}</span>
                     </li>
                   ))}
                 </ul>
@@ -568,349 +781,217 @@ function HeroSection() {
         </div>
       </section>
 
-      <section className="mx-auto mt-20 w-full max-w-6xl">
-        <div className="text-center">
-          <p className="mx-auto inline-flex items-center gap-2 rounded-full bg-[#f5f7ed] px-4 py-1 text-[12px] font-medium text-[#0f766e] transition-all duration-300 hover:scale-105 hover:bg-[#ecfccb] motion-reduce:hover:scale-100">
-            <Bot className="h-3.5 w-3.5 transition-transform duration-300 hover:rotate-12" aria-hidden="true" />
-            Potenciado con IA
-          </p>
-          <h2 className="mt-4 text-[30px] font-bold leading-[1.1] tracking-[-0.02em] text-[#0f172a] md:text-[42px]">
-            Inteligencia Artificial con
-            <span className="ml-2 text-[#0ea5a4]">FinanzasTrack</span>
-          </h2>
-          <p className="mx-auto mt-4 max-w-4xl text-[14px] text-[#334155] md:text-[17px]">
-            Puedes pedirle a la inteligencia artificial de nuestro programa que haga un resumen
-            de todos tus gastos de manera rapida y te de consejos sobre en donde estas gastando
-            mas o cual es el ingreso menor que estas teniendo.
-          </p>
-        </div>
-
-        <div className="mt-10 grid items-center gap-6 lg:grid-cols-2">
-          <div className="relative pb-10 sm:pb-8 lg:pb-6">
-            <img
-              className="h-[260px] w-full rounded-2xl border border-[#e5e7eb] bg-white p-3 object-contain shadow-[0_16px_30px_rgba(15,23,42,0.1)] transition-all duration-300 hover:-translate-y-1 hover:border-[#c5ebe8] hover:shadow-[0_22px_44px_rgba(15,23,42,0.12)] motion-reduce:hover:translate-y-0 md:h-[320px]"
-              src={appPreviewImage}
-              alt="Vista de FinanzasTrack en panel general"
-              loading="lazy"
-            />
-            <div
-              className="pointer-events-none absolute -bottom-1 right-3 z-10 w-[min(calc(100%-1.5rem),17.5rem)] motion-reduce:animate-none sm:bottom-4 sm:right-4 animate-ai-badge-float"
-              role="status"
-              aria-label="IA activa, analizando tus finanzas"
-            >
-              <div className="pointer-events-auto flex cursor-default items-center gap-3 rounded-2xl border border-[#eef2f7] bg-white p-3 pr-4 shadow-[0_14px_40px_rgba(15,23,42,0.14)] transition-transform duration-200 ease-out hover:scale-105">
-                <span className="inline-grid h-11 w-11 shrink-0 place-content-center rounded-xl bg-[#14b8a6] text-white shadow-[0_8px_18px_rgba(20,184,166,0.4)]">
-                  <Bot className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <div className="min-w-0">
-                  <p className="text-[15px] font-semibold leading-tight text-[#0f172a]">IA Activa</p>
-                  <p className="mt-0.5 text-[13px] leading-snug text-[#64748b]">Analizando tus finanzas</p>
+      {/* 7. MÓDULO DE INTELIGENCIA ARTIFICIAL */}
+      <section className="mx-auto mt-24 w-full max-w-6xl">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#0f172a] p-8 text-white shadow-2xl shadow-indigo-950/30 md:p-12">
+          <div className="relative z-10">
+            <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/20 px-3.5 py-1 text-xs font-bold text-indigo-300 backdrop-blur-md">
+                  <Bot className="h-4 w-4" />
+                  <span>INTELIGENCIA ARTIFICIAL INTEGRADA</span>
                 </div>
+                <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-4xl">
+                  Tu Asesor Financiero con IA 24/7
+                </h2>
+                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-indigo-200/90 md:text-base">
+                  Conectado con modelos LLM avanzados para analizar tus finanzas en tiempo real, diagnosticar tus hábitos y responder tus consultas.
+                </p>
+              </div>
+              <div className="shrink-0">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-500/20 px-4 py-1.5 text-xs font-bold text-emerald-300">
+                  <Sparkles className="h-4 w-4" />
+                  Motor de IA Financiera
+                </span>
               </div>
             </div>
-          </div>
 
-          <div className="overflow-hidden rounded-2xl border border-[#dfe8ef] bg-white shadow-[0_16px_30px_rgba(15,23,42,0.1)] transition-all duration-300 hover:border-[#c5ddd9] hover:shadow-[0_22px_42px_rgba(15,23,42,0.12)]">
-            <div className="flex items-center justify-between border-b border-[#e7edf4] bg-[#f7fffe] px-4 py-3 transition-colors duration-300 hover:bg-[#eefcfb]">
-              <div className="flex items-center gap-3">
-                <span className="inline-grid h-10 w-10 place-content-center rounded-full bg-[#14b8a6] text-white shadow-[0_8px_16px_rgba(20,184,166,0.35)]">
-                  <Bot className="h-4 w-4" aria-hidden="true" />
-                </span>
-                <div>
-                  <p className="text-[16px] font-semibold leading-none text-[#0f172a]">IA de FinanzasTrack</p>
-                  <p className="mt-1 text-[14px] text-[#0ea5a4]">Tu asesor financiero personal</p>
+            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {aiCards.map((card) => (
+                <div
+                  key={card.title}
+                  className="rounded-2xl border border-white/10 bg-white/10 p-5 shadow-lg backdrop-blur-md transition-all duration-300 hover:border-indigo-400/40 hover:bg-white/15"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="grid h-10 w-10 place-content-center rounded-xl bg-indigo-500 text-white shadow-md shadow-indigo-500/30">
+                      <card.Icon className="h-5 w-5" />
+                    </span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-300">
+                      {card.badge}
+                    </span>
+                  </div>
+                  <h3 className="mt-4 text-base font-bold text-white">{card.title}</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-indigo-200/80">{card.description}</p>
                 </div>
-              </div>
-              <span className="inline-flex items-center gap-2 text-[14px] font-medium text-[#0f766e]">
-                <span className="h-3 w-3 rounded-full bg-[#72ddd8] motion-safe:animate-pulse motion-reduce:animate-none"></span>
-                En línea
-              </span>
-            </div>
-
-            <div className="flex justify-end px-4 pt-4">
-              <span className="inline-flex max-w-[95%] rounded-full bg-[#d98104] px-5 py-2.5 text-[15px] font-semibold text-white shadow-[0_10px_22px_rgba(217,129,4,0.38),0_0_24px_rgba(217,129,4,0.35)] transition-transform duration-200 hover:scale-[1.02] motion-reduce:hover:scale-100">
-                ¿Cuales son mis principales fuentes de ingreso?
-              </span>
-            </div>
-
-            <div className="mx-4 mt-4 rounded-2xl border border-[#e2e8f0] bg-white p-4 text-[14px] leading-[1.45] text-[#0f172a]">
-              <p className="font-medium">¡Hola! Soy tu asesor de FinanzasTrack. He analizado tus movimientos:</p>
-              <ul className="mt-2 space-y-1 text-[#334155]">
-                <li>💰 Tus Fuentes de Ingreso</li>
-                <li>Tus ingresos totales suman S/ 2,100.00</li>
-                <li>• Transporte (S/ 1,900.0): 90.5% del total</li>
-                <li>• Otros (S/ 100.0): Registrado como "[skoll]"</li>
-                <li>• Negocio (S/ 100.0): Ingreso adicional</li>
-              </ul>
-              <p className="mt-2 text-[#334155]">
-                💡 Consejo: Tu economia depende del 90% de "transporte". Te sugiero diversificar tus fuentes de ingreso.
-              </p>
-            </div>
-
-            <div className="group/input mx-4 mb-4 mt-4 flex cursor-pointer items-center gap-2 rounded-2xl border border-[#dbe5ee] bg-white px-4 py-3 transition-all duration-200 hover:border-[#14b8a6]/40 hover:shadow-[0_8px_20px_rgba(20,184,166,0.12)]">
-              <p className="flex-1 text-[16px] text-[#0f172a]">Pregunta sobre tus finanzas...</p>
-              <span className="inline-grid h-10 w-10 place-content-center rounded-xl bg-[#14b8a6] text-white transition-transform duration-200 group-hover/input:scale-110 group-hover/input:shadow-lg">
-                <Send className="h-5 w-5 transition-transform duration-200 group-hover/input:-translate-y-px group-hover/input:translate-x-0.5" aria-hidden="true" />
-              </span>
+              ))}
             </div>
           </div>
-        </div>
-
-        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {aiCards.map((card) => (
-            <article
-              key={card.title}
-              className="group relative z-0 cursor-default rounded-2xl border border-[#e5e7eb] bg-white p-5 shadow-[0_8px_20px_rgba(15,23,42,0.06)] transition-all duration-200 ease-out hover:z-10 hover:scale-[1.03] hover:border-[#b5f0eb] hover:bg-[#f2fffe] hover:shadow-[0_14px_28px_rgba(15,23,42,0.1)]"
-            >
-              <span className="inline-grid h-9 w-9 place-content-center rounded-xl bg-[#e8fbfa] text-[#14b8a6] transition-colors duration-200 group-hover:bg-[#14b8a6] group-hover:text-white">
-                <card.Icon className="h-4 w-4" aria-hidden="true" />
-              </span>
-              <h3 className="mt-4 text-[20px] font-semibold text-[#0f172a]">{card.title}</h3>
-              <p className="mt-2 text-[13px] leading-[1.45] text-[#334155]">{card.description}</p>
-            </article>
-          ))}
         </div>
       </section>
 
-      <section id="precio" className="mx-auto mt-24 w-full max-w-6xl scroll-mt-24">
+      {/* 8. PRECIO Y OFERTA */}
+      <section id="precio" className="mx-auto mt-28 w-full max-w-4xl scroll-mt-24">
         <div className="text-center">
-          <h2 className="text-[30px] font-bold tracking-[-0.02em] text-[#0f172a] md:text-[42px]">
-            Un precio,
-            <span className="ml-2 text-[#0ea5a4]">todo incluido</span>
+          <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Acceso Inmediato</p>
+          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            Inversión única, <span className="text-indigo-600">beneficio permanente</span>
           </h2>
-          <p className="mt-2 text-[14px] text-[#334155]">
-            Sin sorpresas, sin costos ocultos. Acceso de por vida.
+          <p className="mt-2 text-sm text-slate-600">
+            Sin mensualidades obligatorias ni costos ocultos.
           </p>
         </div>
 
-        <article className="mx-auto mt-8 w-full max-w-4xl rounded-2xl border border-[#f3d58a] bg-[#fffdf5] p-5 shadow-[0_12px_26px_rgba(217,129,4,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#e8c266] hover:shadow-[0_18px_36px_rgba(217,129,4,0.18)] motion-reduce:hover:translate-y-0">
-          <div className="flex items-start gap-4">
-            <span className="inline-grid h-11 w-11 place-content-center rounded-xl bg-[#f59e0b] text-white shadow-[0_10px_18px_rgba(245,158,11,0.3)]">
-              <Gift className="h-5 w-5" aria-hidden="true" />
+        {/* Tarjeta Principal de Precios */}
+        <article className="mt-6 rounded-3xl border border-slate-200 bg-white p-7 shadow-2xl shadow-slate-300/40 md:p-10">
+          <div className="text-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-indigo-200 bg-indigo-50 px-3.5 py-1 text-xs font-bold text-indigo-700">
+              <Zap className="h-3.5 w-3.5 text-indigo-600" />
+              ACCESO COMPLETO AL SISTEMA
             </span>
-
-            <div className="flex-1 text-left">
-              <p className="inline-flex rounded-full bg-[#f7d999] px-3 py-1 text-[11px] font-semibold text-[#9a5a00]">
-                BONO ESPECIAL SOLO POR HOY
-              </p>
-              <h3 className="mt-2 text-[24px] font-bold text-[#7c4a10] md:text-[35px]">
-                🎁 eBook GRATIS en PDF
-              </h3>
-              <p className="text-[18px] font-semibold text-[#7c4a10] md:text-[26px]">
-                "De Caos Financiero a Control Total en 30 Dias"
-              </p>
-              <p className="mt-2 max-w-3xl text-[14px] text-[#6b4c2a] md:text-[22px]">
-                Una guia practica que te acompaña paso a paso para implementar el sistema,
-                crear habitos financieros y tomar el control real de tu dinero.
-              </p>
-
-              <div className="mt-3 flex flex-wrap items-center gap-3 border-t border-[#f2e6c9] pt-3">
-                <p className="text-[34px] font-bold text-[#7c4a10] md:text-[45px]">
-                  <span className="mr-2 text-[#9ca3af] line-through">50 soles</span>
-                  <span className="text-[#14b8a6]">GRATIS</span>
-                </p>
-                <span className="inline-flex items-center gap-1 text-[13px] font-medium text-[#7c4a10] md:text-[22px]">
-                  <FileText className="h-4 w-4" aria-hidden="true" />
-                  Formato PDF descargable
-                </span>
-              </div>
-
-              <div className="mt-3 grid grid-cols-1 gap-2 border-t border-[#f2e6c9] pt-3 text-[13px] text-[#7c4a10] sm:grid-cols-3 md:text-[18px]">
-                <span>Guia paso a paso</span>
-                <span className="inline-flex items-center gap-1">
-                  <CalendarDays className="h-4 w-4" aria-hidden="true" />
-                  Plan de 30 dias
-                </span>
-                <span>Habitos financieros</span>
-              </div>
+            <div className="mt-4 flex items-baseline justify-center gap-1">
+              <span className="text-2xl font-bold text-slate-500">S/</span>
+              <span className="text-6xl font-extrabold tracking-tight text-slate-900 md:text-7xl">25</span>
+              <span className="text-sm font-semibold text-slate-500">pago único</span>
             </div>
+            <p className="mt-1 text-xs text-slate-500">Sin suscripciones recurrentes obligatorias</p>
           </div>
-        </article>
 
-        <article className="mx-auto mt-8 w-full max-w-4xl rounded-3xl border border-[#dff0ef] bg-white p-8 shadow-[0_20px_35px_rgba(15,23,42,0.08)] transition-all duration-300 hover:border-[#b8e8e4] hover:shadow-[0_28px_50px_rgba(15,23,42,0.1)]">
-          <p className="text-center text-[14px] text-[#0f172a]">∞ Acceso de por vida</p>
-          <p className="mt-3 text-center text-[92px] font-bold leading-none text-[#14b8a6] md:text-[124px]">
-            20
-            <span className="ml-2 text-[58px] md:text-[72px]">soles</span>
-          </p>
-          <p className="mt-2 text-center text-[15px] text-[#334155]">Pago unico • Sin suscripciones</p>
-
-          <div className="mx-auto mt-6 w-full max-w-md rounded-2xl border border-[#f0b8b8] bg-[#fff8f8] p-4 text-center">
-            <p className="text-[13px] font-semibold text-[#9f2f2f]">
-              Este precio solo estará disponible por tiempo limitado
+          {/* Contador de Oferta */}
+          <div className="mx-auto mt-6 max-w-md rounded-2xl border border-rose-200 bg-rose-50/70 p-4 text-center">
+            <p className="text-xs font-bold text-rose-800">
+              ⚡ Oferta especial por tiempo limitado
             </p>
-            <div className="mt-3 flex items-center justify-center gap-2">
-              <div className="rounded-lg px-3 py-2 text-white">
-                <div className="rounded-lg bg-[#ef4444] p-5 text-white transition-transform duration-300 hover:scale-105 motion-reduce:hover:scale-100">
-                  <p className="text-[24px] font-bold leading-none tabular-nums">{countdownHours}</p>
+            <div className="mt-3 flex items-center justify-center gap-2.5">
+              <div className="flex flex-col items-center">
+                <div className="grid h-12 w-12 place-content-center rounded-xl bg-rose-600 text-lg font-bold text-white shadow-md shadow-rose-600/20">
+                  {countdownHours}
                 </div>
-                <p className="mt-1 text-[12px] font-semibold text-red-600  uppercase">Horas</p>
+                <span className="mt-1 text-[10px] font-bold uppercase text-rose-700">Horas</span>
               </div>
-
-              <span className="text-[#ef4444] text-[34px] font-extrabold text-center">:</span>
-              <div className="rounded-lg px-3 py-2 text-white">
-                <div className="rounded-lg bg-[#ef4444] p-5 text-white transition-transform duration-300 hover:scale-105 motion-reduce:hover:scale-100">
-                  <p className="text-[24px] font-bold leading-none tabular-nums">
-                    {String(countdownMinutes).padStart(2, '0')}
-                  </p>
+              <span className="text-xl font-black text-rose-500">:</span>
+              <div className="flex flex-col items-center">
+                <div className="grid h-12 w-12 place-content-center rounded-xl bg-rose-600 text-lg font-bold text-white shadow-md shadow-rose-600/20">
+                  {String(countdownMinutes).padStart(2, '0')}
                 </div>
-                <p className="mt-1 text-[12px] font-semibold text-red-600  uppercase">Minutos</p>
+                <span className="mt-1 text-[10px] font-bold uppercase text-rose-700">Minutos</span>
               </div>
-
-              <span className="text-[#ef4444] text-[34px] font-extrabold text-center">:</span>
-              <div className="rounded-lg px-3 py-2 text-white">
-                <div className="rounded-lg bg-[#ef4444] p-5 text-white transition-transform duration-300 hover:scale-105 motion-reduce:hover:scale-100">
-                  <p className="text-[24px] font-bold leading-none tabular-nums">
-                    {String(countdownSecs).padStart(2, '0')}
-                  </p>
+              <span className="text-xl font-black text-rose-500">:</span>
+              <div className="flex flex-col items-center">
+                <div className="grid h-12 w-12 place-content-center rounded-xl bg-rose-600 text-lg font-bold text-white shadow-md shadow-rose-600/20">
+                  {String(countdownSecs).padStart(2, '0')}
                 </div>
-                <p className="mt-1 text-[12px] font-semibold text-red-600  uppercase">Segundos</p>
+                <span className="mt-1 text-[10px] font-bold uppercase text-rose-700">Segundos</span>
               </div>
-              
             </div>
-            <p className="mt-3 text-[15px] font-semibold text-[#7f1d1d]">
-              Proximo precio: <span className="text-[30px]">30 soles</span>
+
+            <p className="mt-3.5 border-t border-rose-200/80 pt-2.5 text-xs font-medium text-rose-900">
+              Al finalizar el contador, el precio subirá a <span className="font-extrabold text-rose-700">S/ 50</span>
             </p>
           </div>
 
-          <button className="group/cta mx-auto mt-6 flex w-fit items-center gap-2 rounded-2xl bg-linear-to-r from-[#fba14c] to-[#eb7ad9] px-8 py-4 text-[18px] font-semibold text-white shadow-[0_10px_20px_rgba(244,114,182,0.35)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(244,114,182,0.45)] hover:brightness-105 active:translate-y-0 active:scale-[0.98] motion-reduce:hover:translate-y-0">
-            <MessageCircle className="h-4 w-4 transition-transform duration-200 group-hover/cta:scale-110" aria-hidden="true" />
-            Si, quiero mi acceso de por vida por 20 soles
-            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/cta:translate-x-1" aria-hidden="true" />
-          </button>
-          <p className="mt-3 text-center text-[13px] text-[#334155]">
-            ⚡ Acceso inmediato • Contáctanos por WhatsApp
-          </p>
+          {/* Botón WhatsApp CTA */}
+          <div className="mt-8 text-center">
+            <a
+              href="https://wa.me/51926289293?text=Hola%2C%20quiero%20activar%20mi%20cuenta%20de%20FinanzasTrack%20por%20S%2F%2025"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mx-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-emerald-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-emerald-600/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-xl hover:shadow-emerald-600/40 active:translate-y-0"
+            >
+              <MessageCircle className="h-5 w-5 fill-white stroke-none" />
+              <span>Quiero mi acceso por S/ 25 vía WhatsApp</span>
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+            </a>
+            <p className="mt-2 text-xs text-slate-500">
+              Aceptamos Yape, Transferencia Bancaria • Activación en minutos
+            </p>
+          </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
-            {pricingFeatures.map((feature) => (
-              <p
-                key={feature}
-                className="group/feature inline-flex items-center gap-2 rounded-lg px-1 py-0.5 text-[14px] text-[#0f172a] transition-colors duration-200 hover:bg-[#f0fdfa] hover:text-[#0f766e]"
-              >
-                <CircleCheck
-                  className="h-4 w-4 fill-[#14b8a6] text-white stroke-2 transition-transform duration-200 group-hover/feature:scale-110"
-                  aria-hidden="true"
-                />
-                {feature}
-              </p>
+          {/* Checklist de Features */}
+          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-3 border-t border-slate-100 pt-8 sm:grid-cols-2">
+            {pricingFeatures.map((f) => (
+              <div key={f} className="flex items-center gap-2.5 text-xs font-semibold text-slate-700">
+                <Check className="h-4 w-4 shrink-0 stroke-[3] text-emerald-600" />
+                <span>{f}</span>
+              </div>
             ))}
           </div>
         </article>
       </section>
 
-      <section className="mx-auto mt-24 w-full max-w-6xl">
+      {/* 9. TESTIMONIOS Y SOCIAL PROOF */}
+      <section className="mx-auto mt-28 w-full max-w-6xl">
         <div className="text-center">
-          <p className="inline-flex items-center justify-center gap-2 text-[13px] text-[#334155]">
-            <MessageCircle className="h-4 w-4" aria-hidden="true" />
-            Testimonios
-          </p>
-          <h2 className="mt-3 text-[30px] font-bold tracking-[-0.02em] text-[#0f172a] md:text-[42px]">
-            Lo que dicen
-            <span className="ml-2 text-[#14b8a6]">nuestros usuarios</span>
+          <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Testimonios</p>
+          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            Lo que opinan nuestros <span className="text-indigo-600">usuarios</span>
           </h2>
-          <p className="mx-auto mt-2 max-w-2xl text-[14px] text-[#334155]">
-            Miles de personas ya confían en FinanzasTrack para gestionar sus finanzas personales y de negocio.
+          <p className="mx-auto mt-2 max-w-xl text-sm text-slate-600">
+            Personas reales que ordenaron sus finanzas con FinanzasTrack.
           </p>
         </div>
 
-        <div className="relative mt-10">
-          <button
-            type="button"
-            className="absolute left-0 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-[#e5e7eb] bg-white p-2 shadow-md transition-all duration-200 hover:scale-110 hover:border-[#c5ebe8] hover:bg-[#f0fdfa] hover:shadow-lg active:scale-95 motion-reduce:hover:scale-100 md:inline-flex"
-            aria-label="Anterior"
-            onClick={() =>
-              setTestimonialIndex((i) => (i - 1 + testimonials.length) % testimonials.length)
-            }
-          >
-            <ChevronLeft className="h-4 w-4 text-[#334155]" aria-hidden="true" />
-          </button>
-          <button
-            type="button"
-            className="absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border border-[#e5e7eb] bg-white p-2 shadow-md transition-all duration-200 hover:scale-110 hover:border-[#c5ebe8] hover:bg-[#f0fdfa] hover:shadow-lg active:scale-95 motion-reduce:hover:scale-100 md:inline-flex"
-            aria-label="Siguiente"
-            onClick={() => setTestimonialIndex((i) => (i + 1) % testimonials.length)}
-          >
-            <ChevronRight className="h-4 w-4 text-[#334155]" aria-hidden="true" />
-          </button>
-
-          <div className="grid grid-cols-12 gap-10 md:px-4">
-            {[0, 1, 2].map((offset) => {
-              const t = testimonials[(testimonialIndex + offset) % testimonials.length]
-              return (
-                <article
-                  key={`${t.name}-${offset}`}
-                  className="col-span-12 rounded-2xl border border-[#e5e7eb] bg-white p-5 shadow-[0_10px_24px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d1fae5] hover:shadow-[0_18px_40px_rgba(15,23,42,0.1)] motion-reduce:hover:translate-y-0 md:col-span-4"
-                >
-                  <div className="flex gap-0.5">
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {testimonials.map((t) => (
+            <article
+              key={t.name}
+              className="flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/5"
+            >
+              <div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 text-amber-400">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
+                      <Star key={i} className="h-4 w-4 fill-amber-400" />
                     ))}
                   </div>
-                  <p className="mt-3 text-[14px] leading-[1.55] text-[#0f172a]">{t.quote}</p>
-                  <hr className="my-4 border-[#eef2f7]" />
-                  <div className="flex items-center gap-3">
-                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-[#e5e7eb] bg-[#f8fafc]">
-                      <User className="h-5 w-5 text-[#64748b]" aria-hidden="true" />
+                  {t.highlight && (
+                    <span className="rounded-full border border-indigo-100 bg-indigo-50/70 px-2.5 py-0.5 text-[10px] font-bold text-indigo-700">
+                      {t.highlight}
                     </span>
-                    <div>
-                      <p className="text-[15px] font-semibold text-[#0f172a]">{t.name}</p>
-                      <p className="text-[13px] text-[#64748b]">{t.role}</p>
-                    </div>
-                  </div>
-                </article>
-              )
-            })}
-          </div>
+                  )}
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-slate-700">
+                  "{t.quote}"
+                </p>
+              </div>
+
+              <div className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-4">
+                <span className={`grid h-10 w-10 place-content-center rounded-full font-bold text-sm shadow-sm ${t.avatarBg || 'bg-indigo-50 text-indigo-600'}`}>
+                  {t.name.charAt(0)}
+                </span>
+                <div>
+                  <p className="text-sm font-bold text-slate-900">{t.name}</p>
+                  <p className="text-xs text-slate-500">{t.role}</p>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
 
-        <div className="mt-4 flex justify-center gap-3 md:hidden">
-          <button
-            type="button"
-            className="rounded-full border border-[#e5e7eb] bg-white p-2 shadow-md transition-all duration-200 hover:scale-110 hover:border-[#c5ebe8] hover:bg-[#f0fdfa] active:scale-95 motion-reduce:hover:scale-100"
-            aria-label="Anterior"
-            onClick={() =>
-              setTestimonialIndex((i) => (i - 1 + testimonials.length) % testimonials.length)
-            }
-          >
-            <ChevronLeft className="h-4 w-4 text-[#334155]" aria-hidden="true" />
-          </button>
-          <button
-            type="button"
-            className="rounded-full border border-[#e5e7eb] bg-white p-2 shadow-md transition-all duration-200 hover:scale-110 hover:border-[#c5ebe8] hover:bg-[#f0fdfa] active:scale-95 motion-reduce:hover:scale-100"
-            aria-label="Siguiente"
-            onClick={() => setTestimonialIndex((i) => (i + 1) % testimonials.length)}
-          >
-            <ChevronRight className="h-4 w-4 text-[#334155]" aria-hidden="true" />
-          </button>
-        </div>
-
-        <div className="mt-10 grid grid-cols-12 gap-6 md:px-4">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {trustStats.map((item) => (
             <article
               key={item.label}
-              className="group/trust col-span-12 rounded-2xl border border-[#e5e7eb] bg-white p-5 text-center shadow-[0_8px_20px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#c5ebe8] hover:shadow-[0_16px_32px_rgba(20,184,166,0.12)] motion-reduce:hover:translate-y-0 sm:col-span-6 lg:col-span-3"
+              className="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm"
             >
-              <p className="text-[28px] font-bold text-[#14b8a6] transition-transform duration-300 group-hover/trust:scale-105 md:text-[34px]">
+              <p className="text-2xl font-extrabold tracking-tight text-indigo-600 sm:text-3xl">
                 {item.value}
               </p>
-              <p className="mt-1 text-[13px] text-[#334155]">{item.label}</p>
+              <p className="mt-1 text-xs font-medium text-slate-600">{item.label}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="faq" className="mx-auto mt-24 w-full max-w-4xl scroll-mt-24">
+      {/* 10. PREGUNTAS FRECUENTES (FAQ) */}
+      <section id="faq" className="mx-auto mt-28 w-full max-w-3xl scroll-mt-24">
         <div className="text-center">
-          <p className="inline-flex items-center gap-2 text-[13px] text-[#334155]">
-            <CircleHelp className="h-4 w-4" aria-hidden="true" />
-            Resuelve tus dudas
-          </p>
-          <h2 className="mt-3 text-[34px] font-bold tracking-[-0.02em] text-[#0f172a] md:text-[44px]">
-            Preguntas
-            <span className="ml-2 text-[#14b8a6]">Frecuentes</span>
+          <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Preguntas Frecuentes</p>
+          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            Resolvemos todas tus dudas
           </h2>
-          <p className="mt-2 text-[14px] text-[#334155]">Resolvemos tus dudas sobre FinanzasTrack</p>
+          <p className="mt-2 text-sm text-slate-600">
+            Todo lo que necesitas saber antes de empezar.
+          </p>
         </div>
 
         <div className="mt-8 space-y-3">
@@ -920,32 +1001,27 @@ function HeroSection() {
             return (
               <article
                 key={item.question}
-                className="rounded-2xl border border-[#e5e7eb] bg-white shadow-[0_8px_18px_rgba(15,23,42,0.06)] transition-all duration-300 hover:border-[#c5ebe8] hover:shadow-[0_14px_28px_rgba(15,23,42,0.08)]"
+                className={`overflow-hidden rounded-2xl border transition-all duration-200 ${isOpen ? 'border-indigo-200 bg-indigo-50/20 shadow-sm' : 'border-slate-200 bg-white shadow-sm hover:border-slate-300'
+                  }`}
               >
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between gap-4 px-7 py-7 text-left transition-colors duration-200 hover:bg-[#fafafa] rounded-2xl"
+                  className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left transition-colors"
                   onClick={() => setOpenFaq(isOpen ? -1 : index)}
                 >
-                  <span className="inline-flex items-center gap-3">
-                    <CircleHelp className="h-4 w-4 text-[#0f172a]" aria-hidden="true" />
-                    <span className="text-[16px] font-semibold text-[#111827]">{item.question}</span>
-                  </span>
+                  <span className="text-sm font-bold text-slate-900">{item.question}</span>
                   <ChevronDown
-                    className={`h-4 w-4 text-[#111827] transition-transform duration-300 ${
-                      isOpen ? 'rotate-180' : ''
-                    }`}
-                    aria-hidden="true"
+                    className={`h-4 w-4 shrink-0 text-slate-500 transition-transform duration-300 ${isOpen ? 'rotate-180 text-indigo-600' : ''
+                      }`}
                   />
                 </button>
 
                 <div
-                  className={`grid transition-all duration-300 ease-out ${
-                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-                  }`}
+                  className={`grid transition-all duration-300 ease-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                    }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="border-t border-[#eef2f7] font-semibold px-13 py-4 text-[19px] leading-[1.4] text-[#334155]">
+                    <p className="border-t border-indigo-100/60 px-6 py-4 text-xs leading-relaxed text-slate-600">
                       {item.answer}
                     </p>
                   </div>
