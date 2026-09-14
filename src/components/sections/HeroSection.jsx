@@ -13,6 +13,7 @@ import {
   BookOpen,
   Lightbulb,
   MessageCircle,
+  Phone,
   PieChart,
   PiggyBank,
   RefreshCw,
@@ -889,22 +890,31 @@ function HeroSection() {
             </p>
           </div>
 
-          {/* Botón WhatsApp CTA */}
-          <div className="mt-8 text-center">
+          {/* Botones WhatsApp CTA y Llamada */}
+          <div className="mt-8 flex flex-col items-center justify-center gap-3">
             <a
-              href="https://wa.me/51926289293?text=Hola%2C%20quiero%20activar%20mi%20cuenta%20de%20FinanzasTrack%20por%20S%2F%2025"
+              href="https://wa.me/51980570301?text=Hola%2C%20quiero%20activar%20mi%20cuenta%20de%20FinanzasTrack%20por%20S%2F%2025"
               target="_blank"
               rel="noopener noreferrer"
-              className="group mx-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-emerald-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-emerald-600/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-xl hover:shadow-emerald-600/40 active:translate-y-0"
+              className="group inline-flex w-full items-center justify-center gap-2.5 rounded-2xl bg-emerald-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-emerald-600/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-xl hover:shadow-emerald-600/40 active:translate-y-0 sm:w-auto"
             >
               <MessageCircle className="h-5 w-5 fill-white stroke-none" />
               <span>Quiero mi acceso por S/ 25 vía WhatsApp</span>
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
-            <p className="mt-2 text-xs text-slate-500">
-              Aceptamos Yape, Transferencia Bancaria • Activación en minutos
-            </p>
+
+            {/* Llamar solo visible en celular/móvil */}
+            <a
+              href="tel:+51972428081"
+              className="group inline-flex w-full items-center justify-center gap-2.5 rounded-2xl border-2 border-slate-200 bg-white px-6 py-4 text-base font-bold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50 hover:text-indigo-600 hover:shadow-md active:translate-y-0 md:hidden sm:w-auto"
+            >
+              <Phone className="h-5 w-5 text-slate-500 transition-colors duration-200 group-hover:text-indigo-600" />
+              <span>Llamar ahora</span>
+            </a>
           </div>
+          <p className="mt-2.5 text-center text-xs text-slate-500">
+            Aceptamos Yape, Transferencia Bancaria • Activación en minutos • Atención personalizada
+          </p>
 
           {/* Checklist de Features */}
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-3 border-t border-slate-100 pt-8 sm:grid-cols-2">

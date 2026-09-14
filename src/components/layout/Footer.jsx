@@ -144,7 +144,7 @@ function Footer() {
               </a>
 
               <a
-                href="https://wa.me/51926289293?text=Hola%2C%20tengo%20una%20consulta%20sobre%20FinanzasTrack"
+                href="https://wa.me/51980570301?text=Hola%2C%20tengo%20una%20consulta%20sobre%20FinanzasTrack"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-between rounded-lg border border-slate-800 bg-slate-900/90 px-3.5 py-2 text-xs font-medium text-slate-300 transition-all duration-200 hover:border-emerald-500/40 hover:bg-emerald-500/10 hover:text-emerald-300"
