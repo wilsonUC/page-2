@@ -905,7 +905,7 @@ function HeroSection() {
 
             {/* Llamar solo visible en celular/móvil */}
             <a
-              href="tel:+51972428081"
+              href="tel:+51980570301"
               className="group inline-flex w-full items-center justify-center gap-2.5 rounded-2xl border-2 border-slate-200 bg-white px-6 py-4 text-base font-bold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50 hover:text-indigo-600 hover:shadow-md active:translate-y-0 md:hidden sm:w-auto"
             >
               <Phone className="h-5 w-5 text-slate-500 transition-colors duration-200 group-hover:text-indigo-600" />
