@@ -134,7 +134,7 @@ function Footer() {
 
             <div className="mt-2.5 flex flex-col gap-2">
               <a
-                href="https://finanzastrack.site/login"
+                href="https://app.finanzastrack.site/login"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-between rounded-lg border border-indigo-500/30 bg-gradient-to-r from-indigo-500/20 to-teal-500/10 px-3.5 py-2 text-xs font-bold text-indigo-200 transition-all duration-200 hover:border-indigo-400 hover:bg-indigo-500/30 hover:text-white"

@@ -59,7 +59,7 @@ function Navbar() {
         {/* Botón CTA Desktop */}
         <div className="hidden items-center gap-3 md:flex">
           <a
-            href="#precio"
+            href="https://app.finanzastrack.site/login"
             className="group flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 text-[14px] font-semibold text-white shadow-[0_4px_14px_rgba(79,70,229,0.3)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-[0_6px_20px_rgba(79,70,229,0.4)] active:translate-y-0 active:scale-[0.98] motion-reduce:hover:translate-y-0"
           >
             <span>Comenzar Ahora</span>
