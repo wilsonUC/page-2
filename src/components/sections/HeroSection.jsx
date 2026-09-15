@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import StatCard from '../ui/StatCard'
 import {
   Activity,
@@ -16,6 +16,7 @@ import {
   Phone,
   PieChart,
   PiggyBank,
+  Play,
   RefreshCw,
   ShieldCheck,
   Smartphone,
@@ -474,6 +475,15 @@ const PRICING_COUNTDOWN_START_SECONDS = 24 * 3600 + 59 * 60 + 59
 function HeroSection() {
   const [openFaq, setOpenFaq] = useState(0)
   const [countdownSeconds, setCountdownSeconds] = useState(PRICING_COUNTDOWN_START_SECONDS)
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+  const videoRef = useRef(null)
+
+  const handlePlayVideo = () => {
+    setIsVideoPlaying(true)
+    if (videoRef.current) {
+      videoRef.current.play()
+    }
+  }
 
   useEffect(() => {
     const id = window.setInterval(() => {
@@ -572,14 +582,64 @@ function HeroSection() {
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-inner">
           <div className="relative w-full aspect-video bg-slate-950 flex items-center justify-center">
             <video
+              ref={videoRef}
+              poster="/video-poster.png"
               className="h-full w-full object-contain rounded-2xl"
-              controls
+              controls={isVideoPlaying}
               playsInline
               preload="metadata"
+              onPlay={() => setIsVideoPlaying(true)}
             >
               <source src="/demo.mp4" type="video/mp4" />
               Tu navegador no soporta la reproducción de video HTML5.
             </video>
+
+            {/* Portada personalizada con botón de Play animado */}
+            {!isVideoPlaying && (
+              <div
+                onClick={handlePlayVideo}
+                className="group/overlay absolute inset-0 z-10 flex cursor-pointer items-center justify-center overflow-hidden rounded-2xl bg-slate-950/30 transition-all duration-300 hover:bg-slate-950/10"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    handlePlayVideo()
+                  }
+                }}
+                aria-label="Reproducir video de demostración de FinanzasTrack"
+              >
+                {/* Imagen de captura de pantalla */}
+                <img
+                  src="/video-poster.png"
+                  alt="Vista previa de FinanzasTrack"
+                  className="absolute inset-0 h-full w-full object-cover sm:object-contain transition-transform duration-500 ease-out group-hover/overlay:scale-[1.02]"
+                />
+
+                {/* Capa de gradiente para contraste estético */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/30 to-slate-950/40 transition-opacity duration-300 group-hover/overlay:opacity-75" />
+
+                {/* Contenedor central del botón Play y llamada a la acción */}
+                <div className="relative z-20 flex flex-col items-center gap-3.5 p-4 text-center">
+                  <div className="relative flex items-center justify-center">
+                    {/* Anillos de pulso animados */}
+                    <span className="absolute inline-flex h-20 w-20 sm:h-24 sm:w-24 animate-ping rounded-full bg-indigo-500/30 duration-1000" />
+                    <span className="absolute inline-flex h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-indigo-600/40 blur-md" />
+
+                    {/* Botón Play */}
+                    <div className="relative flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 via-indigo-600 to-teal-500 p-4 text-white shadow-[0_0_30px_rgba(99,102,241,0.6)] ring-4 ring-white/30 transition-all duration-300 group-hover/overlay:scale-110 group-hover/overlay:ring-white/60 group-hover/overlay:shadow-[0_0_40px_rgba(99,102,241,0.85)] active:scale-95">
+                      <Play className="ml-1 h-7 w-7 sm:h-9 sm:w-9 fill-white text-white transition-transform duration-300 group-hover/overlay:scale-105" />
+                    </div>
+                  </div>
+
+                  {/* Badge de llamada a la acción */}
+                  <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-slate-900/85 px-4 py-1.5 text-xs sm:text-sm font-semibold text-white shadow-xl backdrop-blur-md transition-all duration-300 group-hover/overlay:bg-indigo-900/90 group-hover/overlay:border-indigo-400/60">
+                    <Sparkles className="h-3.5 w-3.5 text-teal-400 animate-pulse" />
+                    <span>Haz clic para ver la demostración en video</span>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -893,7 +953,7 @@ function HeroSection() {
           {/* Botones WhatsApp CTA y Llamada */}
           <div className="mt-8 flex flex-col items-center justify-center gap-3">
             <a
-              href="https://wa.me/51980570301?text=Hola%2C%20quiero%20activar%20mi%20cuenta%20de%20FinanzasTrack%20por%20S%2F%2025"
+              href="https://wa.me/51980570301?text=%C2%A1Hola!%20FinanzasTrack%20deseo%20mi%20acceso%20a%20la%20app%20."
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex w-full items-center justify-center gap-2.5 rounded-2xl bg-emerald-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-emerald-600/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-xl hover:shadow-emerald-600/40 active:translate-y-0 sm:w-auto"

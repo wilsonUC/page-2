@@ -29,10 +29,12 @@ body {
 }
 
 @keyframes ai-badge-float {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -43,6 +45,7 @@ body {
     opacity: 0;
     transform: translateY(14px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -53,6 +56,7 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -63,6 +67,7 @@ body {
     opacity: 0;
     transform: scale(0.97);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -73,17 +78,38 @@ body {
   0% {
     transform: translateX(-150%) skewX(-20deg);
   }
-  25%, 100% {
+
+  25%,
+  100% {
     transform: translateX(250%) skewX(-20deg);
   }
 }
 
 @keyframes logo-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4), 0 0 10px rgba(59, 130, 246, 0.25);
   }
+
   50% {
     box-shadow: 0 6px 20px rgba(37, 99, 235, 0.65), 0 0 18px rgba(96, 165, 250, 0.5);
+  }
+}
+
+@keyframes arrow-scroll-up {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-6px);
+  }
+
+  65% {
+    transform: translateY(1px);
   }
 }
 
@@ -106,4 +132,3 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(148, 163, 184, 0.7);
 }
-
