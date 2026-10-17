@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowRight, Menu, X } from 'lucide-react'
+import { ArrowRight, LogIn, Menu, UserPlus, X } from 'lucide-react'
 
 const navItems = [
   { label: 'Beneficios', href: '#beneficios' },
@@ -56,17 +56,23 @@ function Navbar() {
           ))}
         </ul>
 
-        {/* Botón CTA Desktop */}
-        <div className="hidden items-center gap-3 md:flex">
+        {/* Botones CTA Desktop */}
+        <div className="hidden items-center gap-2.5 md:flex">
+          <a
+            href="https://app.finanzastrack.site/register"
+            title="Crear Cuenta / Registrarse"
+            aria-label="Crear Cuenta / Registrarse"
+            className="group flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#1d4ed8] via-[#0284c7] to-[#2dd4bf] text-white ring-2 ring-teal-400/60 shadow-[0_0_16px_rgba(45,212,191,0.35),0_4px_10px_rgba(2,132,199,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:ring-teal-300 hover:shadow-[0_0_24px_rgba(45,212,191,0.6),0_6px_14px_rgba(2,132,199,0.35)] active:translate-y-0 active:scale-[0.98] motion-reduce:hover:translate-y-0"
+          >
+            <UserPlus className="h-5 w-5 text-white transition-transform duration-200 group-hover:scale-110 drop-shadow-md stroke-[2.2]" aria-hidden="true" />
+          </a>
+
           <a
             href="https://app.finanzastrack.site/login"
             className="group flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 text-[14px] font-semibold text-white shadow-[0_4px_14px_rgba(79,70,229,0.3)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-[0_6px_20px_rgba(79,70,229,0.4)] active:translate-y-0 active:scale-[0.98] motion-reduce:hover:translate-y-0"
           >
-            <span>Comenzar Ahora</span>
-            <ArrowRight
-              className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
-              aria-hidden="true"
-            />
+            <LogIn className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" aria-hidden="true" />
+            <span>Iniciar Sesión</span>
           </a>
         </div>
 
@@ -97,7 +103,7 @@ function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="mt-4 pt-4 border-t border-slate-100">
+          <div className="mt-4 pt-4 border-t border-slate-100 flex flex-col gap-2.5">
             <a
               href="#precio"
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 py-3 text-center text-sm font-bold text-white shadow-md shadow-indigo-600/30"
@@ -105,6 +111,14 @@ function Navbar() {
             >
               <span>Comenzar Ahora • S/ 25</span>
               <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href="https://app.finanzastrack.site/login"
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 py-2.5 text-center text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-indigo-600 transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <LogIn className="h-4 w-4" />
+              <span>Iniciar Sesión</span>
             </a>
           </div>
         </div>

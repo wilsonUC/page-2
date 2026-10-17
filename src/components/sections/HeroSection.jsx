@@ -519,9 +519,9 @@ function HeroSection() {
         <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row sm:gap-4">
           <a
             href="#precio"
-            className="group flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-8 py-3.5 text-base font-semibold text-white shadow-[0_4px_16px_rgba(79,70,229,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-[0_8px_24px_rgba(79,70,229,0.45)] sm:w-auto"
+            className="group flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-8 py-3.5 text-base font-semibold text-white shadow-[0_4px_16px_rgba(5,150,105,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-[0_8px_24px_rgba(5,150,105,0.45)] sm:w-auto"
           >
-            <span>Obtener Acceso Completo</span>
+            <span>Adquiere tu Acceso</span>
             <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
           </a>
           <a
@@ -895,7 +895,7 @@ function HeroSection() {
         <div className="text-center">
           <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Acceso Inmediato</p>
           <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Inversión única, <span className="text-indigo-600">beneficio permanente</span>
+            Pago único, <span className="text-indigo-600">beneficio permanente</span>
           </h2>
           <p className="mt-2 text-sm text-slate-600">
             Sin mensualidades obligatorias ni costos ocultos.
@@ -909,10 +909,30 @@ function HeroSection() {
               <Zap className="h-3.5 w-3.5 text-indigo-600" />
               ACCESO COMPLETO AL SISTEMA
             </span>
-            <div className="mt-4 flex items-baseline justify-center gap-1">
-              <span className="text-2xl font-bold text-slate-500">S/</span>
-              <span className="text-6xl font-extrabold tracking-tight text-slate-900 md:text-7xl">25</span>
-              <span className="text-sm font-semibold text-slate-500">pago único</span>
+            <div className="mt-4 flex flex-col items-center justify-center gap-1.5">
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-medium text-slate-400">
+                  Precio regular:{' '}
+                  <span className="font-bold line-through decoration-rose-500 decoration-2 text-slate-400">
+                    S/ 50
+                  </span>
+                </span>
+                <span className="rounded-full border border-rose-200 bg-rose-50 px-2 py-0.5 text-[11px] font-bold text-rose-700">
+                  50% DCTO
+                </span>
+              </div>
+
+              {/* Indicador de Precio Promoción */}
+              <div className="mt-0.5 inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-0.5 text-xs font-bold text-emerald-700 shadow-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Precio Promoción</span>
+              </div>
+
+              <div className="flex items-baseline justify-center gap-1">
+                <span className="text-2xl font-bold text-slate-500">S/</span>
+                <span className="text-6xl font-extrabold tracking-tight text-slate-900 md:text-7xl">25</span>
+                <span className="text-sm font-semibold text-slate-500">pago único</span>
+              </div>
             </div>
             <p className="mt-1 text-xs text-slate-500">Sin suscripciones recurrentes obligatorias</p>
           </div>
@@ -959,7 +979,7 @@ function HeroSection() {
               className="group inline-flex w-full items-center justify-center gap-2.5 rounded-2xl bg-emerald-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-emerald-600/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-xl hover:shadow-emerald-600/40 active:translate-y-0 sm:w-auto"
             >
               <MessageCircle className="h-5 w-5 fill-white stroke-none" />
-              <span>Quiero mi acceso por S/ 25 vía WhatsApp</span>
+              <span>Quiero mi acceso vía WhatsApp</span>
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
 
