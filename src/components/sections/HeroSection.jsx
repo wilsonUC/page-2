@@ -470,11 +470,31 @@ function ComparisonStatus({ enabled }) {
   )
 }
 
-const PRICING_COUNTDOWN_START_SECONDS = 24 * 3600 + 59 * 60 + 59
+const COUNTDOWN_STORAGE_KEY = 'finanzastrack_offer_end_time'
+const COUNTDOWN_DURATION_MS = 24 * 60 * 60 * 1000 // 24 horas
+
+function getInitialCountdownSeconds() {
+  if (typeof window === 'undefined') return 24 * 3600
+  try {
+    const now = Date.now()
+    const stored = window.localStorage.getItem(COUNTDOWN_STORAGE_KEY)
+    if (stored) {
+      const endTime = parseInt(stored, 10)
+      if (!isNaN(endTime) && endTime > now) {
+        return Math.floor((endTime - now) / 1000)
+      }
+    }
+    const newEndTime = now + COUNTDOWN_DURATION_MS
+    window.localStorage.setItem(COUNTDOWN_STORAGE_KEY, String(newEndTime))
+    return Math.floor(COUNTDOWN_DURATION_MS / 1000)
+  } catch {
+    return 24 * 3600
+  }
+}
 
 function HeroSection() {
   const [openFaq, setOpenFaq] = useState(0)
-  const [countdownSeconds, setCountdownSeconds] = useState(PRICING_COUNTDOWN_START_SECONDS)
+  const [countdownSeconds, setCountdownSeconds] = useState(getInitialCountdownSeconds)
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   const videoRef = useRef(null)
 
@@ -486,9 +506,27 @@ function HeroSection() {
   }
 
   useEffect(() => {
-    const id = window.setInterval(() => {
-      setCountdownSeconds((prev) => (prev > 0 ? prev - 1 : 0))
-    }, 1000)
+    const updateCountdown = () => {
+      try {
+        const now = Date.now()
+        let stored = window.localStorage.getItem(COUNTDOWN_STORAGE_KEY)
+        let endTime = stored ? parseInt(stored, 10) : null
+
+        // Si no existe o ya vencieron las 24 horas, inicia un nuevo ciclo continuo de 24 horas
+        if (!endTime || isNaN(endTime) || endTime <= now) {
+          endTime = now + COUNTDOWN_DURATION_MS
+          window.localStorage.setItem(COUNTDOWN_STORAGE_KEY, String(endTime))
+        }
+
+        const remaining = Math.max(0, Math.floor((endTime - now) / 1000))
+        setCountdownSeconds(remaining)
+      } catch {
+        setCountdownSeconds((prev) => (prev > 0 ? prev - 1 : 24 * 3600))
+      }
+    }
+
+    updateCountdown()
+    const id = window.setInterval(updateCountdown, 1000)
     return () => window.clearInterval(id)
   }, [])
 
@@ -945,7 +983,7 @@ function HeroSection() {
             <div className="mt-3 flex items-center justify-center gap-2.5">
               <div className="flex flex-col items-center">
                 <div className="grid h-12 w-12 place-content-center rounded-xl bg-rose-600 text-lg font-bold text-white shadow-md shadow-rose-600/20">
-                  {countdownHours}
+                  {String(countdownHours).padStart(2, '0')}
                 </div>
                 <span className="mt-1 text-[10px] font-bold uppercase text-rose-700">Horas</span>
               </div>
