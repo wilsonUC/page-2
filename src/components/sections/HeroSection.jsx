@@ -29,8 +29,8 @@ import {
 } from 'lucide-react'
 
 const stats = [
-  { value: 'S/ 25', label: 'Acceso completo', sublabel: 'Pago único', variant: 'emerald' },
   { value: '100%', label: 'Seguro y Privado', sublabel: 'Cifrado bancario', variant: 'primary' },
+  { value: 'S/ 25', label: 'Acceso completo', sublabel: 'Pago único', variant: 'emerald' },
   { value: '24/7', label: 'Siempre Disponible', sublabel: 'Nube en tiempo real', variant: 'emerald' },
 ]
 
@@ -157,16 +157,16 @@ const demoVideoUrl = 'https://drive.google.com/file/d/1lZOXHgS1GUbnDNI0qeovX4ogq
 const appSections = [
   {
     id: 'dashboard',
-    tag: 'Dashboard Completo',
+    tag: 'Control Total',
     tagColor: 'bg-[#e8f9f8] text-[#0f766e] border border-teal-200/80',
-    title: 'Vista General de tu Mes y Balance en Vivo',
+    title: 'Tu Radiografía Financiera en 3 Segundos: Sabe Exactamente Cuánto Tienes',
     description:
-      'Visualiza tus 5 métricas clave en tiempo real: Balance disponible, Balance total, Ingresos, Gastos y Ahorro acumulado. Gráficos interactivos de evolución a 6 meses y resumen mensual de categorías.',
+      'Abre la app y en un solo vistazo ten claridad absoluta: cuánto entra, cuánto sale, cuánto puedes gastar sin culpa y cuánto has logrado ahorrar este mes.',
     bullets: [
-      '5 métricas en tiempo real',
-      'Gráficos de 6 meses (Recharts)',
-      'Desglose de gastos por categoría',
-      'Movimientos recientes y alertas',
+      '5 métricas claras en tiempo real',
+      'Evolución mensual interactiva',
+      'Desglose visual de tus gastos',
+      'Alertas de balance inmediato',
     ],
     bulletDot: 'bg-[#10b981]',
     bulletColor: 'text-[#10b981]',
@@ -177,16 +177,16 @@ const appSections = [
   },
   {
     id: 'ingresos',
-    tag: 'Gestión de Ingresos',
+    tag: 'Ingresos Claros',
     tagColor: 'bg-[#dcfce7] text-[#15803d] border border-emerald-200/80',
-    title: 'Registro Ágil y Control de Fuentes de Entrada',
+    title: 'Controla Cada Entrada de Dinero y Haz Crecer tus Fuentes de Ingreso',
     description:
-      'Registra todas tus fuentes de ingresos (Trabajo, Negocio, Comisiones, Inversiones, Regalos, Reembolsos) con categorías personalizadas, notas descriptivas y totales mensuales automáticos.',
+      'Registra tu sueldo, ventas, comisiones o proyectos freelance en 5 segundos. Mira con orgullo cómo crecen tus entradas mes a mes sin fórmulas ni enredos.',
     bullets: [
-      'Múltiples categorías oficiales',
+      'Sueldo, negocios y extras',
       'Totales mensuales automáticos',
-      'Historial detallado y filtros',
-      'Edición y registro en 5 segundos',
+      'Historial ordenado y claro',
+      'Registro rápido en 5 segundos',
     ],
     bulletDot: 'bg-[#22c55e]',
     bulletColor: 'text-[#22c55e]',
@@ -197,16 +197,16 @@ const appSections = [
   },
   {
     id: 'gastos',
-    tag: 'Control de Gastos',
+    tag: 'Cero Fugas',
     tagColor: 'bg-[#fee2e2] text-[#dc2626] border border-rose-200/80',
-    title: 'Monitoreo de Salidas y Eliminación de Gastos Fuga',
+    title: 'Cierra las Fugas de Dinero y Elimina los Gastos Hormiga',
     description:
-      'Controla cada egreso clasificado en Hogar, Alimentación, Transporte, Salud, Educación, Entretenimiento o Negocio. Monitorea el impacto inmediato en tu balance disponible.',
+      'Descubre esos pequeños gastos invisibles que te dejan en cero antes del día 20. Regístralos al instante y mantén siempre el control en tus manos.',
     bullets: [
-      'Categorías con íconos visuales',
-      'Top de gastos del periodo',
-      'Impacto inmediato en balance',
-      'Historial completo editable',
+      'Identifica gastos innecesarios',
+      'Top de gastos que vacían tu cuenta',
+      'Impacto inmediato en tu saldo',
+      'Historial editable en 1 toque',
     ],
     bulletDot: 'bg-[#f87171]',
     bulletColor: 'text-[#f87171]',
@@ -217,16 +217,16 @@ const appSections = [
   },
   {
     id: 'presupuestos',
-    tag: 'Presupuestos & Límites',
+    tag: 'Presupuesto Fácil',
     tagColor: 'bg-[#e0e7ff] text-[#4f46e5] border border-indigo-200/80',
-    title: 'Límites por Categoría con Botón de Gasto Rápido',
+    title: 'Límites Claros para que Nunca Más Termines el Mes en Cero',
     description:
-      'Planifica topes mensuales por categoría y monitorea el consumo con barras de progreso visuales. Incluye botón de gasto rápido con 1 solo clic para agilizar tus registros diarios.',
+      'Fija un tope para compras, salidas y comida. Las barras visuales te alertan antes de excederte para que disfrutes de tu dinero sin remordimiento.',
     bullets: [
-      'Límites mensuales configurables',
-      'Barras de consumo visuales',
-      'Botón de gasto rápido en 1 clic',
-      'Alertas de sobregiro antes de exceder',
+      'Topes mensuales realistas',
+      'Barras visuales tipo semáforo',
+      'Botón de registro en 1 clic',
+      'Te avisa antes de sobregirarte',
     ],
     bulletDot: 'bg-[#818cf8]',
     bulletColor: 'text-[#818cf8]',
@@ -237,16 +237,16 @@ const appSections = [
   },
   {
     id: 'metas',
-    tag: 'Metas de Ahorro',
+    tag: 'Sueños Cumplidos',
     tagColor: 'bg-[#dbeafe] text-[#2563eb] border border-blue-200/80',
-    title: 'Objetivos Financieros con Pool Global de Ahorros',
+    title: 'Alcanza tus Metas: Viajes, Deudas y tu Fondo de Emergencia',
     description:
-      'Define metas a plazo (viajes, compras, fondo de emergencia) con monto objetivo y fecha límite. Asigna dinero desde el pool de ahorro global de forma libre o vinculada.',
+      'Aparta dinero para lo que de verdad sueñas. Visualiza el avance de tus metas en tiempo real y motívate viendo cómo cada mes estás más cerca de lograrlo.',
     bullets: [
-      'Pool global de ahorro acumulado',
-      'Asignación libre o directa',
-      'Progreso porcentual en vivo',
-      'Cálculo de fecha y tiempo restante',
+      'Fondo de tranquilidad y emergencias',
+      'Metas para viajes, auto o compras',
+      'Barra de avance en tiempo real',
+      'Calcula cuándo alcanzarás tu meta',
     ],
     bulletDot: 'bg-[#60a5fa]',
     bulletColor: 'text-[#60a5fa]',
@@ -257,16 +257,16 @@ const appSections = [
   },
   {
     id: 'recurrentes',
-    tag: 'Transacciones Recurrentes',
+    tag: 'Cero Olvidos',
     tagColor: 'bg-[#f3e8ff] text-[#9333ea] border border-purple-200/80',
-    title: 'Automatización de Pagos Fijos y Cuentas Atrasadas',
+    title: 'Adiós a las Multas e Intereses por Pagos Atrasados',
     description:
-      'Gestiona suscripciones, servicios y alquiler con su día de corte mensual. Permite ajustes por mes, pagos parciales y te notifica de inmediato en el dashboard si tienes pagos pendientes.',
+      'Organiza tus suscripciones, alquiler y tarjetas con fecha de corte. Recibe alertas visuales automáticas para que nunca más pagues moras por olvidos.',
     bullets: [
-      'Día de corte mensual automático',
-      'Alertas de cuentas atrasadas',
-      'Soporte para abonos parciales',
-      'Avisos visuales en el Dashboard',
+      'Recordatorio automático de corte',
+      'Alertas de pagos pendientes',
+      'Registro de pagos y abonos',
+      'Paz mental sin cobros sorpresa',
     ],
     bulletDot: 'bg-[#c084fc]',
     bulletColor: 'text-[#c084fc]',
@@ -277,16 +277,16 @@ const appSections = [
   },
   {
     id: 'reportes',
-    tag: 'Reportes Detallados',
+    tag: 'Claridad Total',
     tagColor: 'bg-[#ffedd5] text-[#ea580c] border border-orange-200/80',
-    title: 'Gráficos de Distribución, Dona y Exportación',
+    title: 'Reportes Visuales que Entiendes al Instante Sin Ser Experto',
     description:
-      'Analiza gráficos de dona interactivos con la distribución porcentual de tus ingresos y gastos. Compara meses anteriores, analiza tu tasa de ahorro y exporta la información.',
+      'Gráficos interactivos limpios que te muestran con total transparencia a dónde se fue cada centavo y cómo va creciendo tu ahorro mes con mes.',
     bullets: [
       'Gráficos de dona interactivos',
-      'Distribución porcentual por rubro',
-      'Historial comparativo semestral',
-      'Filtros por periodo y exportación',
+      'Porcentajes claros de tus gastos',
+      'Comparativa mes a mes',
+      'Información lista para exportar',
     ],
     bulletDot: 'bg-[#fb923c]',
     bulletColor: 'text-[#fb923c]',
@@ -297,16 +297,16 @@ const appSections = [
   },
   {
     id: 'consejos',
-    tag: 'Consejos & Health Score',
+    tag: 'Salud Financiera',
     tagColor: 'bg-[#ccfbf1] text-[#0f766e] border border-teal-200/80',
-    title: 'Score de Salud Financiera (0-100) y Consejos IA',
+    title: 'Tu Calificación Financiera y Consejos Directos para Mejorar',
     description:
-      'Recibe un diagnóstico automatizado de 0 a 100 puntos con recomendaciones clasificadas por impacto (Alerta, Ahorro, Inversión, General) generadas con inteligencia artificial y caché de 24h.',
+      'Conoce tu puntuación de 0 a 100 y recibe recomendaciones prácticas para recortar gastos innecesarios, liquidar deudas y empezar a generar rendimientos.',
     bullets: [
-      'Score de salud financiera (0-100)',
-      'Consejos por impacto (Alto / Medio)',
-      'Recomendaciones de ahorro e inversión',
-      'Caché optimizado de 24 horas',
+      'Puntuación de 0 a 100 en vivo',
+      'Consejos directos según tus gastos',
+      'Estrategias para multiplicar tu ahorro',
+      'Diagnóstico actualizado diariamente',
     ],
     bulletDot: 'bg-[#2dd4bf]',
     bulletColor: 'text-[#2dd4bf]',
@@ -317,16 +317,16 @@ const appSections = [
   },
   {
     id: 'movil',
-    tag: 'Acceso Móvil & PWA',
+    tag: 'Siempre Contigo',
     tagColor: 'bg-[#e0e7ff] text-[#3730a3] border border-indigo-200/80',
-    title: 'Experiencia Nativa en tu Celular (Android & iOS)',
+    title: 'Tus Finanzas en tu Bolsillo: Úsala en tu Celular o PC',
     description:
-      'Lleva FinanzasTrack a donde vayas. Gracias a la tecnología PWA instalable, úsala en tu smartphone o tablet como una aplicación nativa con carga instantánea, interfaz táctil optimizada y modo oscuro/claro.',
+      'Lleva FinanzasTrack a donde vayas. Instálala en tu smartphone (Android o iPhone) o laptop con un solo toque y registra cualquier gasto en la calle en solo 5 segundos.',
     bullets: [
-      'Instalable en pantalla de inicio',
-      'Navegación táctil rápida y fluida',
-      'Compatible con Android, iPhone y iPad',
-      'Sin ocupar espacio de almacenamiento',
+      'Instalable en tu pantalla de inicio',
+      'Navegación táctil súper rápida',
+      'Compatible con iPhone, Android y PC',
+      'Sincronización instantánea en la nube',
     ],
     bulletDot: 'bg-[#6366f1]',
     bulletColor: 'text-[#6366f1]',
@@ -339,28 +339,28 @@ const appSections = [
 
 const aiCards = [
   {
-    title: 'Diagnóstico y Salud Financiera',
-    description: 'Obtén un score de 0 a 100 puntos sobre tus hábitos de gasto, capacidad de ahorro y estabilidad.',
+    title: 'Tu Radiografía Financiera al Instante',
+    description: 'Descubre de 0 a 100 qué tan saludables son tus hábitos y qué corregir hoy para que no te falte dinero a fin de mes.',
     Icon: BarChart3,
-    badge: 'Score 0-100',
+    badge: 'Score de Salud',
   },
   {
-    title: 'Consejos Inteligentes Personalizados',
-    description: 'Recomendaciones automáticas clasificadas por impacto (Alertas, Ahorro, Inversión) generadas con IA.',
+    title: 'Consejos Directos que Salvan tu Dinero',
+    description: 'Alertas automáticas cuando un gasto sea riesgoso y recomendaciones prácticas para recortar costos sin sacrificios.',
     Icon: Lightbulb,
-    badge: 'Caché 24h',
+    badge: 'Ahorro Real',
   },
   {
-    title: 'Chat Financiero Conversacional',
-    description: 'Pregúntale a la IA sobre tu presupuesto: analiza tus transacciones reales y sugiere ajustes concretos.',
+    title: 'Pregúntale Cualquier Duda a tu Dinero',
+    description: '¿Puedo darme este gusto? ¿Cómo pago esta deuda más rápido? Tu asesor te responde al instante con tus números reales.',
     Icon: MessageCircle,
-    badge: 'IA en Vivo',
+    badge: 'Chat en Vivo',
   },
   {
-    title: 'Oportunidades de Inversión',
-    description: 'Aprende alternativas de inversión seguras acordes a tu excedente mensual acumulado.',
+    title: 'Multiplica y Protege tus Ahorros',
+    description: 'Estrategias claras para hacer crecer tus excedentes y construir un fondo de tranquilidad para tu futuro.',
     Icon: TrendingUp,
-    badge: 'Estrategias',
+    badge: 'Crecimiento',
   },
 ]
 
@@ -378,6 +378,28 @@ const pricingFeatures = [
   'Respaldo automático en la nube 24/7',
   'Soporte técnico prioritario y actualizaciones continuas',
 ]
+
+const pricingBonuses = [
+  {
+    icon: BookOpen,
+    title: 'Guía Digital: Cómo Eliminar Gastos Hormiga en 7 Días',
+    description: 'Estrategias paso a paso para identificar y frenar las pequeñas fugas invisibles de dinero sin privarte de tus gustos.',
+    value: 'Valor: S/ 30',
+  },
+  {
+    icon: Target,
+    title: 'Planificador de Metas y Fondo de Emergencia de 90 Días',
+    description: 'Hoja de ruta clara para construir tu primer colchón de tranquilidad de 3 meses desde cero.',
+    value: 'Valor: S/ 25',
+  },
+  {
+    icon: Wallet,
+    title: 'Plantilla de Control Financiero para Negocios y Emprendimientos',
+    description: 'Gestiona los flujos de caja, cobros y ventas de tu negocio independiente de tus finanzas personales.',
+    value: 'Valor: S/ 35',
+  },
+]
+
 
 const faqItems = [
   {
@@ -530,635 +552,777 @@ function HeroSection() {
     return () => window.clearInterval(id)
   }, [])
 
-  const countdownHours = Math.floor(countdownSeconds / 3600)
+  const countdownDays = Math.floor(countdownSeconds / 86400)
+  const countdownHours = Math.floor((countdownSeconds % 86400) / 3600)
   const countdownMinutes = Math.floor((countdownSeconds % 3600) / 60)
   const countdownSecs = countdownSeconds % 60
 
   return (
-    <main className="mx-auto w-full px-4 pb-20 pt-8 sm:px-6 md:pt-14">
-      {/* 1. HERO PRINCIPAL */}
-      <section id="inicio" className="mx-auto max-w-5xl scroll-mt-24 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200/80 bg-indigo-50/80 px-4 py-1.5 text-xs font-bold text-indigo-700 shadow-sm backdrop-blur-md">
-          <Sparkles className="h-3.5 w-3.5 text-indigo-600" />
-          <span>GESTIÓN FINANCIERA INTELIGENTE • VERSIÓN 2026</span>
-        </div>
+    <main className="w-full">
+      {/* ============================================================== */}
+      {/* HERO SECTION CON FONDO DEGRADADO (IDENTIDAD FINANZAS TRACK)    */}
+      {/* ============================================================== */}
+      <div className="relative w-full overflow-hidden bg-gradient-to-br from-[#dbeafe] via-[#e0e7ff]/75 via-40% to-[#ccfbf1] pb-16 pt-10 sm:pb-20 sm:pt-14 md:pb-24 md:pt-16 border-b border-indigo-100/70 shadow-[0_4px_25px_rgba(37,99,235,0.06)]">
+        {/* Resplandores ambientales decorativos que potencian el degradado */}
+        <div
+          className="pointer-events-none absolute -left-20 -top-20 h-96 w-96 rounded-full bg-blue-400/20 blur-3xl"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute -right-20 -top-20 h-96 w-96 rounded-full bg-teal-400/25 blur-3xl"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-80 w-[700px] rounded-full bg-indigo-300/15 blur-3xl"
+          aria-hidden="true"
+        />
 
-        <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl md:leading-[1.15]">
-          Toma el control total de tu dinero con{' '}
-          <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-teal-500 bg-clip-text text-transparent">
-            FinanzasTrack
-          </span>
-        </h1>
-
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
-          La plataforma intuitiva para registrar gastos, fijar presupuestos, alcanzar metas de ahorro y recibir asesoría inteligente con IA.
-        </p>
-
-        <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row sm:gap-4">
-          <a
-            href="#precio"
-            className="group flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-8 py-3.5 text-base font-semibold text-white shadow-[0_4px_16px_rgba(5,150,105,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-[0_8px_24px_rgba(5,150,105,0.45)] sm:w-auto"
-          >
-            <span>Adquiere tu Acceso</span>
-            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-          </a>
-          <a
-            href="#funcionalidades"
-            className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300/90 bg-white px-7 py-3.5 text-base font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:border-slate-400 hover:bg-slate-50 sm:w-auto"
-          >
-            <span>Explorar Funcionalidades</span>
-          </a>
-        </div>
-      </section>
-
-      {/* 2. STATS CARDS */}
-      <section className="mx-auto mt-14 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
-        {stats.map((stat) => (
-          <StatCard
-            key={stat.label}
-            value={stat.value}
-            label={stat.label}
-            sublabel={stat.sublabel}
-            variant={stat.variant}
-          />
-        ))}
-      </section>
-
-      {/* 3. DEMO VIDEO CARD */}
-      <section className="group mx-auto mt-14 w-full max-w-5xl rounded-3xl border border-slate-200/90 bg-white p-5 shadow-xl shadow-slate-200/50 transition-all duration-300 hover:border-indigo-200 hover:shadow-2xl hover:shadow-indigo-500/10 md:p-7">
-        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-3.5 min-w-0">
-            <span className="relative flex h-12 w-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#1d4ed8] via-[#0284c7] to-[#2dd4bf] p-2.5 shadow-md shadow-teal-500/25">
-              <span
-                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[logo-shine_3.5s_infinite]"
-                aria-hidden="true"
-              />
-              <img
-                src="/v4.svg"
-                alt="FinanzasTrack"
-                className="relative z-10 h-7 w-7 object-contain drop-shadow-sm shrink-0"
-              />
-            </span>
-            <div className="min-w-0">
-              <h2 className="text-xl font-bold tracking-tight text-slate-900 md:text-2xl">
-                Demostración en Video
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-500">
-                Conoce la interfaz fluida y las funciones clave de FinanzasTrack en acción
-              </p>
+        <div className="relative z-10 mx-auto w-full max-w-5xl px-4 sm:px-6">
+          {/* 1. HERO PRINCIPAL */}
+          <section id="inicio" className="scroll-mt-24 text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-rose-200/80 bg-white/90 px-4 py-1.5 text-xs font-bold text-rose-700 shadow-sm backdrop-blur-md">
+              <Sparkles className="h-3.5 w-3.5 text-rose-600" />
+              <span>¿SIENTES QUE EL DINERO DESAPARECE CADA MES? • TU SOLUCIÓN DEFINITIVA</span>
             </div>
-          </div>
-          <span className="inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1 text-xs font-bold text-emerald-700">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-            </span>
-            Tour de la Plataforma
-          </span>
-        </div>
 
-        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-inner">
-          <div className="relative w-full aspect-video bg-slate-950 flex items-center justify-center">
-            <video
-              ref={videoRef}
-              poster="/video-poster.png"
-              className="h-full w-full object-contain rounded-2xl"
-              controls={isVideoPlaying}
-              playsInline
-              preload="metadata"
-              onPlay={() => setIsVideoPlaying(true)}
-            >
-              <source src="/demo.mp4" type="video/mp4" />
-              Tu navegador no soporta la reproducción de video HTML5.
-            </video>
+            <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl md:leading-[1.15]">
+              Deja de preguntarte a dónde se va tu sueldo.{' '}
+              <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-teal-500 bg-clip-text text-transparent">
+                Organiza tus gastos, frena fugas y ahorra
+              </span>{' '}
+              desde el primer día.
+            </h1>
 
-            {/* Portada personalizada con botón de Play animado */}
-            {!isVideoPlaying && (
-              <div
-                onClick={handlePlayVideo}
-                className="group/overlay absolute inset-0 z-10 flex cursor-pointer items-center justify-center overflow-hidden rounded-2xl bg-slate-950/30 transition-all duration-300 hover:bg-slate-950/10"
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault()
-                    handlePlayVideo()
-                  }
-                }}
-                aria-label="Reproducir video de demostración de FinanzasTrack"
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
+              Sin libretas desordenadas ni hojas de Excel complicadas. La plataforma intuitiva con inteligencia artificial que te devuelve la paz mental y el control total de tu dinero en tu celular o PC.
+            </p>
+
+            <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row sm:gap-4">
+              <a
+                href="#precio"
+                className="group flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-8 py-4 text-base font-bold text-white shadow-[0_4px_16px_rgba(5,150,105,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-[0_8px_24px_rgba(5,150,105,0.45)] sm:w-auto"
               >
-                {/* Imagen de captura de pantalla */}
-                <img
-                  src="/video-poster.png"
-                  alt="Vista previa de FinanzasTrack"
-                  className="absolute inset-0 h-full w-full object-cover sm:object-contain transition-transform duration-500 ease-out group-hover/overlay:scale-[1.02]"
+                <span>Quiero Ordenar Mis Finanzas Ahora</span>
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+              </a>
+              <a
+                href="#beneficios"
+                className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300/90 bg-white/90 px-7 py-4 text-base font-semibold text-slate-700 shadow-sm backdrop-blur-sm transition-all duration-200 hover:border-slate-400 hover:bg-white sm:w-auto"
+              >
+                <span>Ver cómo funciona 👇</span>
+              </a>
+            </div>
+
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold text-slate-600">
+              <span className="flex items-center gap-1.5 text-emerald-800 bg-emerald-50/90 border border-emerald-200/80 rounded-full px-3 py-1 shadow-sm">
+                <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Pago único de S/ 25
+              </span>
+              <span className="flex items-center gap-1.5 text-slate-700 bg-white/85 border border-slate-200/80 rounded-full px-3 py-1 shadow-sm">
+                <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Acceso de por vida
+              </span>
+              <span className="flex items-center gap-1.5 text-slate-700 bg-white/85 border border-slate-200/80 rounded-full px-3 py-1 shadow-sm">
+                <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Sin mensualidades
+              </span>
+            </div>
+          </section>
+
+          {/* 2. STATS CARDS */}
+          <section className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
+            {stats.map((stat) => (
+              <StatCard
+                key={stat.label}
+                value={stat.value}
+                label={stat.label}
+                sublabel={stat.sublabel}
+                variant={stat.variant}
+              />
+            ))}
+          </section>
+        </div>
+
+        {/* Suave difuminado al final del degradado */}
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-b from-transparent to-[#f1f5f9]/70"
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* CONTENEDOR PRINCIPAL DEL RESTO DE LA PÁGINA */}
+      <div className="mx-auto w-full px-4 pb-20 pt-10 sm:px-6">
+        {/* 3. DEMO VIDEO CARD */}
+        <section className="group mx-auto mt-14 w-full max-w-5xl rounded-3xl border border-slate-200/90 bg-white p-5 shadow-xl shadow-slate-200/50 transition-all duration-300 hover:border-indigo-200 hover:shadow-2xl hover:shadow-indigo-500/10 md:p-7">
+          <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-3.5 min-w-0">
+              <span className="relative flex h-12 w-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#1d4ed8] via-[#0284c7] to-[#2dd4bf] p-2.5 shadow-md shadow-teal-500/25">
+                <span
+                  className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[logo-shine_3.5s_infinite]"
+                  aria-hidden="true"
                 />
-
-                {/* Capa de gradiente para contraste estético */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/30 to-slate-950/40 transition-opacity duration-300 group-hover/overlay:opacity-75" />
-
-                {/* Contenedor central del botón Play y llamada a la acción */}
-                <div className="relative z-20 flex flex-col items-center gap-3.5 p-4 text-center">
-                  <div className="relative flex items-center justify-center">
-                    {/* Anillos de pulso animados */}
-                    <span className="absolute inline-flex h-20 w-20 sm:h-24 sm:w-24 animate-ping rounded-full bg-indigo-500/30 duration-1000" />
-                    <span className="absolute inline-flex h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-indigo-600/40 blur-md" />
-
-                    {/* Botón Play */}
-                    <div className="relative flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 via-indigo-600 to-teal-500 p-4 text-white shadow-[0_0_30px_rgba(99,102,241,0.6)] ring-4 ring-white/30 transition-all duration-300 group-hover/overlay:scale-110 group-hover/overlay:ring-white/60 group-hover/overlay:shadow-[0_0_40px_rgba(99,102,241,0.85)] active:scale-95">
-                      <Play className="ml-1 h-7 w-7 sm:h-9 sm:w-9 fill-white text-white transition-transform duration-300 group-hover/overlay:scale-105" />
-                    </div>
-                  </div>
-
-                  {/* Badge de llamada a la acción */}
-                  <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-slate-900/85 px-4 py-1.5 text-xs sm:text-sm font-semibold text-white shadow-xl backdrop-blur-md transition-all duration-300 group-hover/overlay:bg-indigo-900/90 group-hover/overlay:border-indigo-400/60">
-                    <Sparkles className="h-3.5 w-3.5 text-teal-400 animate-pulse" />
-                    <span>Haz clic para ver la demostración en video</span>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. BENEFICIOS */}
-      <section id="beneficios" className="mx-auto mt-24 w-full max-w-6xl scroll-mt-24">
-        <div className="text-center">
-          <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Beneficios Claros</p>
-          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Di adiós al desorden financiero.{' '}
-            <span className="text-indigo-600">Tus cuentas bajo control en minutos.</span>
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
-            Herramientas diseñadas para que ahorrar y ordenar tus gastos sea fácil y motivador.
-          </p>
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {benefits.map((b) => (
-            <article
-              key={b.title}
-              className={`group rounded-2xl border p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${b.cardBg}`}
-            >
-              <div className="flex items-center justify-between">
-                <span className={`grid h-10 w-10 place-content-center rounded-xl ${b.iconColor} shadow-sm transition-transform duration-300 group-hover:scale-110`}>
-                  <b.icon className="h-5 w-5" />
-                </span>
-                <span className={`rounded-full border px-2.5 py-0.5 text-[10px] font-bold tracking-wide ${b.badgeColor}`}>
-                  {b.badge}
-                </span>
-              </div>
-              <h3 className="mt-4 text-base font-bold leading-snug text-slate-900">
-                {b.title}
-              </h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-600">
-                {b.description}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* 5. TABLA COMPARATIVA */}
-      <section className="mx-auto mt-24 w-full max-w-6xl">
-        <div className="text-center">
-          <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Comparativa Directa</p>
-          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            ¿Por qué elegir <span className="text-indigo-600">FinanzasTrack</span>?
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
-            Comprueba por qué miles de usuarios dejaron atrás las libretas y hojas de Excel complicadas.
-          </p>
-        </div>
-
-        <div className="mt-10 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-200/40">
-          <table className="w-full min-w-[760px] border-collapse">
-            <thead>
-              <tr>
-                <th className="w-[42%] border-b border-r border-slate-200 px-6 py-5 text-left text-base font-bold text-slate-900">
-                  Funcionalidades Clave
-                </th>
-                <th className="w-[26%] border-b border-r border-indigo-200/80 bg-indigo-50/60 px-6 py-5 text-center">
-                  <span className="relative mx-auto mb-2 grid h-10 w-10 place-content-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#1d4ed8] via-[#0284c7] to-[#2dd4bf] p-2 shadow-md shadow-teal-500/25">
-                    <span
-                      className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[logo-shine_3.5s_infinite]"
-                      aria-hidden="true"
-                    />
-                    <img
-                      src="/v4.svg"
-                      alt="FinanzasTrack"
-                      className="relative z-10 h-6 w-6 object-contain drop-shadow-sm"
-                    />
-                  </span>
-                  <p className="text-lg font-bold text-indigo-900">FinanzasTrack</p>
-                </th>
-                <th className="w-[16%] border-b border-r border-slate-200 px-5 py-5 text-center">
-                  <span className="mx-auto mb-2 grid h-10 w-10 place-content-center rounded-2xl border border-emerald-200/80 bg-emerald-50 text-emerald-600 shadow-sm transition-transform duration-200 hover:scale-105">
-                    <FileSpreadsheet className="h-5 w-5 stroke-[2]" />
-                  </span>
-                  <p className="text-base font-semibold text-slate-700">Excel / Sheets</p>
-                </th>
-                <th className="w-[16%] border-b border-slate-200 px-5 py-5 text-center">
-                  <span className="mx-auto mb-2 grid h-10 w-10 place-content-center rounded-2xl border border-amber-200/80 bg-amber-50 text-amber-600 shadow-sm transition-transform duration-200 hover:scale-105">
-                    <BookOpen className="h-5 w-5 stroke-[2]" />
-                  </span>
-                  <p className="text-base font-semibold text-slate-700">Cuaderno</p>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {comparisonRows.map((row) => (
-                <tr key={row.feature} className="transition-colors hover:bg-slate-50/60">
-                  <td className="border-b border-r border-slate-200 px-6 py-3.5 text-sm font-medium text-slate-800">
-                    {row.feature}
-                  </td>
-                  <td className="border-b border-r border-indigo-100 bg-indigo-50/30 px-6 py-3.5 text-center">
-                    <ComparisonStatus enabled={row.finanzasTrack} />
-                  </td>
-                  <td className="border-b border-r border-slate-200 px-5 py-3.5 text-center">
-                    <ComparisonStatus enabled={row.excel} />
-                  </td>
-                  <td className="border-b border-slate-200 px-5 py-3.5 text-center">
-                    <ComparisonStatus enabled={row.notebook} />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* 6. FUNCIONALIDADES DETALLADAS (SHOWCASE ZIG-ZAG) */}
-      <section id="funcionalidades" className="mx-auto mt-28 w-full max-w-6xl scroll-mt-24">
-        <div className="text-center">
-          <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Módulos de la Plataforma</p>
-          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Todo lo que necesitas para tu <span className="text-indigo-600">salud financiera</span>
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
-            Una plataforma completa diseñada con los módulos reales de FinanzasTrack para que tengas el control total de tu dinero.
-          </p>
-        </div>
-
-        <div className="mt-14 space-y-16 md:space-y-20">
-          {appSections.map((sec) => (
-            <article
-              key={sec.id}
-              className={`grid items-center gap-8 lg:grid-cols-2 lg:gap-12 ${sec.imageLeft ? '' : 'lg:[&>*:first-child]:order-2'
-                }`}
-            >
-              {/* Contenedor Mockup / Espacio de Imagen */}
-              <div className="group/mockup relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-[0_16px_35px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-[0_20px_45px_rgba(79,70,229,0.12)]">
-                {/* Cabecera estilo navegador / app */}
-                <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50/90 px-4 py-2.5">
-                  <div className="flex items-center gap-1.5">
-                    <span className="h-2.5 w-2.5 rounded-full bg-rose-400/80" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
-                  </div>
-                  <div className="flex items-center gap-1.5 rounded-lg border border-slate-200/70 bg-white px-3 py-0.5 text-[11px] font-medium text-slate-600 shadow-sm">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    <span>finanzastrack.site/{sec.id}</span>
-                  </div>
-                  <span className="hidden sm:inline-block text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                    {sec.previewBadge}
-                  </span>
-                </div>
-
-                {/* Espacio reservado para la captura de pantalla */}
-                <div className={`relative flex min-h-[260px] sm:min-h-[310px] w-full items-center justify-center overflow-hidden bg-gradient-to-br ${sec.previewGradient} bg-slate-50`}>
-                  <img
-                    src={sec.imageSrc}
-                    alt={`Vista de ${sec.title}`}
-                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover/mockup:scale-[1.02]"
-                    loading="lazy"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                      if (e.currentTarget.nextElementSibling) {
-                        e.currentTarget.nextElementSibling.classList.remove('hidden');
-                        e.currentTarget.nextElementSibling.classList.add('flex');
-                      }
-                    }}
-                  />
-                  {/* Placeholder elegante en caso de no cargar la imagen todavía */}
-                  <div className="hidden flex-col items-center justify-center gap-3 p-8 text-center text-slate-400">
-                    <span className="grid h-14 w-14 place-content-center rounded-2xl bg-white text-indigo-600 border border-indigo-100 shadow-md">
-                      <TrendingUp className="h-7 w-7 stroke-[2.5]" />
-                    </span>
-                    <div>
-                      <p className="text-sm font-bold text-slate-800">Captura: {sec.tag}</p>
-                      <p className="text-xs text-slate-500 mt-0.5">Espacio reservado para imagen: <code className="text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded">{sec.imageSrc}</code></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Información Descriptiva del Módulo */}
-              <div className="flex flex-col justify-center">
-                <span className={`inline-flex w-fit rounded-full px-3.5 py-1 text-xs font-bold ${sec.tagColor}`}>
-                  {sec.tag}
-                </span>
-                <h3 className="mt-3.5 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
-                  {sec.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
-                  {sec.description}
-                </p>
-
-                <ul className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-                  {sec.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 md:text-sm">
-                      <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${sec.bulletDot}`} />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* 7. MÓDULO DE INTELIGENCIA ARTIFICIAL */}
-      <section className="mx-auto mt-24 w-full max-w-6xl">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#0f172a] p-8 text-white shadow-2xl shadow-indigo-950/30 md:p-12">
-          <div className="relative z-10">
-            <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-              <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/20 px-3.5 py-1 text-xs font-bold text-indigo-300 backdrop-blur-md">
-                  <Bot className="h-4 w-4" />
-                  <span>INTELIGENCIA ARTIFICIAL INTEGRADA</span>
-                </div>
-                <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-4xl">
-                  Tu Asesor Financiero con IA 24/7
+                <img
+                  src="/v4.svg"
+                  alt="FinanzasTrack"
+                  className="relative z-10 h-7 w-7 object-contain drop-shadow-sm shrink-0"
+                />
+              </span>
+              <div className="min-w-0">
+                <h2 className="text-xl font-bold tracking-tight text-slate-900 md:text-2xl">
+                  Demostración en Video
                 </h2>
-                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-indigo-200/90 md:text-base">
-                  Conectado con modelos LLM avanzados para analizar tus finanzas en tiempo real, diagnosticar tus hábitos y responder tus consultas.
+                <p className="text-xs sm:text-sm text-slate-500">
+                  Conoce la interfaz fluida y las funciones clave de FinanzasTrack en acción
                 </p>
               </div>
-              <div className="shrink-0">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-500/20 px-4 py-1.5 text-xs font-bold text-emerald-300">
-                  <Sparkles className="h-4 w-4" />
-                  Motor de IA Financiera
-                </span>
-              </div>
             </div>
-
-            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {aiCards.map((card) => (
-                <div
-                  key={card.title}
-                  className="rounded-2xl border border-white/10 bg-white/10 p-5 shadow-lg backdrop-blur-md transition-all duration-300 hover:border-indigo-400/40 hover:bg-white/15"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="grid h-10 w-10 place-content-center rounded-xl bg-indigo-500 text-white shadow-md shadow-indigo-500/30">
-                      <card.Icon className="h-5 w-5" />
-                    </span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-300">
-                      {card.badge}
-                    </span>
-                  </div>
-                  <h3 className="mt-4 text-base font-bold text-white">{card.title}</h3>
-                  <p className="mt-2 text-xs leading-relaxed text-indigo-200/80">{card.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. PRECIO Y OFERTA */}
-      <section id="precio" className="mx-auto mt-28 w-full max-w-4xl scroll-mt-24">
-        <div className="text-center">
-          <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Acceso Inmediato</p>
-          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Pago único, <span className="text-indigo-600">beneficio permanente</span>
-          </h2>
-          <p className="mt-2 text-sm text-slate-600">
-            Sin mensualidades obligatorias ni costos ocultos.
-          </p>
-        </div>
-
-        {/* Tarjeta Principal de Precios */}
-        <article className="mt-6 rounded-3xl border border-slate-200 bg-white p-7 shadow-2xl shadow-slate-300/40 md:p-10">
-          <div className="text-center">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-indigo-200 bg-indigo-50 px-3.5 py-1 text-xs font-bold text-indigo-700">
-              <Zap className="h-3.5 w-3.5 text-indigo-600" />
-              ACCESO COMPLETO AL SISTEMA
+            <span className="inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1 text-xs font-bold text-emerald-700">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              Tour de la Plataforma
             </span>
-            <div className="mt-4 flex flex-col items-center justify-center gap-1.5">
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-medium text-slate-400">
-                  Precio regular:{' '}
-                  <span className="font-bold line-through decoration-rose-500 decoration-2 text-slate-400">
-                    S/ 50
+          </div>
+
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-inner">
+            <div className="relative w-full aspect-video bg-slate-950 flex items-center justify-center">
+              <video
+                ref={videoRef}
+                poster="/video-poster.png"
+                className="h-full w-full object-contain rounded-2xl"
+                controls={isVideoPlaying}
+                playsInline
+                preload="metadata"
+                onPlay={() => setIsVideoPlaying(true)}
+              >
+                <source src="/demo.mp4" type="video/mp4" />
+                Tu navegador no soporta la reproducción de video HTML5.
+              </video>
+
+              {/* Portada personalizada con botón de Play animado */}
+              {!isVideoPlaying && (
+                <div
+                  onClick={handlePlayVideo}
+                  className="group/overlay absolute inset-0 z-10 flex cursor-pointer items-center justify-center overflow-hidden rounded-2xl bg-slate-950/30 transition-all duration-300 hover:bg-slate-950/10"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      handlePlayVideo()
+                    }
+                  }}
+                  aria-label="Reproducir video de demostración de FinanzasTrack"
+                >
+                  {/* Imagen de captura de pantalla */}
+                  <img
+                    src="/video-poster.png"
+                    alt="Vista previa de FinanzasTrack"
+                    className="absolute inset-0 h-full w-full object-cover sm:object-contain transition-transform duration-500 ease-out group-hover/overlay:scale-[1.02]"
+                  />
+
+                  {/* Capa de gradiente para contraste estético */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/30 to-slate-950/40 transition-opacity duration-300 group-hover/overlay:opacity-75" />
+
+                  {/* Contenedor central del botón Play y llamada a la acción */}
+                  <div className="relative z-20 flex flex-col items-center gap-3.5 p-4 text-center">
+                    <div className="relative flex items-center justify-center">
+                      {/* Anillos de pulso animados */}
+                      <span className="absolute inline-flex h-20 w-20 sm:h-24 sm:w-24 animate-ping rounded-full bg-indigo-500/30 duration-1000" />
+                      <span className="absolute inline-flex h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-indigo-600/40 blur-md" />
+
+                      {/* Botón Play */}
+                      <div className="relative flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 via-indigo-600 to-teal-500 p-4 text-white shadow-[0_0_30px_rgba(99,102,241,0.6)] ring-4 ring-white/30 transition-all duration-300 group-hover/overlay:scale-110 group-hover/overlay:ring-white/60 group-hover/overlay:shadow-[0_0_40px_rgba(99,102,241,0.85)] active:scale-95">
+                        <Play className="ml-1 h-7 w-7 sm:h-9 sm:w-9 fill-white text-white transition-transform duration-300 group-hover/overlay:scale-105" />
+                      </div>
+                    </div>
+
+                    {/* Badge de llamada a la acción */}
+                    <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-slate-900/85 px-4 py-1.5 text-xs sm:text-sm font-semibold text-white shadow-xl backdrop-blur-md transition-all duration-300 group-hover/overlay:bg-indigo-900/90 group-hover/overlay:border-indigo-400/60">
+                      <Sparkles className="h-3.5 w-3.5 text-teal-400 animate-pulse" />
+                      <span>Haz clic para ver la demostración en video</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* 4. BENEFICIOS */}
+        <section id="beneficios" className="mx-auto mt-24 w-full max-w-6xl scroll-mt-24">
+          <div className="text-center">
+            <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Beneficios Claros</p>
+            <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Di adiós al desorden financiero.{' '}
+              <span className="text-indigo-600">Tus cuentas bajo control en minutos.</span>
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
+              Herramientas diseñadas para que ahorrar y ordenar tus gastos sea fácil y motivador.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {benefits.map((b) => (
+              <article
+                key={b.title}
+                className={`group rounded-2xl border p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${b.cardBg}`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className={`grid h-10 w-10 place-content-center rounded-xl ${b.iconColor} shadow-sm transition-transform duration-300 group-hover:scale-110`}>
+                    <b.icon className="h-5 w-5" />
                   </span>
-                </span>
-                <span className="rounded-full border border-rose-200 bg-rose-50 px-2 py-0.5 text-[11px] font-bold text-rose-700">
-                  50% DCTO
-                </span>
-              </div>
-
-              {/* Indicador de Precio Promoción */}
-              <div className="mt-0.5 inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-0.5 text-xs font-bold text-emerald-700 shadow-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span>Precio Promoción</span>
-              </div>
-
-              <div className="flex items-baseline justify-center gap-1">
-                <span className="text-2xl font-bold text-slate-500">S/</span>
-                <span className="text-6xl font-extrabold tracking-tight text-slate-900 md:text-7xl">25</span>
-                <span className="text-sm font-semibold text-slate-500">pago único</span>
-              </div>
-            </div>
-            <p className="mt-1 text-xs text-slate-500">Sin suscripciones recurrentes obligatorias</p>
-          </div>
-
-          {/* Contador de Oferta */}
-          <div className="mx-auto mt-6 max-w-md rounded-2xl border border-rose-200 bg-rose-50/70 p-4 text-center">
-            <p className="text-xs font-bold text-rose-800">
-              ⚡ Oferta especial por tiempo limitado
-            </p>
-            <div className="mt-3 flex items-center justify-center gap-2.5">
-              <div className="flex flex-col items-center">
-                <div className="grid h-12 w-12 place-content-center rounded-xl bg-rose-600 text-lg font-bold text-white shadow-md shadow-rose-600/20">
-                  {String(countdownHours).padStart(2, '0')}
+                  <span className={`rounded-full border px-2.5 py-0.5 text-[10px] font-bold tracking-wide ${b.badgeColor}`}>
+                    {b.badge}
+                  </span>
                 </div>
-                <span className="mt-1 text-[10px] font-bold uppercase text-rose-700">Horas</span>
-              </div>
-              <span className="text-xl font-black text-rose-500">:</span>
-              <div className="flex flex-col items-center">
-                <div className="grid h-12 w-12 place-content-center rounded-xl bg-rose-600 text-lg font-bold text-white shadow-md shadow-rose-600/20">
-                  {String(countdownMinutes).padStart(2, '0')}
-                </div>
-                <span className="mt-1 text-[10px] font-bold uppercase text-rose-700">Minutos</span>
-              </div>
-              <span className="text-xl font-black text-rose-500">:</span>
-              <div className="flex flex-col items-center">
-                <div className="grid h-12 w-12 place-content-center rounded-xl bg-rose-600 text-lg font-bold text-white shadow-md shadow-rose-600/20">
-                  {String(countdownSecs).padStart(2, '0')}
-                </div>
-                <span className="mt-1 text-[10px] font-bold uppercase text-rose-700">Segundos</span>
-              </div>
-            </div>
-
-            <p className="mt-3.5 border-t border-rose-200/80 pt-2.5 text-xs font-medium text-rose-900">
-              Al finalizar el contador, el precio subirá a <span className="font-extrabold text-rose-700">S/ 50</span>
-            </p>
-          </div>
-
-          {/* Botones WhatsApp CTA y Llamada */}
-          <div className="mt-8 flex flex-col items-center justify-center gap-3">
-            <a
-              href="https://wa.me/51980570301?text=%C2%A1Hola!%20FinanzasTrack%20deseo%20mi%20acceso%20a%20la%20app%20."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex w-full items-center justify-center gap-2.5 rounded-2xl bg-emerald-600 px-8 py-4 text-base font-bold text-white shadow-lg shadow-emerald-600/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-xl hover:shadow-emerald-600/40 active:translate-y-0 sm:w-auto"
-            >
-              <MessageCircle className="h-5 w-5 fill-white stroke-none" />
-              <span>Quiero mi acceso vía WhatsApp</span>
-              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-            </a>
-
-            {/* Llamar solo visible en celular/móvil */}
-            <a
-              href="tel:+51980570301"
-              className="group inline-flex w-full items-center justify-center gap-2.5 rounded-2xl border-2 border-slate-200 bg-white px-6 py-4 text-base font-bold text-slate-700 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50 hover:text-indigo-600 hover:shadow-md active:translate-y-0 md:hidden sm:w-auto"
-            >
-              <Phone className="h-5 w-5 text-slate-500 transition-colors duration-200 group-hover:text-indigo-600" />
-              <span>Llamar ahora</span>
-            </a>
-          </div>
-          <p className="mt-2.5 text-center text-xs text-slate-500">
-            Aceptamos Yape, Transferencia Bancaria • Activación en minutos • Atención personalizada
-          </p>
-
-          {/* Checklist de Features */}
-          <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-3 border-t border-slate-100 pt-8 sm:grid-cols-2">
-            {pricingFeatures.map((f) => (
-              <div key={f} className="flex items-center gap-2.5 text-xs font-semibold text-slate-700">
-                <Check className="h-4 w-4 shrink-0 stroke-[3] text-emerald-600" />
-                <span>{f}</span>
-              </div>
+                <h3 className="mt-4 text-base font-bold leading-snug text-slate-900">
+                  {b.title}
+                </h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">
+                  {b.description}
+                </p>
+              </article>
             ))}
           </div>
-        </article>
-      </section>
+        </section>
 
-      {/* 9. TESTIMONIOS Y SOCIAL PROOF */}
-      <section className="mx-auto mt-28 w-full max-w-6xl">
-        <div className="text-center">
-          <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Testimonios</p>
-          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Lo que opinan nuestros <span className="text-indigo-600">usuarios</span>
-          </h2>
-          <p className="mx-auto mt-2 max-w-xl text-sm text-slate-600">
-            Personas reales que ordenaron sus finanzas con FinanzasTrack.
-          </p>
-        </div>
+        {/* 5. TABLA COMPARATIVA */}
+        <section className="mx-auto mt-24 w-full max-w-6xl">
+          <div className="text-center">
+            <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Comparativa Directa</p>
+            <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              ¿Por qué elegir <span className="text-indigo-600">FinanzasTrack</span>?
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
+              Comprueba por qué miles de usuarios dejaron atrás las libretas y hojas de Excel complicadas.
+            </p>
+          </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {testimonials.map((t) => (
-            <article
-              key={t.name}
-              className="flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/5"
-            >
-              <div>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-1 text-amber-400">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-amber-400" />
-                    ))}
-                  </div>
-                  {t.highlight && (
-                    <span className="rounded-full border border-indigo-100 bg-indigo-50/70 px-2.5 py-0.5 text-[10px] font-bold text-indigo-700">
-                      {t.highlight}
+          <div className="mt-10 overflow-x-auto rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-200/40">
+            <table className="w-full min-w-[760px] border-collapse">
+              <thead>
+                <tr>
+                  <th className="w-[42%] border-b border-r border-slate-200 px-6 py-5 text-left text-base font-bold text-slate-900">
+                    Funcionalidades Clave
+                  </th>
+                  <th className="w-[26%] border-b border-r border-indigo-200/80 bg-indigo-50/60 px-6 py-5 text-center">
+                    <span className="relative mx-auto mb-2 grid h-10 w-10 place-content-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#1d4ed8] via-[#0284c7] to-[#2dd4bf] p-2 shadow-md shadow-teal-500/25">
+                      <span
+                        className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[logo-shine_3.5s_infinite]"
+                        aria-hidden="true"
+                      />
+                      <img
+                        src="/v4.svg"
+                        alt="FinanzasTrack"
+                        className="relative z-10 h-6 w-6 object-contain drop-shadow-sm"
+                      />
                     </span>
-                  )}
+                    <p className="text-lg font-bold text-indigo-900">FinanzasTrack</p>
+                  </th>
+                  <th className="w-[16%] border-b border-r border-slate-200 px-5 py-5 text-center">
+                    <span className="mx-auto mb-2 grid h-10 w-10 place-content-center rounded-2xl border border-emerald-200/80 bg-emerald-50 text-emerald-600 shadow-sm transition-transform duration-200 hover:scale-105">
+                      <FileSpreadsheet className="h-5 w-5 stroke-[2]" />
+                    </span>
+                    <p className="text-base font-semibold text-slate-700">Excel / Sheets</p>
+                  </th>
+                  <th className="w-[16%] border-b border-slate-200 px-5 py-5 text-center">
+                    <span className="mx-auto mb-2 grid h-10 w-10 place-content-center rounded-2xl border border-amber-200/80 bg-amber-50 text-amber-600 shadow-sm transition-transform duration-200 hover:scale-105">
+                      <BookOpen className="h-5 w-5 stroke-[2]" />
+                    </span>
+                    <p className="text-base font-semibold text-slate-700">Cuaderno</p>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonRows.map((row) => (
+                  <tr key={row.feature} className="transition-colors hover:bg-slate-50/60">
+                    <td className="border-b border-r border-slate-200 px-6 py-3.5 text-sm font-medium text-slate-800">
+                      {row.feature}
+                    </td>
+                    <td className="border-b border-r border-indigo-100 bg-indigo-50/30 px-6 py-3.5 text-center">
+                      <ComparisonStatus enabled={row.finanzasTrack} />
+                    </td>
+                    <td className="border-b border-r border-slate-200 px-5 py-3.5 text-center">
+                      <ComparisonStatus enabled={row.excel} />
+                    </td>
+                    <td className="border-b border-slate-200 px-5 py-3.5 text-center">
+                      <ComparisonStatus enabled={row.notebook} />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* 6. FUNCIONALIDADES DETALLADAS (SHOWCASE ZIG-ZAG) */}
+        <section id="funcionalidades" className="mx-auto mt-28 w-full max-w-6xl scroll-mt-24">
+          <div className="text-center">
+            <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Herramientas que Transforman tu Economía</p>
+            <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Cada función pensada para que <span className="text-indigo-600">tu dinero rinda mucho más</span>
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
+              Diseñado para personas reales que quieren dejar atrás el estrés de fin de mes y ver crecer sus ahorros con total facilidad.
+            </p>
+          </div>
+
+          <div className="mt-14 space-y-16 md:space-y-20">
+            {appSections.map((sec) => (
+              <article
+                key={sec.id}
+                className={`grid items-center gap-8 lg:grid-cols-2 lg:gap-12 ${sec.imageLeft ? '' : 'lg:[&>*:first-child]:order-2'
+                  }`}
+              >
+                {/* Contenedor Mockup / Espacio de Imagen */}
+                <div className="group/mockup relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-[0_16px_35px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-[0_20px_45px_rgba(79,70,229,0.12)]">
+                  {/* Cabecera estilo navegador / app */}
+                  <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50/90 px-4 py-2.5">
+                    <div className="flex items-center gap-1.5">
+                      <span className="h-2.5 w-2.5 rounded-full bg-rose-400/80" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
+                    </div>
+                    <div className="flex items-center gap-1.5 rounded-lg border border-slate-200/70 bg-white px-3 py-0.5 text-[11px] font-medium text-slate-600 shadow-sm">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      <span>finanzastrack.site/{sec.id}</span>
+                    </div>
+                    <span className="hidden sm:inline-block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                      {sec.previewBadge}
+                    </span>
+                  </div>
+
+                  {/* Espacio reservado para la captura de pantalla */}
+                  <div className={`relative flex min-h-[260px] sm:min-h-[310px] w-full items-center justify-center overflow-hidden bg-gradient-to-br ${sec.previewGradient} bg-slate-50`}>
+                    <img
+                      src={sec.imageSrc}
+                      alt={`Vista de ${sec.title}`}
+                      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover/mockup:scale-[1.02]"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        if (e.currentTarget.nextElementSibling) {
+                          e.currentTarget.nextElementSibling.classList.remove('hidden');
+                          e.currentTarget.nextElementSibling.classList.add('flex');
+                        }
+                      }}
+                    />
+                    {/* Placeholder elegante en caso de no cargar la imagen todavía */}
+                    <div className="hidden flex-col items-center justify-center gap-3 p-8 text-center text-slate-400">
+                      <span className="grid h-14 w-14 place-content-center rounded-2xl bg-white text-indigo-600 border border-indigo-100 shadow-md">
+                        <TrendingUp className="h-7 w-7 stroke-[2.5]" />
+                      </span>
+                      <div>
+                        <p className="text-sm font-bold text-slate-800">Captura: {sec.tag}</p>
+                        <p className="text-xs text-slate-500 mt-0.5">Espacio reservado para imagen: <code className="text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded">{sec.imageSrc}</code></p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-slate-700">
-                  "{t.quote}"
+
+                {/* Información Descriptiva del Módulo */}
+                <div className="flex flex-col justify-center">
+                  <span className={`inline-flex w-fit rounded-full px-3.5 py-1 text-xs font-bold ${sec.tagColor}`}>
+                    {sec.tag}
+                  </span>
+                  <h3 className="mt-3.5 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
+                    {sec.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
+                    {sec.description}
+                  </p>
+
+                  <ul className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+                    {sec.bullets.map((bullet) => (
+                      <li key={bullet} className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 md:text-sm">
+                        <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${sec.bulletDot}`} />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* 7. MÓDULO DE INTELIGENCIA ARTIFICIAL */}
+        <section className="mx-auto mt-24 w-full max-w-6xl">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#0f172a] p-8 text-white shadow-2xl shadow-indigo-950/30 md:p-12">
+            <div className="relative z-10">
+              <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <div className="inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/20 px-3.5 py-1 text-xs font-bold text-indigo-300 backdrop-blur-md">
+                    <Bot className="h-4 w-4" />
+                    <span>TU ASESOR FINANCIERO EN EL BOLSILLO</span>
+                  </div>
+                  <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-4xl">
+                    Tu Asesor Financiero en el Bolsillo 24/7 que te dice exactamente cómo ahorrar
+                  </h2>
+                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-indigo-200/90 md:text-base">
+                    No necesitas saber de finanzas ni ser economista. Tu copiloto con inteligencia artificial analiza tus gastos en tiempo real, frena fugas de dinero y te guía paso a paso para que te sobre dinero a fin de mes.
+                  </p>
+                </div>
+                <div className="shrink-0">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-500/20 px-4 py-1.5 text-xs font-bold text-emerald-300">
+                    <Sparkles className="h-4 w-4" />
+                    Copiloto Financiero 24/7
+                  </span>
+                </div>
+              </div>
+
+              <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                {aiCards.map((card) => (
+                  <div
+                    key={card.title}
+                    className="rounded-2xl border border-white/10 bg-white/10 p-5 shadow-lg backdrop-blur-md transition-all duration-300 hover:border-indigo-400/40 hover:bg-white/15"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="grid h-10 w-10 place-content-center rounded-xl bg-indigo-500 text-white shadow-md shadow-indigo-500/30">
+                        <card.Icon className="h-5 w-5" />
+                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-300">
+                        {card.badge}
+                      </span>
+                    </div>
+                    <h3 className="mt-4 text-base font-bold text-white">{card.title}</h3>
+                    <p className="mt-2 text-xs leading-relaxed text-indigo-200/80">{card.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 8. PRECIO Y OFERTA */}
+        <section id="precio" className="mx-auto mt-28 w-full max-w-4xl scroll-mt-24">
+          <div className="text-center mb-8">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1 text-xs font-bold text-emerald-700 shadow-sm">
+              <Zap className="h-3.5 w-3.5 text-emerald-600" />
+              ACCESO COMPLETO Y PERMANENTE
+            </span>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
+              Invierte una sola vez, <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">ahorra toda la vida</span>
+            </h2>
+            <p className="mt-2.5 text-sm md:text-base text-slate-600">
+              Sin mensualidades, sin renovaciones obligatorias ni tarifas ocultas.
+            </p>
+          </div>
+
+          {/* Tarjeta de Oferta Estilo MisFinanzasPro con Identidad FinanzasTrack */}
+          <article className="rounded-3xl border-2 border-emerald-500/30 bg-white overflow-hidden shadow-2xl shadow-emerald-600/10 transition-all duration-300">
+            {/* Cabecera Verde Degradada de Oferta */}
+            <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 p-6 sm:p-7 text-center text-white relative overflow-hidden">
+              <span
+                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-[logo-shine_4s_infinite]"
+                aria-hidden="true"
+              />
+              <p className="text-xs md:text-sm font-bold tracking-wider uppercase opacity-95 flex items-center justify-center gap-1.5">
+                <span>🎉</span> OFERTA ESPECIAL POR TIEMPO LIMITADO
+              </p>
+              <h3 className="mt-1 text-2xl md:text-4xl font-extrabold tracking-tight text-white drop-shadow-sm">
+                ¡Aprovecha el 50% de Descuento!
+              </h3>
+            </div>
+
+            <div className="p-6 md:p-10">
+              {/* Comparativa de Precios en 2 Columnas */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+                {/* Tarjeta Precio Normal */}
+                <div className="rounded-2xl border border-slate-200/90 bg-slate-50/80 p-6 text-center flex flex-col justify-center">
+                  <p className="text-xs font-bold uppercase tracking-wider text-slate-400">PRECIO NORMAL</p>
+                  <p className="mt-1 text-xs text-slate-500">Sin la oferta</p>
+                  <div className="my-2">
+                    <span className="text-4xl md:text-5xl font-black text-slate-400 line-through decoration-rose-500 decoration-[3px]">
+                      S/ 50
+                    </span>
+                  </div>
+                  <p className="text-xs font-medium text-slate-500">+ S/ 90 en bonos</p>
+                </div>
+
+                {/* Tarjeta Precio Hoy con 50% OFF */}
+                <div className="relative rounded-2xl border-2 border-emerald-500 bg-gradient-to-br from-emerald-50/90 via-teal-50/40 to-emerald-100/50 p-6 text-center shadow-lg shadow-emerald-500/10">
+                  <div className="absolute top-3.5 right-3.5 rounded-full bg-amber-400 px-3 py-1 text-[11px] font-black uppercase text-amber-950 shadow-sm animate-pulse">
+                    50% OFF
+                  </div>
+                  <p className="text-xs font-bold uppercase tracking-wider text-emerald-700">PRECIO HOY</p>
+                  <p className="mt-1 text-xs text-slate-600">
+                    <span className="line-through text-slate-400">S/ 140</span> (sistema + 3 bonos)
+                  </p>
+                  <div className="my-2 flex items-baseline justify-center gap-1">
+                    <span className="text-2xl font-black text-emerald-700">S/</span>
+                    <span className="text-5xl md:text-6xl font-black tracking-tight text-emerald-600">25</span>
+                  </div>
+                  <span className="inline-block text-xs font-bold text-emerald-800 bg-emerald-100/70 border border-emerald-200 px-3 py-0.5 rounded-full">
+                    ¡Todo incluido! • Pago único
+                  </span>
+                </div>
+              </div>
+
+              {/* Botón Central Grande de Acción (WhatsApp / Compra) */}
+              <div className="text-center mb-10">
+                <a
+                  href="https://wa.me/51980570301?text=%C2%A1Hola!%20FinanzasTrack%20deseo%20mi%20acceso%20a%20la%20app%20."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex flex-col items-center justify-center w-full sm:w-auto rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 hover:from-emerald-700 hover:to-teal-700 text-white px-10 py-4.5 shadow-xl shadow-emerald-600/30 transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-600/40 active:translate-y-0"
+                >
+                  <div className="flex items-center justify-center gap-2.5 text-lg sm:text-xl font-extrabold tracking-wide">
+                    <Sparkles className="h-5 w-5 fill-white stroke-none" />
+                    <span>OBTENER ESTA OFERTA AHORA →</span>
+                  </div>
+                  <span className="text-xs font-medium text-emerald-100 mt-1">
+                    Haz clic aquí • Activación inmediata vía WhatsApp
+                  </span>
+                </a>
+
+                {/* Botón de llamada para celular */}
+                <div className="mt-3 md:hidden">
+                  <a
+                    href="tel:+51980570301"
+                    className="inline-flex items-center justify-center gap-2 text-xs font-bold text-slate-600 hover:text-indigo-600"
+                  >
+                    <Phone className="h-3.5 w-3.5" />
+                    <span>O si prefieres, puedes llamarnos al +51 980 570 301</span>
+                  </a>
+                </div>
+                <p className="mt-2.5 text-xs text-slate-500">
+                  Aceptamos Yape, Plin y Transferencia Bancaria • Activación en 2 minutos
                 </p>
               </div>
 
-              <div className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-4">
-                <span className={`grid h-10 w-10 place-content-center rounded-full font-bold text-sm shadow-sm ${t.avatarBg || 'bg-indigo-50 text-indigo-600'}`}>
-                  {t.name.charAt(0)}
-                </span>
-                <div>
-                  <p className="text-sm font-bold text-slate-900">{t.name}</p>
-                  <p className="text-xs text-slate-500">{t.role}</p>
+              {/* Lista: Lo que incluye tu compra */}
+              <div className="mb-10">
+                <h4 className="flex items-center gap-2 text-base md:text-lg font-bold text-slate-900 mb-4">
+                  <Check className="h-5 w-5 text-emerald-600 stroke-[3]" />
+                  <span>Lo que incluye tu acceso completo:</span>
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {pricingFeatures.map((f) => (
+                    <div key={f} className="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+                      <span className="grid h-5 w-5 place-content-center rounded-full bg-emerald-100/80 text-emerald-700 shrink-0 mt-0.5">
+                        <Check className="h-3.5 w-3.5 stroke-[3]" />
+                      </span>
+                      <span>{f}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </article>
-          ))}
-        </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {trustStats.map((item) => (
-            <article
-              key={item.label}
-              className="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm"
-            >
-              <p className="text-2xl font-extrabold tracking-tight text-indigo-600 sm:text-3xl">
-                {item.value}
+              {/* 3 BONOS EXCLUSIVOS GRATIS */}
+              <div className="mb-10 pt-8 border-t border-slate-100">
+                <div className="mb-4 flex items-center gap-2 text-base md:text-lg font-extrabold text-slate-900">
+                  <span className="text-xl">🎁</span>
+                  <span>+ 3 BONOS EXCLUSIVOS GRATIS:</span>
+                </div>
+
+                <div className="space-y-3.5">
+                  {pricingBonuses.map((bono) => (
+                    <div
+                      key={bono.title}
+                      className="flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 rounded-2xl border border-amber-200/80 bg-amber-50/50 p-4 sm:p-5 transition-all hover:bg-amber-50 hover:border-amber-300 shadow-sm"
+                    >
+                      <div className="flex items-start sm:items-center gap-3.5">
+                        <span className="grid h-11 w-11 shrink-0 place-content-center rounded-xl bg-amber-100/90 text-amber-800 border border-amber-200 shadow-sm">
+                          <bono.icon className="h-5 w-5" />
+                        </span>
+                        <div>
+                          <p className="text-sm sm:text-base font-bold text-slate-900">{bono.title}</p>
+                          <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">{bono.description}</p>
+                        </div>
+                      </div>
+                      <span className="shrink-0 self-start sm:self-center inline-flex items-center rounded-full bg-amber-100 text-amber-900 px-3.5 py-1 text-xs font-black border border-amber-200/90 shadow-sm">
+                        {bono.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <p className="mt-4 text-center text-xs sm:text-sm text-slate-600">
+                  Valor total de los bonos:{' '}
+                  <span className="line-through font-bold text-slate-400">S/ 90</span>{' '}
+                  <span className="font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-md ml-1">
+                    ¡GRATIS HOY CON TU ACCESO!
+                  </span>
+                </p>
+              </div>
+
+              {/* Badges de Confianza */}
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 pt-6 pb-2 border-t border-slate-100 text-xs sm:text-sm font-bold text-slate-700">
+                <span className="flex items-center gap-2">
+                  <Check className="h-4 w-4 text-emerald-600 stroke-[3]" /> UN SOLO PAGO
+                </span>
+                <span className="flex items-center gap-2">
+                  <Check className="h-4 w-4 text-emerald-600 stroke-[3]" /> ACTIVACIÓN INMEDIATA
+                </span>
+                <span className="flex items-center gap-2">
+                  <Check className="h-4 w-4 text-emerald-600 stroke-[3]" /> ACCESO DE POR VIDA
+                </span>
+              </div>
+
+              {/* Caja de Contador de Urgencia */}
+              <div className="mx-auto mt-6 rounded-2xl border border-slate-200/80 bg-slate-50/70 p-5 text-center">
+                <p className="flex items-center justify-center gap-1.5 text-xs sm:text-sm font-bold text-slate-800">
+                  <span>⏰</span> Oferta por tiempo limitado
+                </p>
+                <div className="mt-3 flex items-center justify-center gap-2 sm:gap-3">
+                  <div className="flex flex-col items-center">
+                    <div className="grid h-12 w-12 sm:h-14 sm:w-14 place-content-center rounded-xl bg-slate-900 text-lg sm:text-xl font-black text-white shadow-md">
+                      {String(countdownDays).padStart(2, '0')}
+                    </div>
+                    <span className="mt-1 text-[10px] font-bold uppercase tracking-wider text-slate-500">Días</span>
+                  </div>
+                  <span className="text-xl font-black text-slate-400 self-start mt-2">:</span>
+                  <div className="flex flex-col items-center">
+                    <div className="grid h-12 w-12 sm:h-14 sm:w-14 place-content-center rounded-xl bg-slate-900 text-lg sm:text-xl font-black text-white shadow-md">
+                      {String(countdownHours).padStart(2, '0')}
+                    </div>
+                    <span className="mt-1 text-[10px] font-bold uppercase tracking-wider text-slate-500">Horas</span>
+                  </div>
+                  <span className="text-xl font-black text-slate-400 self-start mt-2">:</span>
+                  <div className="flex flex-col items-center">
+                    <div className="grid h-12 w-12 sm:h-14 sm:w-14 place-content-center rounded-xl bg-slate-900 text-lg sm:text-xl font-black text-white shadow-md">
+                      {String(countdownMinutes).padStart(2, '0')}
+                    </div>
+                    <span className="mt-1 text-[10px] font-bold uppercase tracking-wider text-slate-500">Min</span>
+                  </div>
+                  <span className="text-xl font-black text-slate-400 self-start mt-2">:</span>
+                  <div className="flex flex-col items-center">
+                    <div className="grid h-12 w-12 sm:h-14 sm:w-14 place-content-center rounded-xl bg-slate-900 text-lg sm:text-xl font-black text-white shadow-md">
+                      {String(countdownSecs).padStart(2, '0')}
+                    </div>
+                    <span className="mt-1 text-[10px] font-bold uppercase tracking-wider text-slate-500">Seg</span>
+                  </div>
+                </div>
+                <p className="mt-3 text-xs text-slate-500">
+                  Al finalizar el contador, la oferta volverá a su precio regular de <span className="font-bold text-slate-700">S/ 50</span>.
+                </p>
+              </div>
+            </div>
+
+            {/* Barra inferior de Garantía y Seguridad */}
+            <div className="bg-slate-50/90 border-t border-slate-100 p-4 text-center">
+              <p className="flex items-center justify-center gap-2 text-xs font-semibold text-slate-600">
+                <ShieldCheck className="h-4 w-4 text-emerald-600" />
+                <span>Compra 100% segura • Activación Inmediata • Garantía de Satisfacción</span>
               </p>
-              <p className="mt-1 text-xs font-medium text-slate-600">{item.label}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+            </div>
+          </article>
+        </section>
 
-      {/* 10. PREGUNTAS FRECUENTES (FAQ) */}
-      <section id="faq" className="mx-auto mt-28 w-full max-w-3xl scroll-mt-24">
-        <div className="text-center">
-          <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Preguntas Frecuentes</p>
-          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            Resolvemos todas tus dudas
-          </h2>
-          <p className="mt-2 text-sm text-slate-600">
-            Todo lo que necesitas saber antes de empezar.
-          </p>
-        </div>
+        {/* 9. TESTIMONIOS Y SOCIAL PROOF */}
+        <section className="mx-auto mt-28 w-full max-w-6xl">
+          <div className="text-center">
+            <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Testimonios</p>
+            <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Lo que opinan nuestros <span className="text-indigo-600">usuarios</span>
+            </h2>
+            <p className="mx-auto mt-2 max-w-xl text-sm text-slate-600">
+              Personas reales que ordenaron sus finanzas con FinanzasTrack.
+            </p>
+          </div>
 
-        <div className="mt-8 space-y-3">
-          {faqItems.map((item, index) => {
-            const isOpen = openFaq === index
-
-            return (
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {testimonials.map((t) => (
               <article
-                key={item.question}
-                className={`overflow-hidden rounded-2xl border transition-all duration-200 ${isOpen ? 'border-indigo-200 bg-indigo-50/20 shadow-sm' : 'border-slate-200 bg-white shadow-sm hover:border-slate-300'
-                  }`}
+                key={t.name}
+                className="flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/5"
               >
-                <button
-                  type="button"
-                  className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left transition-colors"
-                  onClick={() => setOpenFaq(isOpen ? -1 : index)}
-                >
-                  <span className="text-sm font-bold text-slate-900">{item.question}</span>
-                  <ChevronDown
-                    className={`h-4 w-4 shrink-0 text-slate-500 transition-transform duration-300 ${isOpen ? 'rotate-180 text-indigo-600' : ''
-                      }`}
-                  />
-                </button>
+                <div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex gap-1 text-amber-400">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-amber-400" />
+                      ))}
+                    </div>
+                    {t.highlight && (
+                      <span className="rounded-full border border-indigo-100 bg-indigo-50/70 px-2.5 py-0.5 text-[10px] font-bold text-indigo-700">
+                        {t.highlight}
+                      </span>
+                    )}
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-slate-700">
+                    "{t.quote}"
+                  </p>
+                </div>
 
-                <div
-                  className={`grid transition-all duration-300 ease-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-                    }`}
-                >
-                  <div className="overflow-hidden">
-                    <p className="border-t border-indigo-100/60 px-6 py-4 text-xs leading-relaxed text-slate-600">
-                      {item.answer}
-                    </p>
+                <div className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-4">
+                  <span className={`grid h-10 w-10 place-content-center rounded-full font-bold text-sm shadow-sm ${t.avatarBg || 'bg-indigo-50 text-indigo-600'}`}>
+                    {t.name.charAt(0)}
+                  </span>
+                  <div>
+                    <p className="text-sm font-bold text-slate-900">{t.name}</p>
+                    <p className="text-xs text-slate-500">{t.role}</p>
                   </div>
                 </div>
               </article>
-            )
-          })}
-        </div>
-      </section>
+            ))}
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {trustStats.map((item) => (
+              <article
+                key={item.label}
+                className="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm"
+              >
+                <p className="text-2xl font-extrabold tracking-tight text-indigo-600 sm:text-3xl">
+                  {item.value}
+                </p>
+                <p className="mt-1 text-xs font-medium text-slate-600">{item.label}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* 10. PREGUNTAS FRECUENTES (FAQ) */}
+        <section id="faq" className="mx-auto mt-28 w-full max-w-3xl scroll-mt-24">
+          <div className="text-center">
+            <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Preguntas Frecuentes</p>
+            <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Resolvemos todas tus dudas
+            </h2>
+            <p className="mt-2 text-sm text-slate-600">
+              Todo lo que necesitas saber antes de empezar.
+            </p>
+          </div>
+
+          <div className="mt-8 space-y-3">
+            {faqItems.map((item, index) => {
+              const isOpen = openFaq === index
+
+              return (
+                <article
+                  key={item.question}
+                  className={`overflow-hidden rounded-2xl border transition-all duration-200 ${isOpen ? 'border-indigo-200 bg-indigo-50/20 shadow-sm' : 'border-slate-200 bg-white shadow-sm hover:border-slate-300'
+                    }`}
+                >
+                  <button
+                    type="button"
+                    className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left transition-colors"
+                    onClick={() => setOpenFaq(isOpen ? -1 : index)}
+                  >
+                    <span className="text-sm font-bold text-slate-900">{item.question}</span>
+                    <ChevronDown
+                      className={`h-4 w-4 shrink-0 text-slate-500 transition-transform duration-300 ${isOpen ? 'rotate-180 text-indigo-600' : ''
+                        }`}
+                    />
+                  </button>
+
+                  <div
+                    className={`grid transition-all duration-300 ease-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                      }`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="border-t border-indigo-100/60 px-6 py-4 text-xs leading-relaxed text-slate-600">
+                        {item.answer}
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              )
+            })}
+          </div>
+        </section>
+      </div>
     </main>
   )
 }
