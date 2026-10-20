@@ -106,7 +106,7 @@ function Footer() {
                 </li>
                 <li className="flex items-center gap-1.5">
                   <Zap className="h-3.5 w-3.5 text-amber-400 shrink-0" />
-                  <span className="truncate">Acceso de por vida • S/ 25</span>
+                  <span className="truncate">Acceso de por vida • S/ 30</span>
                 </li>
               </ul>
 

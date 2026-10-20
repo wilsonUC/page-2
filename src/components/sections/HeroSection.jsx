@@ -29,8 +29,8 @@ import {
 } from 'lucide-react'
 
 const stats = [
-  { value: '100%', label: 'Seguro y Privado', sublabel: 'Cifrado bancario', variant: 'primary' },
-  { value: 'S/ 25', label: 'Acceso completo', sublabel: 'Pago único', variant: 'emerald' },
+  { value: '100%', label: 'Seguro y Privado', sublabel: 'Cifrado bancario', variant: 'emerald' },
+  { value: 'S/ 30', label: 'Acceso completo', sublabel: 'Pago único', variant: 'primary' },
   { value: '24/7', label: 'Siempre Disponible', sublabel: 'Nube en tiempo real', variant: 'emerald' },
 ]
 
@@ -365,47 +365,38 @@ const aiCards = [
 ]
 
 const pricingFeatures = [
-  'Acceso completo a todos los módulos del sistema',
-  'Control ilimitado de ingresos, gastos y ahorros',
-  'Dashboard en tiempo real con gráficos interactivos',
-  'Módulo de presupuestos con gasto rápido',
-  'Metas de ahorro con pool y asignación de fondos',
-  'Gestión de transacciones y pagos recurrentes',
-  'Asistente financiero con Inteligencia Artificial integrada',
-  'Reportes y distribución porcentual por categoría',
-  'Modo oscuro, claro y personalización de preferencias',
-  'Acceso desde cualquier dispositivo (Web Responsive)',
-  'Respaldo automático en la nube 24/7',
-  'Soporte técnico prioritario y actualizaciones continuas',
+  'Acceso completo a los módulos del sistema',
+  'Dashboard en tiempo real con gráficos',
+  'Metas de ahorro y asignación de fondos',
+  'Personalización de modo oscuro y claro',
+  'Control de ingresos, gastos y ahorros',
+  'Acceso desde cualquier dispositivo',
+  'Soporte técnico y actualizaciones continuas',
 ]
 
 const pricingBonuses = [
   {
     icon: BookOpen,
-    title: 'Guía Digital: Cómo Eliminar Gastos Hormiga en 7 Días',
-    description: 'Estrategias paso a paso para identificar y frenar las pequeñas fugas invisibles de dinero sin privarte de tus gustos.',
-    value: 'Valor: S/ 30',
+    title: 'Plantilla de Aprendizaje y Control de finanzas de Cero',
+    description:
+      'Estrategias paso a paso para aprender y maximizar mi ahorro de dinero planificada con el método 50 - 30 - 20.',
+    value: 'Valor: S/ 40',
   },
   {
-    icon: Target,
-    title: 'Planificador de Metas y Fondo de Emergencia de 90 Días',
-    description: 'Hoja de ruta clara para construir tu primer colchón de tranquilidad de 3 meses desde cero.',
-    value: 'Valor: S/ 25',
-  },
-  {
-    icon: Wallet,
-    title: 'Plantilla de Control Financiero para Negocios y Emprendimientos',
-    description: 'Gestiona los flujos de caja, cobros y ventas de tu negocio independiente de tus finanzas personales.',
-    value: 'Valor: S/ 35',
+    icon: MessageCircle,
+    title: 'Asesoría 1:1 sobre Crédito personal',
+    description:
+      'Hoja de ruta clara para construir y/o reparar tu crédito personal en 6 o 12 meses, según tu caso.',
+    value: 'Valor: S/ 50',
   },
 ]
 
 
 const faqItems = [
   {
-    question: '¿El precio de S/ 25 es mensual o es un pago único de por vida?',
+    question: '¿El precio de S/ 30 es mensual o es un pago único de por vida?',
     answer:
-      'Es un pago único. Con un solo abono de S/ 25 obtienes acceso completo y permanente a la plataforma. No cobramos mensualidades, renovaciones obligatorias ni tarifas ocultas.',
+      'Es un pago único. Con un solo abono de S/ 30 obtienes acceso completo y permanente a la plataforma. No cobramos mensualidades, renovaciones obligatorias ni tarifas ocultas.',
   },
   {
     question: '¿Tengo que conectar mis tarjetas o claves bancarias a la plataforma?',
@@ -440,7 +431,7 @@ const faqItems = [
   {
     question: '¿Cómo realizo el pago y cuánto demora la activación de mi cuenta?',
     answer:
-      'El proceso toma menos de 5 minutos. Haces clic en el botón de WhatsApp, coordinamos el pago por Yape o Transferencia Bancaria, te generamos tus credenciales de acceso y puedes empezar a ordenar tus finanzas de inmediato.',
+      'El proceso toma menos de 15 minutos. Haces clic en el botón de WhatsApp, coordinamos el pago por Yape o Transferencia Bancaria, te generamos tus credenciales de acceso y puedes empezar a ordenar tus finanzas de inmediato.',
   },
 ]
 
@@ -463,7 +454,7 @@ const testimonials = [
   },
   {
     quote:
-      'Tengo 8 pagos fijos entre alquiler, internet y préstamos. El sistema de transacciones recurrentes con alertas de corte y atrasos me quitó un peso enorme de encima. Pagué los S/ 25 una sola vez y valió totalmente la pena.',
+      'Tengo 8 pagos fijos entre alquiler, internet y préstamos. El sistema de transacciones recurrentes con alertas de corte y atrasos me quitó un peso enorme de encima. Pagué los S/ 30 una sola vez y valió totalmente la pena.',
     name: 'Jorge Luis Huamán',
     role: 'Ingeniero de Sistemas',
     avatarBg: 'bg-purple-100 text-purple-700',
@@ -582,19 +573,18 @@ function HeroSection() {
           <section id="inicio" className="scroll-mt-24 text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-rose-200/80 bg-white/90 px-4 py-1.5 text-xs font-bold text-rose-700 shadow-sm backdrop-blur-md">
               <Sparkles className="h-3.5 w-3.5 text-rose-600" />
-              <span>¿SIENTES QUE EL DINERO DESAPARECE CADA MES? • TU SOLUCIÓN DEFINITIVA</span>
+              <span>¿SIENTES QUE EL DINERO DESAPARECE CADA MES?</span>
             </div>
 
             <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl md:leading-[1.15]">
-              Deja de preguntarte a dónde se va tu sueldo.{' '}
+              Sistema web de Finanzas Personales.{' '}
               <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-teal-500 bg-clip-text text-transparent">
-                Organiza tus gastos, frena fugas y ahorra
-              </span>{' '}
-              desde el primer día.
+                Deja de preguntarte a dónde se va tu dinero.
+              </span>
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
-              Sin libretas desordenadas ni hojas de Excel complicadas. La plataforma intuitiva con inteligencia artificial que te devuelve la paz mental y el control total de tu dinero en tu celular o PC.
+              La forma más simple de controlar tus ingresos y gastos de la mano con la IA los 365 días. Olvídate de Excel, libretas, hojas complicadas.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row sm:gap-4">
@@ -615,7 +605,7 @@ function HeroSection() {
 
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold text-slate-600">
               <span className="flex items-center gap-1.5 text-emerald-800 bg-emerald-50/90 border border-emerald-200/80 rounded-full px-3 py-1 shadow-sm">
-                <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Pago único de S/ 25
+                <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Pago único de S/ 30
               </span>
               <span className="flex items-center gap-1.5 text-slate-700 bg-white/85 border border-slate-200/80 rounded-full px-3 py-1 shadow-sm">
                 <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Acceso de por vida
@@ -1020,7 +1010,7 @@ function HeroSection() {
                 <span>🎉</span> OFERTA ESPECIAL POR TIEMPO LIMITADO
               </p>
               <h3 className="mt-1 text-2xl md:text-4xl font-extrabold tracking-tight text-white drop-shadow-sm">
-                ¡Aprovecha el 50% de Descuento!
+                ¡Aprovecha el 90% de Descuento!
               </h3>
             </div>
 
@@ -1029,28 +1019,28 @@ function HeroSection() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
                 {/* Tarjeta Precio Normal */}
                 <div className="rounded-2xl border border-slate-200/90 bg-slate-50/80 p-6 text-center flex flex-col justify-center">
-                  <p className="text-xs font-bold uppercase tracking-wider text-slate-400">PRECIO NORMAL</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-slate-400">PRECIO NORMAL - ANUAL</p>
                   <p className="mt-1 text-xs text-slate-500">Sin la oferta</p>
                   <div className="my-2">
                     <span className="text-4xl md:text-5xl font-black text-slate-400 line-through decoration-rose-500 decoration-[3px]">
-                      S/ 50
+                      S/ 300
                     </span>
                   </div>
                   <p className="text-xs font-medium text-slate-500">+ S/ 90 en bonos</p>
                 </div>
 
-                {/* Tarjeta Precio Hoy con 50% OFF */}
+                {/* Tarjeta Precio Hoy con 90% OFF */}
                 <div className="relative rounded-2xl border-2 border-emerald-500 bg-gradient-to-br from-emerald-50/90 via-teal-50/40 to-emerald-100/50 p-6 text-center shadow-lg shadow-emerald-500/10">
                   <div className="absolute top-3.5 right-3.5 rounded-full bg-amber-400 px-3 py-1 text-[11px] font-black uppercase text-amber-950 shadow-sm animate-pulse">
-                    50% OFF
+                    90% OFF
                   </div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-emerald-700">PRECIO HOY</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-emerald-700">PRECIO HOY - ANUAL</p>
                   <p className="mt-1 text-xs text-slate-600">
-                    <span className="line-through text-slate-400">S/ 140</span> (sistema + 3 bonos)
+                    <span className="line-through text-slate-400">S/ 300</span> (sistema + 2 bonos)
                   </p>
                   <div className="my-2 flex items-baseline justify-center gap-1">
                     <span className="text-2xl font-black text-emerald-700">S/</span>
-                    <span className="text-5xl md:text-6xl font-black tracking-tight text-emerald-600">25</span>
+                    <span className="text-5xl md:text-6xl font-black tracking-tight text-emerald-600">30</span>
                   </div>
                   <span className="inline-block text-xs font-bold text-emerald-800 bg-emerald-100/70 border border-emerald-200 px-3 py-0.5 rounded-full">
                     ¡Todo incluido! • Pago único
@@ -1086,7 +1076,7 @@ function HeroSection() {
                   </a>
                 </div>
                 <p className="mt-2.5 text-xs text-slate-500">
-                  Aceptamos Yape, Plin y Transferencia Bancaria • Activación en 2 minutos
+                  Aceptamos Yape, Plin y Transferencia Bancaria • Activación en 15 minutos
                 </p>
               </div>
 
@@ -1108,11 +1098,11 @@ function HeroSection() {
                 </div>
               </div>
 
-              {/* 3 BONOS EXCLUSIVOS GRATIS */}
+              {/* 2 BONOS EXCLUSIVOS GRATIS */}
               <div className="mb-10 pt-8 border-t border-slate-100">
                 <div className="mb-4 flex items-center gap-2 text-base md:text-lg font-extrabold text-slate-900">
                   <span className="text-xl">🎁</span>
-                  <span>+ 3 BONOS EXCLUSIVOS GRATIS:</span>
+                  <span>+ 2 BONOS EXCLUSIVOS GRATIS:</span>
                 </div>
 
                 <div className="space-y-3.5">
@@ -1194,7 +1184,7 @@ function HeroSection() {
                   </div>
                 </div>
                 <p className="mt-3 text-xs text-slate-500">
-                  Al finalizar el contador, la oferta volverá a su precio regular de <span className="font-bold text-slate-700">S/ 50</span>.
+                  Al finalizar el contador, la oferta volverá a su precio regular de <span className="font-bold text-slate-700">S/ 300</span>.
                 </p>
               </div>
             </div>

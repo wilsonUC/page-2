@@ -109,7 +109,7 @@ function Navbar() {
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 py-3 text-center text-sm font-bold text-white shadow-md shadow-indigo-600/30"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <span>Comenzar Ahora • S/ 25</span>
+              <span>Comenzar Ahora • S/ 30</span>
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
