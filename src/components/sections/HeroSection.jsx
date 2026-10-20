@@ -1005,6 +1005,15 @@ function HeroSection() {
             </p>
           </div>
 
+          {/* Mockup de Dispositivos sobre la Oferta */}
+          <div className="relative z-10 mx-auto -mb-6 sm:-mb-8 md:-mb-10 w-full max-w-3xl px-3 flex justify-center">
+            <img
+              src="/dispositivos-png.png"
+              alt="FinanzasTrack en Computadora, Laptop y Celular"
+              className="w-full max-w-[760px] h-auto object-contain drop-shadow-[0_25px_40px_rgba(15,23,42,0.14)] animate-subtle-float"
+            />
+          </div>
+
           {/* Tarjeta de Oferta Estilo MisFinanzasPro con Identidad FinanzasTrack */}
           <article className="rounded-3xl border-2 border-emerald-500/30 bg-white overflow-hidden shadow-2xl shadow-emerald-600/10 transition-all duration-300">
             {/* Cabecera Verde Degradada de Oferta */}
