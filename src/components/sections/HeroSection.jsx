@@ -235,6 +235,8 @@ const appSections = [
     previewBadge: 'Presupuestos • 1 Clic',
     previewGradient: 'from-amber-500/10 via-slate-900/5 to-orange-500/10',
   },
+  /*
+  // Oculto temporalmente: Metas
   {
     id: 'metas',
     tag: 'Sueños Cumplidos',
@@ -255,6 +257,7 @@ const appSections = [
     previewBadge: 'Metas • Pool de Ahorro',
     previewGradient: 'from-violet-500/10 via-slate-900/5 to-purple-500/10',
   },
+  // Oculto temporalmente: Recurrentes
   {
     id: 'recurrentes',
     tag: 'Cero Olvidos',
@@ -275,6 +278,7 @@ const appSections = [
     previewBadge: 'Recurrentes • Días de Corte',
     previewGradient: 'from-purple-500/10 via-slate-900/5 to-indigo-500/10',
   },
+  */
   {
     id: 'reportes',
     tag: 'Claridad Total',
@@ -295,6 +299,8 @@ const appSections = [
     previewBadge: 'Reportes • Donut Charts',
     previewGradient: 'from-blue-500/10 via-slate-900/5 to-cyan-500/10',
   },
+  /*
+  // Oculto temporalmente: Consejos / Salud Financiera
   {
     id: 'consejos',
     tag: 'Salud Financiera',
@@ -315,6 +321,7 @@ const appSections = [
     previewBadge: 'Salud Financiera • Score 0-100',
     previewGradient: 'from-teal-500/10 via-slate-900/5 to-emerald-500/10',
   },
+  */
   {
     id: 'movil',
     tag: 'Siempre Contigo',
@@ -330,7 +337,7 @@ const appSections = [
     ],
     bulletDot: 'bg-[#6366f1]',
     bulletColor: 'text-[#6366f1]',
-    imageLeft: false,
+    imageLeft: true,
     imageSrc: '/capturas/pwa-mobile.jpg',
     previewBadge: 'PWA • Android / iOS',
     previewGradient: 'from-indigo-500/15 via-blue-900/10 to-teal-500/15',
