@@ -28,8 +28,8 @@ function Footer() {
       {/* Línea superior con gradiente de neón */}
       <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-indigo-500 via-teal-400 to-transparent opacity-80" />
 
-      <div className="mx-auto max-w-6xl px-6 py-8">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8 items-start">
+      <div className="mx-auto max-w-6xl px-6 pt-14 pb-12 sm:pt-16 sm:pb-16 md:pt-20 md:pb-20">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10 items-start">
           {/* 1. Columna Marca y Propuesta */}
           <div className="lg:col-span-4">
             <a
@@ -160,10 +160,10 @@ function Footer() {
         </div>
 
         {/* Separador */}
-        <hr className="my-5 border-slate-800/80" />
+        <hr className="my-8 border-slate-800/80" />
 
         {/* Barra Inferior de Derechos */}
-        <div className="flex flex-col items-center justify-between gap-2 text-xs text-slate-500 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-3 text-xs text-slate-500 sm:flex-row pt-1">
           <p className="inline-flex items-center gap-1.5 text-slate-400 text-[11px]">
             <Sparkles className="h-3 w-3 text-teal-400" aria-hidden="true" />
             <span>Tecnología inteligente para el control total de tu dinero</span>

@@ -450,6 +450,7 @@ const testimonials = [
     role: 'Diseñador UI / Freelance',
     avatarBg: 'bg-emerald-100 text-emerald-700',
     highlight: 'Control de gastos diario',
+    image: '/rodrigo-salazar.png',
   },
   {
     quote:
@@ -458,6 +459,7 @@ const testimonials = [
     role: 'Coordinadora de Marketing',
     avatarBg: 'bg-indigo-100 text-indigo-700',
     highlight: 'Metas de ahorro e IA',
+    image: '/valeria-cardenas.png',
   },
   {
     quote:
@@ -466,6 +468,7 @@ const testimonials = [
     role: 'Ingeniero de Sistemas',
     avatarBg: 'bg-purple-100 text-purple-700',
     highlight: 'Gestión de recurrentes',
+    image: '/jorge-luis-huaman.png',
   },
 ]
 
@@ -880,6 +883,332 @@ function HeroSection() {
           </div>
         </section>
 
+        {/* 4.5 WIDGET DE REELS / HISTORIAS ESTILO INSTAGRAM (EMBEDSOCIAL) */}
+        <section id="experiencia-movil" className="mx-auto mt-24 w-full max-w-5xl scroll-mt-24">
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200/90 bg-indigo-50/90 px-4 py-1.5 text-xs font-bold text-indigo-700 shadow-sm">
+              <Sparkles className="h-3.5 w-3.5 text-indigo-600" />
+              <span>MIRA LA APP EN ACCIÓN REAL</span>
+            </span>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
+              Descubre FinanzasTrack{' '}
+              <span className="bg-gradient-to-r from-rose-500 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                en acción directa
+              </span>
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
+              Mira cómo funciona la app en el día a día y conoce el caso real con dinero en efectivo que demuestra cómo poner orden a tus finanzas.
+            </p>
+          </div>
+
+          {/* Carrusel de Stories / Reels con flechas laterales */}
+          <div className="relative mx-auto flex items-center justify-center gap-4 sm:gap-6 py-4">
+            {/* Flecha Izquierda (<) */}
+            <button
+              type="button"
+              onClick={() => handleSlideStories('prev')}
+              className="group/arrow z-30 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.12)] border border-slate-200/90 text-slate-700 transition-all duration-200 hover:scale-110 hover:border-indigo-300 hover:text-indigo-600 hover:shadow-[0_8px_25px_rgba(79,70,229,0.2)] active:scale-95"
+              aria-label="Historia anterior"
+            >
+              <ChevronLeft className="h-6 w-6 stroke-[2.5] transition-transform group-hover/arrow:-translate-x-0.5" />
+            </button>
+
+            {/* Contenedor de las dos Story Cards */}
+            <div className="flex items-center justify-center gap-5 sm:gap-8 w-full">
+              {/* HISTORIA 1: App Móvil (finanzastrack-vertical.mp4) */}
+              <div
+                className={`relative w-full max-w-[280px] sm:max-w-[320px] aspect-[9/16] rounded-[24px] sm:rounded-[28px] overflow-hidden bg-slate-950 shadow-2xl transition-all duration-300 select-none group/story ${
+                  activeStoryIndex === 0 ? 'ring-2 ring-indigo-500/40 scale-100 opacity-100' : 'sm:scale-95 sm:opacity-95'
+                } ${activeStoryIndex === 1 ? 'hidden md:block' : 'block'}`}
+              >
+                {/* Barra de progreso superior estilo Instagram Story */}
+                <div className="absolute top-3 inset-x-3.5 z-30 flex gap-1 pointer-events-none">
+                  <div className="h-1 flex-1 bg-white/35 rounded-full overflow-hidden backdrop-blur-sm">
+                    <div
+                      className="h-full bg-white rounded-full transition-all duration-100 shadow-sm"
+                      style={{ width: `${verticalAppProgress}%` }}
+                    />
+                  </div>
+                </div>
+
+                {/* Cabecera superior: Badge perfil + Logo Instagram + Botón Audio */}
+                <div className="absolute top-6 inset-x-3.5 z-30 flex items-center justify-between">
+                  {/* Pastilla de perfil estilo EmbedSocial / Instagram */}
+                  <div className="flex items-center gap-2 rounded-full bg-white/95 backdrop-blur-md px-3 py-1 shadow-md border border-white/60">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-[#1d4ed8] via-[#0284c7] to-[#2dd4bf] p-1 shadow-sm">
+                      <img src="/v4.svg" alt="FinanzasTrack" className="h-3.5 w-3.5 object-contain" />
+                    </span>
+                    <div className="flex flex-col text-left">
+                      <div className="flex items-center gap-1 leading-none">
+                        <span className="text-[12px] font-bold text-slate-900 tracking-tight">finanzastrack</span>
+                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-[#0095f6]">
+                          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.9 14.7l-4.1-4.1 1.4-1.4 2.7 2.7 6.9-6.9 1.4 1.4-8.3 8.3z" />
+                        </svg>
+                      </div>
+                      <span className="text-[9px] text-slate-500 font-medium leading-tight mt-0.5">App Móvil • 25s</span>
+                    </div>
+                  </div>
+
+                  {/* Icono de Instagram y botón de volumen */}
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      type="button"
+                      onClick={handleToggleVerticalAppMute}
+                      className="flex h-7 w-7 items-center justify-center rounded-full bg-black/60 backdrop-blur-md text-white border border-white/20 hover:bg-black/80 transition-transform active:scale-90"
+                      aria-label={isVerticalAppMuted ? 'Activar sonido' : 'Silenciar sonido'}
+                    >
+                      {isVerticalAppMuted ? (
+                        <VolumeX className="h-3.5 w-3.5 text-rose-300" />
+                      ) : (
+                        <Volume2 className="h-3.5 w-3.5 text-emerald-300" />
+                      )}
+                    </button>
+
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] shadow-md">
+                      <svg className="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Video de fondo a pantalla completa dentro de la card */}
+                <div
+                  className="relative h-full w-full cursor-pointer"
+                  onClick={handleToggleVerticalAppPlay}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      handleToggleVerticalAppPlay()
+                    }
+                  }}
+                  aria-label={isVerticalAppPlaying ? 'Pausar historia' : 'Reproducir historia'}
+                >
+                  <video
+                    ref={verticalAppRef}
+                    src="/finanzastrack-vertical.mp4"
+                    poster="/finanzastrack-vertical-poster.jpg"
+                    playsInline
+                    preload="metadata"
+                    muted={isVerticalAppMuted}
+                    onTimeUpdate={handleVerticalAppTimeUpdate}
+                    onPlay={() => setIsVerticalAppPlaying(true)}
+                    onPause={() => setIsVerticalAppPlaying(false)}
+                    onEnded={() => {
+                      setIsVerticalAppPlaying(false)
+                      setVerticalAppProgress(0)
+                    }}
+                    className="h-full w-full object-cover"
+                  >
+                    Tu navegador no soporta la reproducción de video HTML5.
+                  </video>
+
+                  {/* Botón Central Play cuando está pausado */}
+                  {!isVerticalAppPlaying && (
+                    <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/35 backdrop-blur-[1px] transition-all group-hover/story:bg-black/20">
+                      <div className="relative flex items-center justify-center">
+                        <span className="absolute inline-flex h-16 w-16 animate-ping rounded-full bg-white/40 duration-1000" />
+                        <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-white text-slate-900 shadow-2xl transition-transform duration-300 group-hover/story:scale-110">
+                          <Play className="ml-0.5 h-6 w-6 fill-slate-900 text-slate-900" />
+                        </div>
+                      </div>
+                      <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-white border border-white/20 shadow-md">
+                        <Sparkles className="h-3 w-3 text-teal-300" />
+                        Ver app en celular
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Pie de foto estilo Instagram Reel / Story */}
+                  <div className="absolute bottom-0 inset-x-0 z-20 p-4 pt-10 bg-gradient-to-t from-black/90 via-black/50 to-transparent text-white pointer-events-none">
+                    <div className="flex items-center gap-1.5 mb-1.5">
+                      <span className="inline-block px-2 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold text-white border border-white/30">
+                        📱 PWA Instalable
+                      </span>
+                    </div>
+                    <p className="text-xs text-white/95 leading-relaxed font-medium line-clamp-2">
+                      Navegación táctil y registro en 5 segundos sin fórmulas.
+                      <span className="font-bold text-teal-300 ml-1">#FinanzasTrack #PWA</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* HISTORIA 2: Caso Real con Dinero en Efectivo e IA (finanzastrack.mp4) */}
+              <div
+                className={`relative w-full max-w-[280px] sm:max-w-[320px] aspect-[9/16] rounded-[24px] sm:rounded-[28px] overflow-hidden bg-slate-950 shadow-2xl transition-all duration-300 select-none group/story ${
+                  activeStoryIndex === 1 ? 'ring-2 ring-indigo-500/40 scale-100 opacity-100' : 'sm:scale-95 sm:opacity-95'
+                } ${activeStoryIndex === 0 ? 'hidden md:block' : 'block'}`}
+              >
+                {/* Barra de progreso superior estilo Instagram Story */}
+                <div className="absolute top-3 inset-x-3.5 z-30 flex gap-1 pointer-events-none">
+                  <div className="h-1 flex-1 bg-white/35 rounded-full overflow-hidden backdrop-blur-sm">
+                    <div
+                      className="h-full bg-white rounded-full transition-all duration-100 shadow-sm"
+                      style={{ width: `${realCaseProgress}%` }}
+                    />
+                  </div>
+                </div>
+
+                {/* Cabecera superior: Badge perfil + Logo Instagram + Botón Audio */}
+                <div className="absolute top-6 inset-x-3.5 z-30 flex items-center justify-between">
+                  {/* Pastilla de perfil estilo EmbedSocial / Instagram */}
+                  <div className="flex items-center gap-2 rounded-full bg-white/95 backdrop-blur-md px-3 py-1 shadow-md border border-white/60">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-[#1d4ed8] via-[#0284c7] to-[#2dd4bf] p-1 shadow-sm">
+                      <img src="/v4.svg" alt="FinanzasTrack" className="h-3.5 w-3.5 object-contain" />
+                    </span>
+                    <div className="flex flex-col text-left">
+                      <div className="flex items-center gap-1 leading-none">
+                        <span className="text-[12px] font-bold text-slate-900 tracking-tight">finanzastrack</span>
+                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-[#0095f6]">
+                          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.9 14.7l-4.1-4.1 1.4-1.4 2.7 2.7 6.9-6.9 1.4 1.4-8.3 8.3z" />
+                        </svg>
+                      </div>
+                      <span className="text-[9px] text-slate-500 font-medium leading-tight mt-0.5">Caso Real • 11s</span>
+                    </div>
+                  </div>
+
+                  {/* Icono de Instagram y botón de volumen */}
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      type="button"
+                      onClick={handleToggleRealCaseMute}
+                      className="flex h-7 w-7 items-center justify-center rounded-full bg-black/60 backdrop-blur-md text-white border border-white/20 hover:bg-black/80 transition-transform active:scale-90"
+                      aria-label={isRealCaseMuted ? 'Activar sonido' : 'Silenciar sonido'}
+                    >
+                      {isRealCaseMuted ? (
+                        <VolumeX className="h-3.5 w-3.5 text-rose-300" />
+                      ) : (
+                        <Volume2 className="h-3.5 w-3.5 text-emerald-300" />
+                      )}
+                    </button>
+
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] shadow-md">
+                      <svg className="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Video de fondo a pantalla completa dentro de la card */}
+                <div
+                  className="relative h-full w-full cursor-pointer"
+                  onClick={handleToggleRealCasePlay}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      handleToggleRealCasePlay()
+                    }
+                  }}
+                  aria-label={isRealCasePlaying ? 'Pausar historia' : 'Reproducir historia'}
+                >
+                  <video
+                    ref={realCaseRef}
+                    src="/finanzastrack.mp4"
+                    poster="/finanzastrack-poster.jpg"
+                    playsInline
+                    preload="metadata"
+                    muted={isRealCaseMuted}
+                    onTimeUpdate={handleRealCaseTimeUpdate}
+                    onPlay={() => setIsRealCasePlaying(true)}
+                    onPause={() => setIsRealCasePlaying(false)}
+                    onEnded={() => {
+                      setIsRealCasePlaying(false)
+                      setRealCaseProgress(0)
+                    }}
+                    className="h-full w-full object-cover"
+                  >
+                    Tu navegador no soporta la reproducción de video HTML5.
+                  </video>
+
+                  {/* Botón Central Play cuando está pausado */}
+                  {!isRealCasePlaying && (
+                    <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/35 backdrop-blur-[1px] transition-all group-hover/story:bg-black/20">
+                      <div className="relative flex items-center justify-center">
+                        <span className="absolute inline-flex h-16 w-16 animate-ping rounded-full bg-white/40 duration-1000" />
+                        <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-white text-slate-900 shadow-2xl transition-transform duration-300 group-hover/story:scale-110">
+                          <Play className="ml-0.5 h-6 w-6 fill-slate-900 text-slate-900" />
+                        </div>
+                      </div>
+                      <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-white border border-white/20 shadow-md">
+                        <Sparkles className="h-3 w-3 text-teal-300" />
+                        Ver caso real con IA
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Pie de foto estilo Instagram Reel / Story */}
+                  <div className="absolute bottom-0 inset-x-0 z-20 p-4 pt-10 bg-gradient-to-t from-black/90 via-black/50 to-transparent text-white pointer-events-none">
+                    <div className="flex items-center gap-1.5 mb-1.5">
+                      <span className="inline-block px-2 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold text-white border border-white/30">
+                        💵 Efectivo & Copiloto IA
+                      </span>
+                    </div>
+                    <p className="text-xs text-white/95 leading-relaxed font-medium line-clamp-2">
+                      "Sin datos registrados no hay análisis". Controla tus billetes al instante.
+                      <span className="font-bold text-amber-300 ml-1">#AhorroReal #Finanzas</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Flecha Derecha (>) */}
+            <button
+              type="button"
+              onClick={() => handleSlideStories('next')}
+              className="group/arrow z-30 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.12)] border border-slate-200/90 text-slate-700 transition-all duration-200 hover:scale-110 hover:border-indigo-300 hover:text-indigo-600 hover:shadow-[0_8px_25px_rgba(79,70,229,0.2)] active:scale-95"
+              aria-label="Siguiente historia"
+            >
+              <ChevronRight className="h-6 w-6 stroke-[2.5] transition-transform group-hover/arrow:translate-x-0.5" />
+            </button>
+          </div>
+
+          {/* Indicadores de carrusel para móviles */}
+          <div className="flex md:hidden items-center justify-center gap-2 mt-4">
+            <button
+              type="button"
+              onClick={() => setActiveStoryIndex(0)}
+              className={`h-2 rounded-full transition-all ${
+                activeStoryIndex === 0 ? 'w-6 bg-indigo-600' : 'w-2 bg-slate-300'
+              }`}
+              aria-label="Ver App Móvil"
+            />
+            <button
+              type="button"
+              onClick={() => setActiveStoryIndex(1)}
+              className={`h-2 rounded-full transition-all ${
+                activeStoryIndex === 1 ? 'w-6 bg-indigo-600' : 'w-2 bg-slate-300'
+              }`}
+              aria-label="Ver Caso Real"
+            />
+          </div>
+
+          {/* Banner CTA debajo del widget */}
+          <div className="mt-12 rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 p-6 sm:p-8 text-center text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-5 border border-indigo-500/20">
+            <div className="text-left">
+              <p className="text-base sm:text-lg font-bold text-white">
+                ¿Listo para tener el control total de tu dinero en tu celular y computadora?
+              </p>
+              <p className="text-xs sm:text-sm text-indigo-200/80 mt-1">
+                Plan anual completo por un pago único de S/ 30.
+              </p>
+            </div>
+            <a
+              href="#precio"
+              className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white px-7 py-3.5 text-sm sm:text-base font-bold shadow-lg shadow-emerald-600/30 transition-all hover:-translate-y-0.5"
+            >
+              <span>Quiero Acceder Ahora</span>
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </section>
+
         {/* 5. TABLA COMPARATIVA */}
         <section className="mx-auto mt-24 w-full max-w-6xl">
           <div className="text-center">
@@ -1088,341 +1417,15 @@ function HeroSection() {
           </div>
         </section>
 
-        {/* 7.5 WIDGET DE REELS / HISTORIAS ESTILO INSTAGRAM (EMBEDSOCIAL) */}
-        <section id="experiencia-movil" className="mx-auto mt-28 w-full max-w-5xl scroll-mt-24">
-          <div className="text-center mb-10">
-            <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200/90 bg-indigo-50/90 px-4 py-1.5 text-xs font-bold text-indigo-700 shadow-sm">
-              <Sparkles className="h-3.5 w-3.5 text-indigo-600" />
-              <span>MIRA LA APP EN ACCIÓN REAL</span>
-            </span>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-              Descubre FinanzasTrack{' '}
-              <span className="bg-gradient-to-r from-rose-500 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                en acción directa
-              </span>
-            </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
-              Mira cómo funciona la app en el día a día y conoce el caso real con dinero en efectivo que demuestra cómo poner orden a tus finanzas.
-            </p>
-          </div>
-
-          {/* Carrusel de Stories / Reels con flechas laterales */}
-          <div className="relative mx-auto flex items-center justify-center gap-4 sm:gap-6 py-4">
-            {/* Flecha Izquierda (<) */}
-            <button
-              type="button"
-              onClick={() => handleSlideStories('prev')}
-              className="group/arrow z-30 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.12)] border border-slate-200/90 text-slate-700 transition-all duration-200 hover:scale-110 hover:border-indigo-300 hover:text-indigo-600 hover:shadow-[0_8px_25px_rgba(79,70,229,0.2)] active:scale-95"
-              aria-label="Historia anterior"
-            >
-              <ChevronLeft className="h-6 w-6 stroke-[2.5] transition-transform group-hover/arrow:-translate-x-0.5" />
-            </button>
-
-            {/* Contenedor de las dos Story Cards */}
-            <div className="flex items-center justify-center gap-5 sm:gap-8 w-full">
-              {/* HISTORIA 1: App Móvil (finanzastrack-vertical.mp4) */}
-              <div
-                className={`relative w-full max-w-[280px] sm:max-w-[320px] aspect-[9/16] rounded-[24px] sm:rounded-[28px] overflow-hidden bg-slate-950 shadow-2xl transition-all duration-300 select-none group/story ${
-                  activeStoryIndex === 0 ? 'ring-2 ring-indigo-500/40 scale-100 opacity-100' : 'sm:scale-95 sm:opacity-95'
-                } ${activeStoryIndex === 1 ? 'hidden md:block' : 'block'}`}
-              >
-                {/* Barra de progreso superior estilo Instagram Story */}
-                <div className="absolute top-3 inset-x-3.5 z-30 flex gap-1 pointer-events-none">
-                  <div className="h-1 flex-1 bg-white/35 rounded-full overflow-hidden backdrop-blur-sm">
-                    <div
-                      className="h-full bg-white rounded-full transition-all duration-100 shadow-sm"
-                      style={{ width: `${verticalAppProgress}%` }}
-                    />
-                  </div>
-                </div>
-
-                {/* Cabecera superior: Badge perfil + Logo Instagram + Botón Audio */}
-                <div className="absolute top-6 inset-x-3.5 z-30 flex items-center justify-between">
-                  {/* Pastilla de perfil estilo EmbedSocial / Instagram */}
-                  <div className="flex items-center gap-2 rounded-full bg-white/95 backdrop-blur-md px-3 py-1 shadow-md border border-white/60">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-[#1d4ed8] via-[#0284c7] to-[#2dd4bf] p-1 shadow-sm">
-                      <img src="/v4.svg" alt="FinanzasTrack" className="h-3.5 w-3.5 object-contain" />
-                    </span>
-                    <div className="flex flex-col text-left">
-                      <div className="flex items-center gap-1 leading-none">
-                        <span className="text-[12px] font-bold text-slate-900 tracking-tight">finanzastrack</span>
-                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-[#0095f6]">
-                          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.9 14.7l-4.1-4.1 1.4-1.4 2.7 2.7 6.9-6.9 1.4 1.4-8.3 8.3z" />
-                        </svg>
-                      </div>
-                      <span className="text-[9px] text-slate-500 font-medium leading-tight mt-0.5">App Móvil • 25s</span>
-                    </div>
-                  </div>
-
-                  {/* Icono de Instagram y botón de volumen */}
-                  <div className="flex items-center gap-1.5">
-                    <button
-                      type="button"
-                      onClick={handleToggleVerticalAppMute}
-                      className="flex h-7 w-7 items-center justify-center rounded-full bg-black/60 backdrop-blur-md text-white border border-white/20 hover:bg-black/80 transition-transform active:scale-90"
-                      aria-label={isVerticalAppMuted ? 'Activar sonido' : 'Silenciar sonido'}
-                    >
-                      {isVerticalAppMuted ? (
-                        <VolumeX className="h-3.5 w-3.5 text-rose-300" />
-                      ) : (
-                        <Volume2 className="h-3.5 w-3.5 text-emerald-300" />
-                      )}
-                    </button>
-
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] shadow-md">
-                      <svg className="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-
-                {/* Video de fondo a pantalla completa dentro de la card */}
-                <div
-                  className="relative h-full w-full cursor-pointer"
-                  onClick={handleToggleVerticalAppPlay}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault()
-                      handleToggleVerticalAppPlay()
-                    }
-                  }}
-                  aria-label={isVerticalAppPlaying ? 'Pausar historia' : 'Reproducir historia'}
-                >
-                  <video
-                    ref={verticalAppRef}
-                    src="/finanzastrack-vertical.mp4"
-                    poster="/finanzastrack-vertical-poster.jpg"
-                    playsInline
-                    preload="metadata"
-                    muted={isVerticalAppMuted}
-                    onTimeUpdate={handleVerticalAppTimeUpdate}
-                    onPlay={() => setIsVerticalAppPlaying(true)}
-                    onPause={() => setIsVerticalAppPlaying(false)}
-                    onEnded={() => {
-                      setIsVerticalAppPlaying(false)
-                      setVerticalAppProgress(0)
-                    }}
-                    className="h-full w-full object-cover"
-                  >
-                    Tu navegador no soporta la reproducción de video HTML5.
-                  </video>
-
-                  {/* Botón Central Play cuando está pausado */}
-                  {!isVerticalAppPlaying && (
-                    <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/35 backdrop-blur-[1px] transition-all group-hover/story:bg-black/20">
-                      <div className="relative flex items-center justify-center">
-                        <span className="absolute inline-flex h-16 w-16 animate-ping rounded-full bg-white/40 duration-1000" />
-                        <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-white text-slate-900 shadow-2xl transition-transform duration-300 group-hover/story:scale-110">
-                          <Play className="ml-0.5 h-6 w-6 fill-slate-900 text-slate-900" />
-                        </div>
-                      </div>
-                      <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-white border border-white/20 shadow-md">
-                        <Sparkles className="h-3 w-3 text-teal-300" />
-                        Ver app en celular
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Pie de foto estilo Instagram Reel / Story */}
-                  <div className="absolute bottom-0 inset-x-0 z-20 p-4 pt-10 bg-gradient-to-t from-black/90 via-black/50 to-transparent text-white pointer-events-none">
-                    <div className="flex items-center gap-1.5 mb-1.5">
-                      <span className="inline-block px-2 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold text-white border border-white/30">
-                        📱 PWA Instalable
-                      </span>
-                    </div>
-                    <p className="text-xs text-white/95 leading-relaxed font-medium line-clamp-2">
-                      Navegación táctil y registro en 5 segundos sin fórmulas.
-                      <span className="font-bold text-teal-300 ml-1">#FinanzasTrack #PWA</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* HISTORIA 2: Caso Real con Dinero en Efectivo e IA (finanzastrack.mp4) */}
-              <div
-                className={`relative w-full max-w-[280px] sm:max-w-[320px] aspect-[9/16] rounded-[24px] sm:rounded-[28px] overflow-hidden bg-slate-950 shadow-2xl transition-all duration-300 select-none group/story ${
-                  activeStoryIndex === 1 ? 'ring-2 ring-indigo-500/40 scale-100 opacity-100' : 'sm:scale-95 sm:opacity-95'
-                } ${activeStoryIndex === 0 ? 'hidden md:block' : 'block'}`}
-              >
-                {/* Barra de progreso superior estilo Instagram Story */}
-                <div className="absolute top-3 inset-x-3.5 z-30 flex gap-1 pointer-events-none">
-                  <div className="h-1 flex-1 bg-white/35 rounded-full overflow-hidden backdrop-blur-sm">
-                    <div
-                      className="h-full bg-white rounded-full transition-all duration-100 shadow-sm"
-                      style={{ width: `${realCaseProgress}%` }}
-                    />
-                  </div>
-                </div>
-
-                {/* Cabecera superior: Badge perfil + Logo Instagram + Botón Audio */}
-                <div className="absolute top-6 inset-x-3.5 z-30 flex items-center justify-between">
-                  {/* Pastilla de perfil estilo EmbedSocial / Instagram */}
-                  <div className="flex items-center gap-2 rounded-full bg-white/95 backdrop-blur-md px-3 py-1 shadow-md border border-white/60">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-[#1d4ed8] via-[#0284c7] to-[#2dd4bf] p-1 shadow-sm">
-                      <img src="/v4.svg" alt="FinanzasTrack" className="h-3.5 w-3.5 object-contain" />
-                    </span>
-                    <div className="flex flex-col text-left">
-                      <div className="flex items-center gap-1 leading-none">
-                        <span className="text-[12px] font-bold text-slate-900 tracking-tight">finanzastrack</span>
-                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-[#0095f6]">
-                          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.9 14.7l-4.1-4.1 1.4-1.4 2.7 2.7 6.9-6.9 1.4 1.4-8.3 8.3z" />
-                        </svg>
-                      </div>
-                      <span className="text-[9px] text-slate-500 font-medium leading-tight mt-0.5">Caso Real • 41s</span>
-                    </div>
-                  </div>
-
-                  {/* Icono de Instagram y botón de volumen */}
-                  <div className="flex items-center gap-1.5">
-                    <button
-                      type="button"
-                      onClick={handleToggleRealCaseMute}
-                      className="flex h-7 w-7 items-center justify-center rounded-full bg-black/60 backdrop-blur-md text-white border border-white/20 hover:bg-black/80 transition-transform active:scale-90"
-                      aria-label={isRealCaseMuted ? 'Activar sonido' : 'Silenciar sonido'}
-                    >
-                      {isRealCaseMuted ? (
-                        <VolumeX className="h-3.5 w-3.5 text-rose-300" />
-                      ) : (
-                        <Volume2 className="h-3.5 w-3.5 text-emerald-300" />
-                      )}
-                    </button>
-
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] shadow-md">
-                      <svg className="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-
-                {/* Video de fondo a pantalla completa dentro de la card */}
-                <div
-                  className="relative h-full w-full cursor-pointer"
-                  onClick={handleToggleRealCasePlay}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault()
-                      handleToggleRealCasePlay()
-                    }
-                  }}
-                  aria-label={isRealCasePlaying ? 'Pausar historia' : 'Reproducir historia'}
-                >
-                  <video
-                    ref={realCaseRef}
-                    src="/finanzastrack.mp4"
-                    poster="/finanzastrack-poster.jpg"
-                    playsInline
-                    preload="metadata"
-                    muted={isRealCaseMuted}
-                    onTimeUpdate={handleRealCaseTimeUpdate}
-                    onPlay={() => setIsRealCasePlaying(true)}
-                    onPause={() => setIsRealCasePlaying(false)}
-                    onEnded={() => {
-                      setIsRealCasePlaying(false)
-                      setRealCaseProgress(0)
-                    }}
-                    className="h-full w-full object-cover"
-                  >
-                    Tu navegador no soporta la reproducción de video HTML5.
-                  </video>
-
-                  {/* Botón Central Play cuando está pausado */}
-                  {!isRealCasePlaying && (
-                    <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/35 backdrop-blur-[1px] transition-all group-hover/story:bg-black/20">
-                      <div className="relative flex items-center justify-center">
-                        <span className="absolute inline-flex h-16 w-16 animate-ping rounded-full bg-white/40 duration-1000" />
-                        <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-white text-slate-900 shadow-2xl transition-transform duration-300 group-hover/story:scale-110">
-                          <Play className="ml-0.5 h-6 w-6 fill-slate-900 text-slate-900" />
-                        </div>
-                      </div>
-                      <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-white border border-white/20 shadow-md">
-                        <Sparkles className="h-3 w-3 text-teal-300" />
-                        Ver caso real con IA
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Pie de foto estilo Instagram Reel / Story */}
-                  <div className="absolute bottom-0 inset-x-0 z-20 p-4 pt-10 bg-gradient-to-t from-black/90 via-black/50 to-transparent text-white pointer-events-none">
-                    <div className="flex items-center gap-1.5 mb-1.5">
-                      <span className="inline-block px-2 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold text-white border border-white/30">
-                        💵 Efectivo & Copiloto IA
-                      </span>
-                    </div>
-                    <p className="text-xs text-white/95 leading-relaxed font-medium line-clamp-2">
-                      "Sin datos registrados no hay análisis". Controla tus billetes al instante.
-                      <span className="font-bold text-amber-300 ml-1">#AhorroReal #Finanzas</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Flecha Derecha (>) */}
-            <button
-              type="button"
-              onClick={() => handleSlideStories('next')}
-              className="group/arrow z-30 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.12)] border border-slate-200/90 text-slate-700 transition-all duration-200 hover:scale-110 hover:border-indigo-300 hover:text-indigo-600 hover:shadow-[0_8px_25px_rgba(79,70,229,0.2)] active:scale-95"
-              aria-label="Siguiente historia"
-            >
-              <ChevronRight className="h-6 w-6 stroke-[2.5] transition-transform group-hover/arrow:translate-x-0.5" />
-            </button>
-          </div>
-
-          {/* Indicadores de carrusel para móviles */}
-          <div className="flex md:hidden items-center justify-center gap-2 mt-4">
-            <button
-              type="button"
-              onClick={() => setActiveStoryIndex(0)}
-              className={`h-2 rounded-full transition-all ${
-                activeStoryIndex === 0 ? 'w-6 bg-indigo-600' : 'w-2 bg-slate-300'
-              }`}
-              aria-label="Ver App Móvil"
-            />
-            <button
-              type="button"
-              onClick={() => setActiveStoryIndex(1)}
-              className={`h-2 rounded-full transition-all ${
-                activeStoryIndex === 1 ? 'w-6 bg-indigo-600' : 'w-2 bg-slate-300'
-              }`}
-              aria-label="Ver Caso Real"
-            />
-          </div>
-
-          {/* Banner CTA debajo del widget */}
-          <div className="mt-12 rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 p-6 sm:p-8 text-center text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-5 border border-indigo-500/20">
-            <div className="text-left">
-              <p className="text-base sm:text-lg font-bold text-white">
-                ¿Listo para tener el control total de tu dinero en tu celular y computadora?
-              </p>
-              <p className="text-xs sm:text-sm text-indigo-200/80 mt-1">
-                Acceso completo e ilimitado de por vida por un pago único de S/ 30.
-              </p>
-            </div>
-            <a
-              href="#precio"
-              className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white px-7 py-3.5 text-sm sm:text-base font-bold shadow-lg shadow-emerald-600/30 transition-all hover:-translate-y-0.5"
-            >
-              <span>Quiero Acceder Ahora</span>
-              <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
-        </section>
-
         {/* 8. PRECIO Y OFERTA */}
         <section id="precio" className="mx-auto mt-28 w-full max-w-4xl scroll-mt-24">
           <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1 text-xs font-bold text-emerald-700 shadow-sm">
-              <Zap className="h-3.5 w-3.5 text-emerald-600" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-indigo-200 bg-indigo-50 px-3.5 py-1 text-xs font-bold text-indigo-700 shadow-sm">
+              <Zap className="h-3.5 w-3.5 text-indigo-600" />
               ACCESO COMPLETO Y PERMANENTE
             </span>
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-              Invierte una sola vez, <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">ahorra toda la vida</span>
+              Invierte una sola vez, <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 bg-clip-text text-transparent">ahorra toda la vida</span>
             </h2>
             <p className="mt-2.5 text-sm md:text-base text-slate-600">
               Sin mensualidades, sin renovaciones obligatorias ni tarifas ocultas.
@@ -1430,18 +1433,18 @@ function HeroSection() {
           </div>
 
           {/* Mockup de Dispositivos sobre la Oferta */}
-          <div className="relative z-10 mx-auto -mb-6 sm:-mb-8 md:-mb-10 w-full max-w-3xl px-3 flex justify-center">
+          <div className="relative z-10 mx-auto mt-6 mb-6 sm:mb-8 w-full max-w-3xl px-3 flex justify-center">
             <img
-              src="/dispositivos-png.png"
+              src="/device-group1.png"
               alt="FinanzasTrack en Computadora, Laptop y Celular"
               className="w-full max-w-[760px] h-auto object-contain drop-shadow-[0_25px_40px_rgba(15,23,42,0.14)] animate-subtle-float"
             />
           </div>
 
-          {/* Tarjeta de Oferta Estilo MisFinanzasPro con Identidad FinanzasTrack */}
-          <article className="rounded-3xl border-2 border-emerald-500/30 bg-white overflow-hidden shadow-2xl shadow-emerald-600/10 transition-all duration-300">
-            {/* Cabecera Verde Degradada de Oferta */}
-            <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 p-6 sm:p-7 text-center text-white relative overflow-hidden">
+          {/* Tarjeta de Oferta con Identidad Oficial FinanzasTrack */}
+          <article className="rounded-3xl border-2 border-indigo-200/80 bg-white overflow-hidden shadow-2xl shadow-indigo-600/10 transition-all duration-300">
+            {/* Cabecera Degradada con Paleta Oficial FinanzasTrack */}
+            <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 p-6 sm:p-7 text-center text-white relative overflow-hidden">
               <span
                 className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-[logo-shine_4s_infinite]"
                 aria-hidden="true"
@@ -1470,19 +1473,19 @@ function HeroSection() {
                 </div>
 
                 {/* Tarjeta Precio Hoy con 90% OFF */}
-                <div className="relative rounded-2xl border-2 border-emerald-500 bg-gradient-to-br from-emerald-50/90 via-teal-50/40 to-emerald-100/50 p-6 text-center shadow-lg shadow-emerald-500/10">
+                <div className="relative rounded-2xl border-2 border-indigo-500 bg-gradient-to-br from-indigo-50/90 via-blue-50/40 to-teal-50/50 p-6 text-center shadow-lg shadow-indigo-500/10">
                   <div className="absolute top-3.5 right-3.5 rounded-full bg-amber-400 px-3 py-1 text-[11px] font-black uppercase text-amber-950 shadow-sm animate-pulse">
                     90% OFF
                   </div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-emerald-700">PRECIO HOY - ANUAL</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-indigo-700">PRECIO HOY - ANUAL</p>
                   <p className="mt-1 text-xs text-slate-600">
                     <span className="line-through text-slate-400">S/ 300</span> (sistema + 2 bonos)
                   </p>
                   <div className="my-2 flex items-baseline justify-center gap-1">
-                    <span className="text-2xl font-black text-emerald-700">S/</span>
-                    <span className="text-5xl md:text-6xl font-black tracking-tight text-emerald-600">30</span>
+                    <span className="text-2xl font-black text-indigo-700">S/</span>
+                    <span className="text-5xl md:text-6xl font-black tracking-tight text-indigo-600">30</span>
                   </div>
-                  <span className="inline-block text-xs font-bold text-emerald-800 bg-emerald-100/70 border border-emerald-200 px-3 py-0.5 rounded-full">
+                  <span className="inline-block text-xs font-bold text-indigo-800 bg-indigo-100/70 border border-indigo-200 px-3 py-0.5 rounded-full">
                     ¡Todo incluido! • Plan Anual
                   </span>
                 </div>
@@ -1494,13 +1497,13 @@ function HeroSection() {
                   href="https://wa.me/51980570301?text=%C2%A1Hola!%20FinanzasTrack%20deseo%20mi%20acceso%20a%20la%20app%20."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex flex-col items-center justify-center w-full sm:w-auto rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-600 hover:from-emerald-700 hover:to-teal-700 text-white px-10 py-4.5 shadow-xl shadow-emerald-600/30 transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-600/40 active:translate-y-0"
+                  className="group inline-flex flex-col items-center justify-center w-full sm:w-auto rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 hover:from-blue-700 hover:via-indigo-700 hover:to-teal-600 text-white px-10 py-4.5 shadow-xl shadow-indigo-600/30 transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-600/40 active:translate-y-0"
                 >
                   <div className="flex items-center justify-center gap-2.5 text-lg sm:text-xl font-extrabold tracking-wide">
                     <Sparkles className="h-5 w-5 fill-white stroke-none" />
                     <span>OBTENER ESTA OFERTA AHORA →</span>
                   </div>
-                  <span className="text-xs font-medium text-emerald-100 mt-1">
+                  <span className="text-xs font-medium text-indigo-100 mt-1">
                     Haz clic aquí • Activación inmediata vía WhatsApp
                   </span>
                 </a>
@@ -1523,13 +1526,13 @@ function HeroSection() {
               {/* Lista: Lo que incluye tu compra */}
               <div className="mb-10">
                 <h4 className="flex items-center gap-2 text-base md:text-lg font-bold text-slate-900 mb-4">
-                  <Check className="h-5 w-5 text-emerald-600 stroke-[3]" />
+                  <Check className="h-5 w-5 text-indigo-600 stroke-[3]" />
                   <span>Lo que incluye tu acceso completo:</span>
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {pricingFeatures.map((f) => (
                     <div key={f} className="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
-                      <span className="grid h-5 w-5 place-content-center rounded-full bg-emerald-100/80 text-emerald-700 shrink-0 mt-0.5">
+                      <span className="grid h-5 w-5 place-content-center rounded-full bg-indigo-100/80 text-indigo-700 shrink-0 mt-0.5">
                         <Check className="h-3.5 w-3.5 stroke-[3]" />
                       </span>
                       <span>{f}</span>
@@ -1570,7 +1573,7 @@ function HeroSection() {
                 <p className="mt-4 text-center text-xs sm:text-sm text-slate-600">
                   Valor total de los bonos:{' '}
                   <span className="line-through font-bold text-slate-400">S/ 200</span>{' '}
-                  <span className="font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-md ml-1">
+                  <span className="font-extrabold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2.5 py-0.5 rounded-md ml-1">
                     ¡GRATIS HOY CON TU ACCESO!
                   </span>
                 </p>
@@ -1579,13 +1582,13 @@ function HeroSection() {
               {/* Badges de Confianza */}
               <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 pt-6 pb-2 border-t border-slate-100 text-xs sm:text-sm font-bold text-slate-700">
                 <span className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-600 stroke-[3]" /> UN SOLO PAGO AL AÑO
+                  <Check className="h-4 w-4 text-indigo-600 stroke-[3]" /> UN SOLO PAGO AL AÑO
                 </span>
                 <span className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-600 stroke-[3]" /> ACTIVACIÓN INMEDIATA
+                  <Check className="h-4 w-4 text-indigo-600 stroke-[3]" /> ACTIVACIÓN INMEDIATA
                 </span>
                 <span className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-600 stroke-[3]" /> ACCESO ANUAL COMPLETO
+                  <Check className="h-4 w-4 text-indigo-600 stroke-[3]" /> ACCESO ANUAL COMPLETO
                 </span>
               </div>
 
@@ -1630,9 +1633,9 @@ function HeroSection() {
             </div>
 
             {/* Barra inferior de Garantía y Seguridad */}
-            <div className="bg-slate-50/90 border-t border-slate-100 p-4 text-center">
-              <p className="flex items-center justify-center gap-2 text-xs font-semibold text-slate-600">
-                <ShieldCheck className="h-4 w-4 text-emerald-600" />
+            <div className="bg-slate-50/90 border-t border-slate-100 px-4 pt-4 pb-7 sm:pb-8 text-center rounded-b-3xl">
+              <p className="flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-slate-600">
+                <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
                 <span>Compra 100% segura • Activación Inmediata • Garantía de Satisfacción</span>
               </p>
             </div>
@@ -1651,21 +1654,33 @@ function HeroSection() {
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="mt-16 grid grid-cols-1 gap-12 sm:gap-14 md:grid-cols-3 md:gap-6 pt-4">
             {testimonials.map((t) => (
               <article
                 key={t.name}
-                className="flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/5"
+                className="relative flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 pt-12 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/5"
               >
+                {/* Avatar flotante centrado sobre el borde superior */}
+                <div className="absolute -top-11 left-1/2 -translate-x-1/2">
+                  <div className="relative h-22 w-22 sm:h-24 sm:w-24 overflow-hidden rounded-full border-4 border-white shadow-lg bg-slate-100">
+                    <img
+                      src={t.image}
+                      alt={t.name}
+                      className="h-full w-full object-cover object-center"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
                 <div>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-2">
                     <div className="flex gap-1 text-amber-400">
                       {Array.from({ length: 5 }).map((_, i) => (
                         <Star key={i} className="h-4 w-4 fill-amber-400" />
                       ))}
                     </div>
                     {t.highlight && (
-                      <span className="rounded-full border border-indigo-100 bg-indigo-50/70 px-2.5 py-0.5 text-[10px] font-bold text-indigo-700">
+                      <span className="rounded-full border border-indigo-100 bg-indigo-50/70 px-2.5 py-0.5 text-[10px] font-bold text-indigo-700 whitespace-nowrap">
                         {t.highlight}
                       </span>
                     )}
@@ -1676,7 +1691,7 @@ function HeroSection() {
                 </div>
 
                 <div className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-4">
-                  <span className={`grid h-10 w-10 place-content-center rounded-full font-bold text-sm shadow-sm ${t.avatarBg || 'bg-indigo-50 text-indigo-600'}`}>
+                  <span className={`grid h-10 w-10 shrink-0 place-content-center rounded-full font-bold text-sm shadow-sm ${t.avatarBg || 'bg-indigo-50 text-indigo-600'}`}>
                     {t.name.charAt(0)}
                   </span>
                   <div>
@@ -1704,7 +1719,7 @@ function HeroSection() {
         </section>
 
         {/* 10. PREGUNTAS FRECUENTES (FAQ) */}
-        <section id="faq" className="mx-auto mt-28 w-full max-w-3xl scroll-mt-24">
+        <section id="faq" className="mx-auto mt-28 mb-12 sm:mb-16 w-full max-w-3xl scroll-mt-24">
           <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Preguntas Frecuentes</p>
             <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
