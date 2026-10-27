@@ -392,23 +392,23 @@ const pricingBonuses = [
     title: 'Plantilla de Aprendizaje y Control de finanzas de Cero',
     description:
       'Estrategias paso a paso para aprender y maximizar mi ahorro de dinero planificada con el método 50 - 30 - 20.',
-    value: 'Valor: S/ 40',
+    value: 'Valor: S/ 30',
   },
   {
     icon: MessageCircle,
     title: 'Asesoría 1:1 sobre Crédito personal',
     description:
       'Hoja de ruta clara para construir y/o reparar tu crédito personal en 6 o 12 meses, según tu caso.',
-    value: 'Valor: S/ 50',
+    value: 'Valor: S/ 170',
   },
 ]
 
 
 const faqItems = [
   {
-    question: '¿El precio de S/ 30 es mensual o es un pago único de por vida?',
+    question: '¿El precio de S/ 30 es mensual o es un plan anual?',
     answer:
-      'Es un pago único. Con un solo abono de S/ 30 obtienes acceso completo y permanente a la plataforma. No cobramos mensualidades, renovaciones obligatorias ni tarifas ocultas.',
+      'El precio de promoción de S/ 30 corresponde a un plan anual (acceso completo durante 1 año / 12 meses). No cobramos mensualidades: con un solo pago de S/ 30 disfrutas de acceso a toda la plataforma, bonos y actualizaciones durante todo el año.',
   },
   {
     question: '¿Tengo que conectar mis tarjetas o claves bancarias a la plataforma?',
@@ -429,11 +429,6 @@ const faqItems = [
     question: '¿Cómo me ayuda el sistema a no gastar de más en el mes?',
     answer:
       'El sistema calcula automáticamente tu "Balance Disponible", descontando tus gastos fijos y el dinero que decides apartar en Ahorros y Metas. Además, cada categoría de Presupuesto tiene barras de progreso visuales y alertas que te avisan antes de que superes tu límite mensual.',
-  },
-  {
-    question: '¿Cómo gestiona los pagos fijos y suscripciones recurrentes?',
-    answer:
-      'En el módulo de Recurrentes configuras tus gastos periódicos (alquiler, luz, agua, internet, streaming) con su día de corte. La app te alerta en el Dashboard cuando una cuenta está próxima a vencer o atrasada, y te permite marcarlas como pagadas o registrar abonos parciales.',
   },
   {
     question: '¿Qué diferencia a FinanzasTrack de una plantilla de Excel o Google Sheets?',
@@ -709,10 +704,10 @@ function HeroSection() {
 
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold text-slate-600">
               <span className="flex items-center gap-1.5 text-emerald-800 bg-emerald-50/90 border border-emerald-200/80 rounded-full px-3 py-1 shadow-sm">
-                <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Pago único de S/ 30
+                <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Plan Anual S/ 30
               </span>
               <span className="flex items-center gap-1.5 text-slate-700 bg-white/85 border border-slate-200/80 rounded-full px-3 py-1 shadow-sm">
-                <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Acceso de por vida
+                <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Acceso anual completo
               </span>
               <span className="flex items-center gap-1.5 text-slate-700 bg-white/85 border border-slate-200/80 rounded-full px-3 py-1 shadow-sm">
                 <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Sin mensualidades
@@ -1471,7 +1466,7 @@ function HeroSection() {
                       S/ 300
                     </span>
                   </div>
-                  <p className="text-xs font-medium text-slate-500">+ S/ 90 en bonos</p>
+                  <p className="text-xs font-medium text-slate-500">+ S/ 200 en bonos</p>
                 </div>
 
                 {/* Tarjeta Precio Hoy con 90% OFF */}
@@ -1488,7 +1483,7 @@ function HeroSection() {
                     <span className="text-5xl md:text-6xl font-black tracking-tight text-emerald-600">30</span>
                   </div>
                   <span className="inline-block text-xs font-bold text-emerald-800 bg-emerald-100/70 border border-emerald-200 px-3 py-0.5 rounded-full">
-                    ¡Todo incluido! • Pago único
+                    ¡Todo incluido! • Plan Anual
                   </span>
                 </div>
               </div>
@@ -1574,7 +1569,7 @@ function HeroSection() {
 
                 <p className="mt-4 text-center text-xs sm:text-sm text-slate-600">
                   Valor total de los bonos:{' '}
-                  <span className="line-through font-bold text-slate-400">S/ 90</span>{' '}
+                  <span className="line-through font-bold text-slate-400">S/ 200</span>{' '}
                   <span className="font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-md ml-1">
                     ¡GRATIS HOY CON TU ACCESO!
                   </span>
@@ -1584,13 +1579,13 @@ function HeroSection() {
               {/* Badges de Confianza */}
               <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 pt-6 pb-2 border-t border-slate-100 text-xs sm:text-sm font-bold text-slate-700">
                 <span className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-600 stroke-[3]" /> UN SOLO PAGO
+                  <Check className="h-4 w-4 text-emerald-600 stroke-[3]" /> UN SOLO PAGO AL AÑO
                 </span>
                 <span className="flex items-center gap-2">
                   <Check className="h-4 w-4 text-emerald-600 stroke-[3]" /> ACTIVACIÓN INMEDIATA
                 </span>
                 <span className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-600 stroke-[3]" /> ACCESO DE POR VIDA
+                  <Check className="h-4 w-4 text-emerald-600 stroke-[3]" /> ACCESO ANUAL COMPLETO
                 </span>
               </div>
 
