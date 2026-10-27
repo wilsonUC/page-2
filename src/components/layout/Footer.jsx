@@ -64,7 +64,7 @@ function Footer() {
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-md border border-slate-800 bg-slate-900/90 px-2 py-1 shadow-sm">
                 <Smartphone className="h-3.5 w-3.5 text-indigo-400" />
-                <span className="font-medium">PWA Web & Móvil</span>
+                <span className="font-medium">App Web & Móvil</span>
               </span>
             </div>
           </div>

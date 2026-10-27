@@ -123,7 +123,7 @@ const benefits = [
   {
     title: 'Disponible en tu celular, tablet y computadora',
     description:
-      'App instalable (PWA) con navegación táctil nativa, soporte completo para Modo Oscuro/Claro y visualización compacta opcional.',
+      'Instálala en tu celular como una app nativa con navegación táctil, soporte completo para Modo Oscuro/Claro y visualización compacta opcional.',
     badge: 'Multi-dispositivo',
     badgeColor: 'bg-slate-200 text-slate-800 border-slate-300',
     icon: Smartphone,
@@ -143,7 +143,7 @@ const benefits = [
 ]
 
 const comparisonRows = [
-  { feature: 'Acceso desde celular, tablet y PC (PWA instalable)', finanzasTrack: true, excel: true, notebook: false },
+  { feature: 'Acceso desde celular, tablet y PC (App instalable)', finanzasTrack: true, excel: true, notebook: false },
   { feature: 'Dashboard en vivo con 5 métricas de balance automático', finanzasTrack: true, excel: false, notebook: false },
   { feature: 'Control de presupuestos y gasto rápido en 1 clic', finanzasTrack: true, excel: false, notebook: false },
   { feature: 'Metas de ahorro con pool global y fechas estimadas', finanzasTrack: true, excel: false, notebook: false },
@@ -344,7 +344,7 @@ const appSections = [
     bulletColor: 'text-[#6366f1]',
     imageLeft: true,
     imageSrc: '/capturas/pwa-mobile.jpg',
-    previewBadge: 'PWA • Android / iOS',
+    previewBadge: 'App Móvil • Android / iOS',
     previewGradient: 'from-indigo-500/15 via-blue-900/10 to-teal-500/15',
   },
 ]
@@ -423,7 +423,7 @@ const faqItems = [
   {
     question: '¿Cómo se instala en mi celular (Android / iPhone) y computadora?',
     answer:
-      'FinanzasTrack es una Aplicación Web Progresiva (PWA). Al ingresar desde Chrome en Android o Safari en iPhone, seleccionas "Agregar a la pantalla principal" o "Instalar App". Funciona como una aplicación nativa, con carga ultra rápida y sin ocupar espacio en la memoria de tu teléfono.',
+      'Es muy fácil y no requiere descargas pesadas. Al ingresar desde tu navegador (Chrome en Android o Safari en iPhone), solo seleccionas "Agregar a la pantalla de inicio" o "Instalar". Se guarda directamente en tu celular como cualquier otra app, con carga ultra rápida y sin ocupar memoria de tu teléfono.',
   },
   {
     question: '¿Cómo me ayuda el sistema a no gastar de más en el mes?',
@@ -1025,12 +1025,12 @@ function HeroSection() {
                   <div className="absolute bottom-0 inset-x-0 z-20 p-4 pt-10 bg-gradient-to-t from-black/90 via-black/50 to-transparent text-white pointer-events-none">
                     <div className="flex items-center gap-1.5 mb-1.5">
                       <span className="inline-block px-2 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold text-white border border-white/30">
-                        📱 PWA Instalable
+                        📱 App Instalable
                       </span>
                     </div>
                     <p className="text-xs text-white/95 leading-relaxed font-medium line-clamp-2">
                       Navegación táctil y registro en 5 segundos sin fórmulas.
-                      <span className="font-bold text-teal-300 ml-1">#FinanzasTrack #PWA</span>
+                      <span className="font-bold text-teal-300 ml-1">#FinanzasTrack #AppMovil</span>
                     </p>
                   </div>
                 </div>
@@ -1690,14 +1690,9 @@ function HeroSection() {
                   </p>
                 </div>
 
-                <div className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-4">
-                  <span className={`grid h-10 w-10 shrink-0 place-content-center rounded-full font-bold text-sm shadow-sm ${t.avatarBg || 'bg-indigo-50 text-indigo-600'}`}>
-                    {t.name.charAt(0)}
-                  </span>
-                  <div>
-                    <p className="text-sm font-bold text-slate-900">{t.name}</p>
-                    <p className="text-xs text-slate-500">{t.role}</p>
-                  </div>
+                <div className="mt-6 border-t border-slate-100 pt-4">
+                  <p className="text-sm font-bold text-slate-900">{t.name}</p>
+                  <p className="text-xs text-slate-500">{t.role}</p>
                 </div>
               </article>
             ))}
