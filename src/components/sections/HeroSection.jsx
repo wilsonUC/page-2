@@ -7,12 +7,15 @@ import {
   Bot,
   Check,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   CircleX,
   FileSpreadsheet,
   FileText,
   BookOpen,
   Lightbulb,
   MessageCircle,
+  Monitor,
   Phone,
   PieChart,
   PiggyBank,
@@ -24,6 +27,8 @@ import {
   Star,
   Target,
   TrendingUp,
+  Volume2,
+  VolumeX,
   Wallet,
   Zap,
 } from 'lucide-react'
@@ -152,7 +157,7 @@ const comparisonRows = [
   { feature: 'Actualizaciones continuas de por vida incluidas', finanzasTrack: true, excel: false, notebook: false },
 ]
 
-const demoVideoUrl = 'https://drive.google.com/file/d/1lZOXHgS1GUbnDNI0qeovX4ogqAC_FRg6/preview'
+
 
 const appSections = [
   {
@@ -515,13 +520,105 @@ function getInitialCountdownSeconds() {
 function HeroSection() {
   const [openFaq, setOpenFaq] = useState(0)
   const [countdownSeconds, setCountdownSeconds] = useState(getInitialCountdownSeconds)
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
-  const videoRef = useRef(null)
+  // 1. Video Horizontal Superior (arriba)
+  const [isHorizontalPlaying, setIsHorizontalPlaying] = useState(false)
+  const horizontalVideoRef = useRef(null)
 
-  const handlePlayVideo = () => {
-    setIsVideoPlaying(true)
-    if (videoRef.current) {
-      videoRef.current.play()
+  const handlePlayHorizontal = () => {
+    setIsHorizontalPlaying(true)
+    if (horizontalVideoRef.current) {
+      horizontalVideoRef.current.play()
+    }
+  }
+
+  // 2. Stories / Reels Widget (como en Instagram / EmbedSocial)
+  const [activeStoryIndex, setActiveStoryIndex] = useState(0)
+  const [isVerticalAppPlaying, setIsVerticalAppPlaying] = useState(false)
+  const [isVerticalAppMuted, setIsVerticalAppMuted] = useState(false)
+  const [verticalAppProgress, setVerticalAppProgress] = useState(0)
+  const verticalAppRef = useRef(null)
+
+  const handleToggleVerticalAppPlay = () => {
+    if (verticalAppRef.current) {
+      if (isVerticalAppPlaying) {
+        verticalAppRef.current.pause()
+        setIsVerticalAppPlaying(false)
+      } else {
+        if (isRealCasePlaying && realCaseRef.current) {
+          realCaseRef.current.pause()
+          setIsRealCasePlaying(false)
+        }
+        if (isHorizontalPlaying && horizontalVideoRef.current) {
+          horizontalVideoRef.current.pause()
+          setIsHorizontalPlaying(false)
+        }
+        verticalAppRef.current.play()
+        setIsVerticalAppPlaying(true)
+      }
+    }
+  }
+
+  const handleToggleVerticalAppMute = (e) => {
+    e.stopPropagation()
+    if (verticalAppRef.current) {
+      verticalAppRef.current.muted = !isVerticalAppMuted
+      setIsVerticalAppMuted(!isVerticalAppMuted)
+    }
+  }
+
+  const handleVerticalAppTimeUpdate = () => {
+    if (verticalAppRef.current && verticalAppRef.current.duration) {
+      const prog = (verticalAppRef.current.currentTime / verticalAppRef.current.duration) * 100
+      setVerticalAppProgress(prog)
+    }
+  }
+
+  // 3. Video Vertical 2: Caso Real con Dinero en Efectivo e IA
+  const [isRealCasePlaying, setIsRealCasePlaying] = useState(false)
+  const [isRealCaseMuted, setIsRealCaseMuted] = useState(false)
+  const [realCaseProgress, setRealCaseProgress] = useState(0)
+  const realCaseRef = useRef(null)
+
+  const handleToggleRealCasePlay = () => {
+    if (realCaseRef.current) {
+      if (isRealCasePlaying) {
+        realCaseRef.current.pause()
+        setIsRealCasePlaying(false)
+      } else {
+        if (isVerticalAppPlaying && verticalAppRef.current) {
+          verticalAppRef.current.pause()
+          setIsVerticalAppPlaying(false)
+        }
+        if (isHorizontalPlaying && horizontalVideoRef.current) {
+          horizontalVideoRef.current.pause()
+          setIsHorizontalPlaying(false)
+        }
+        realCaseRef.current.play()
+        setIsRealCasePlaying(true)
+      }
+    }
+  }
+
+  const handleToggleRealCaseMute = (e) => {
+    e.stopPropagation()
+    if (realCaseRef.current) {
+      realCaseRef.current.muted = !isRealCaseMuted
+      setIsRealCaseMuted(!isRealCaseMuted)
+    }
+  }
+
+  const handleRealCaseTimeUpdate = () => {
+    if (realCaseRef.current && realCaseRef.current.duration) {
+      const prog = (realCaseRef.current.currentTime / realCaseRef.current.duration) * 100
+      setRealCaseProgress(prog)
+    }
+  }
+
+  const handleSlideStories = (direction) => {
+    if (direction === 'prev') {
+      setActiveStoryIndex((prev) => (prev === 0 ? 1 : 0))
+    } else {
+      setActiveStoryIndex((prev) => (prev === 1 ? 0 : 1))
     }
   }
 
@@ -646,7 +743,7 @@ function HeroSection() {
 
       {/* CONTENEDOR PRINCIPAL DEL RESTO DE LA PÁGINA */}
       <div className="mx-auto w-full px-4 pb-20 pt-10 sm:px-6">
-        {/* 3. DEMO VIDEO CARD */}
+        {/* 3. DEMO VIDEO CARD (HORIZONTAL - ARRIBA) */}
         <section className="group mx-auto mt-14 w-full max-w-5xl rounded-3xl border border-slate-200/90 bg-white p-5 shadow-xl shadow-slate-200/50 transition-all duration-300 hover:border-indigo-200 hover:shadow-2xl hover:shadow-indigo-500/10 md:p-7">
           <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3.5 min-w-0">
@@ -666,10 +763,11 @@ function HeroSection() {
                   Demostración en Video
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-500">
-                  Conoce la interfaz fluida y las funciones clave de FinanzasTrack en acción
+                  Conoce la interfaz fluida y las funciones clave de FinanzasTrack en acción (20 seg)
                 </p>
               </div>
             </div>
+
             <span className="inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1 text-xs font-bold text-emerald-700">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -682,60 +780,65 @@ function HeroSection() {
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-inner">
             <div className="relative w-full aspect-video bg-slate-950 flex items-center justify-center">
               <video
-                ref={videoRef}
-                poster="/video-poster.png"
+                ref={horizontalVideoRef}
+                poster="/finanzastrack-horizontal-poster.jpg"
                 className="h-full w-full object-contain rounded-2xl"
-                controls={isVideoPlaying}
+                controls={isHorizontalPlaying}
                 playsInline
                 preload="metadata"
-                onPlay={() => setIsVideoPlaying(true)}
+                onPlay={() => {
+                  setIsHorizontalPlaying(true)
+                  if (isVerticalAppPlaying && verticalAppRef.current) {
+                    verticalAppRef.current.pause()
+                    setIsVerticalAppPlaying(false)
+                  }
+                  if (isRealCasePlaying && realCaseRef.current) {
+                    realCaseRef.current.pause()
+                    setIsRealCasePlaying(false)
+                  }
+                }}
+                onPause={() => setIsHorizontalPlaying(false)}
               >
-                <source src="/demo.mp4" type="video/mp4" />
+                <source src="/finanzastrack-horizontal.mp4" type="video/mp4" />
                 Tu navegador no soporta la reproducción de video HTML5.
               </video>
 
               {/* Portada personalizada con botón de Play animado */}
-              {!isVideoPlaying && (
+              {!isHorizontalPlaying && (
                 <div
-                  onClick={handlePlayVideo}
+                  onClick={handlePlayHorizontal}
                   className="group/overlay absolute inset-0 z-10 flex cursor-pointer items-center justify-center overflow-hidden rounded-2xl bg-slate-950/30 transition-all duration-300 hover:bg-slate-950/10"
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault()
-                      handlePlayVideo()
+                      handlePlayHorizontal()
                     }
                   }}
                   aria-label="Reproducir video de demostración de FinanzasTrack"
                 >
-                  {/* Imagen de captura de pantalla */}
                   <img
-                    src="/video-poster.png"
+                    src="/finanzastrack-horizontal-poster.jpg"
                     alt="Vista previa de FinanzasTrack"
                     className="absolute inset-0 h-full w-full object-cover sm:object-contain transition-transform duration-500 ease-out group-hover/overlay:scale-[1.02]"
                   />
 
-                  {/* Capa de gradiente para contraste estético */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/30 to-slate-950/40 transition-opacity duration-300 group-hover/overlay:opacity-75" />
 
-                  {/* Contenedor central del botón Play y llamada a la acción */}
                   <div className="relative z-20 flex flex-col items-center gap-3.5 p-4 text-center">
                     <div className="relative flex items-center justify-center">
-                      {/* Anillos de pulso animados */}
                       <span className="absolute inline-flex h-20 w-20 sm:h-24 sm:w-24 animate-ping rounded-full bg-indigo-500/30 duration-1000" />
                       <span className="absolute inline-flex h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-indigo-600/40 blur-md" />
 
-                      {/* Botón Play */}
                       <div className="relative flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 via-indigo-600 to-teal-500 p-4 text-white shadow-[0_0_30px_rgba(99,102,241,0.6)] ring-4 ring-white/30 transition-all duration-300 group-hover/overlay:scale-110 group-hover/overlay:ring-white/60 group-hover/overlay:shadow-[0_0_40px_rgba(99,102,241,0.85)] active:scale-95">
                         <Play className="ml-1 h-7 w-7 sm:h-9 sm:w-9 fill-white text-white transition-transform duration-300 group-hover/overlay:scale-105" />
                       </div>
                     </div>
 
-                    {/* Badge de llamada a la acción */}
                     <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-slate-900/85 px-4 py-1.5 text-xs sm:text-sm font-semibold text-white shadow-xl backdrop-blur-md transition-all duration-300 group-hover/overlay:bg-indigo-900/90 group-hover/overlay:border-indigo-400/60">
                       <Sparkles className="h-3.5 w-3.5 text-teal-400 animate-pulse" />
-                      <span>Haz clic para ver la demostración en video</span>
+                      <span>Haz clic para ver el recorrido de 20 segundos</span>
                     </div>
                   </div>
                 </div>
@@ -987,6 +1090,332 @@ function HeroSection() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* 7.5 WIDGET DE REELS / HISTORIAS ESTILO INSTAGRAM (EMBEDSOCIAL) */}
+        <section id="experiencia-movil" className="mx-auto mt-28 w-full max-w-5xl scroll-mt-24">
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200/90 bg-indigo-50/90 px-4 py-1.5 text-xs font-bold text-indigo-700 shadow-sm">
+              <Sparkles className="h-3.5 w-3.5 text-indigo-600" />
+              <span>MIRA LA APP EN ACCIÓN REAL</span>
+            </span>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
+              Descubre FinanzasTrack{' '}
+              <span className="bg-gradient-to-r from-rose-500 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                en acción directa
+              </span>
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
+              Mira cómo funciona la app en el día a día y conoce el caso real con dinero en efectivo que demuestra cómo poner orden a tus finanzas.
+            </p>
+          </div>
+
+          {/* Carrusel de Stories / Reels con flechas laterales */}
+          <div className="relative mx-auto flex items-center justify-center gap-4 sm:gap-6 py-4">
+            {/* Flecha Izquierda (<) */}
+            <button
+              type="button"
+              onClick={() => handleSlideStories('prev')}
+              className="group/arrow z-30 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.12)] border border-slate-200/90 text-slate-700 transition-all duration-200 hover:scale-110 hover:border-indigo-300 hover:text-indigo-600 hover:shadow-[0_8px_25px_rgba(79,70,229,0.2)] active:scale-95"
+              aria-label="Historia anterior"
+            >
+              <ChevronLeft className="h-6 w-6 stroke-[2.5] transition-transform group-hover/arrow:-translate-x-0.5" />
+            </button>
+
+            {/* Contenedor de las dos Story Cards */}
+            <div className="flex items-center justify-center gap-5 sm:gap-8 w-full">
+              {/* HISTORIA 1: App Móvil (finanzastrack-vertical.mp4) */}
+              <div
+                className={`relative w-full max-w-[280px] sm:max-w-[320px] aspect-[9/16] rounded-[24px] sm:rounded-[28px] overflow-hidden bg-slate-950 shadow-2xl transition-all duration-300 select-none group/story ${
+                  activeStoryIndex === 0 ? 'ring-2 ring-indigo-500/40 scale-100 opacity-100' : 'sm:scale-95 sm:opacity-95'
+                } ${activeStoryIndex === 1 ? 'hidden md:block' : 'block'}`}
+              >
+                {/* Barra de progreso superior estilo Instagram Story */}
+                <div className="absolute top-3 inset-x-3.5 z-30 flex gap-1 pointer-events-none">
+                  <div className="h-1 flex-1 bg-white/35 rounded-full overflow-hidden backdrop-blur-sm">
+                    <div
+                      className="h-full bg-white rounded-full transition-all duration-100 shadow-sm"
+                      style={{ width: `${verticalAppProgress}%` }}
+                    />
+                  </div>
+                </div>
+
+                {/* Cabecera superior: Badge perfil + Logo Instagram + Botón Audio */}
+                <div className="absolute top-6 inset-x-3.5 z-30 flex items-center justify-between">
+                  {/* Pastilla de perfil estilo EmbedSocial / Instagram */}
+                  <div className="flex items-center gap-2 rounded-full bg-white/95 backdrop-blur-md px-3 py-1 shadow-md border border-white/60">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-[#1d4ed8] via-[#0284c7] to-[#2dd4bf] p-1 shadow-sm">
+                      <img src="/v4.svg" alt="FinanzasTrack" className="h-3.5 w-3.5 object-contain" />
+                    </span>
+                    <div className="flex flex-col text-left">
+                      <div className="flex items-center gap-1 leading-none">
+                        <span className="text-[12px] font-bold text-slate-900 tracking-tight">finanzastrack</span>
+                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-[#0095f6]">
+                          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.9 14.7l-4.1-4.1 1.4-1.4 2.7 2.7 6.9-6.9 1.4 1.4-8.3 8.3z" />
+                        </svg>
+                      </div>
+                      <span className="text-[9px] text-slate-500 font-medium leading-tight mt-0.5">App Móvil • 25s</span>
+                    </div>
+                  </div>
+
+                  {/* Icono de Instagram y botón de volumen */}
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      type="button"
+                      onClick={handleToggleVerticalAppMute}
+                      className="flex h-7 w-7 items-center justify-center rounded-full bg-black/60 backdrop-blur-md text-white border border-white/20 hover:bg-black/80 transition-transform active:scale-90"
+                      aria-label={isVerticalAppMuted ? 'Activar sonido' : 'Silenciar sonido'}
+                    >
+                      {isVerticalAppMuted ? (
+                        <VolumeX className="h-3.5 w-3.5 text-rose-300" />
+                      ) : (
+                        <Volume2 className="h-3.5 w-3.5 text-emerald-300" />
+                      )}
+                    </button>
+
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] shadow-md">
+                      <svg className="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Video de fondo a pantalla completa dentro de la card */}
+                <div
+                  className="relative h-full w-full cursor-pointer"
+                  onClick={handleToggleVerticalAppPlay}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      handleToggleVerticalAppPlay()
+                    }
+                  }}
+                  aria-label={isVerticalAppPlaying ? 'Pausar historia' : 'Reproducir historia'}
+                >
+                  <video
+                    ref={verticalAppRef}
+                    src="/finanzastrack-vertical.mp4"
+                    poster="/finanzastrack-vertical-poster.jpg"
+                    playsInline
+                    preload="metadata"
+                    muted={isVerticalAppMuted}
+                    onTimeUpdate={handleVerticalAppTimeUpdate}
+                    onPlay={() => setIsVerticalAppPlaying(true)}
+                    onPause={() => setIsVerticalAppPlaying(false)}
+                    onEnded={() => {
+                      setIsVerticalAppPlaying(false)
+                      setVerticalAppProgress(0)
+                    }}
+                    className="h-full w-full object-cover"
+                  >
+                    Tu navegador no soporta la reproducción de video HTML5.
+                  </video>
+
+                  {/* Botón Central Play cuando está pausado */}
+                  {!isVerticalAppPlaying && (
+                    <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/35 backdrop-blur-[1px] transition-all group-hover/story:bg-black/20">
+                      <div className="relative flex items-center justify-center">
+                        <span className="absolute inline-flex h-16 w-16 animate-ping rounded-full bg-white/40 duration-1000" />
+                        <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-white text-slate-900 shadow-2xl transition-transform duration-300 group-hover/story:scale-110">
+                          <Play className="ml-0.5 h-6 w-6 fill-slate-900 text-slate-900" />
+                        </div>
+                      </div>
+                      <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-white border border-white/20 shadow-md">
+                        <Sparkles className="h-3 w-3 text-teal-300" />
+                        Ver app en celular
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Pie de foto estilo Instagram Reel / Story */}
+                  <div className="absolute bottom-0 inset-x-0 z-20 p-4 pt-10 bg-gradient-to-t from-black/90 via-black/50 to-transparent text-white pointer-events-none">
+                    <div className="flex items-center gap-1.5 mb-1.5">
+                      <span className="inline-block px-2 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold text-white border border-white/30">
+                        📱 PWA Instalable
+                      </span>
+                    </div>
+                    <p className="text-xs text-white/95 leading-relaxed font-medium line-clamp-2">
+                      Navegación táctil y registro en 5 segundos sin fórmulas.
+                      <span className="font-bold text-teal-300 ml-1">#FinanzasTrack #PWA</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* HISTORIA 2: Caso Real con Dinero en Efectivo e IA (finanzastrack.mp4) */}
+              <div
+                className={`relative w-full max-w-[280px] sm:max-w-[320px] aspect-[9/16] rounded-[24px] sm:rounded-[28px] overflow-hidden bg-slate-950 shadow-2xl transition-all duration-300 select-none group/story ${
+                  activeStoryIndex === 1 ? 'ring-2 ring-indigo-500/40 scale-100 opacity-100' : 'sm:scale-95 sm:opacity-95'
+                } ${activeStoryIndex === 0 ? 'hidden md:block' : 'block'}`}
+              >
+                {/* Barra de progreso superior estilo Instagram Story */}
+                <div className="absolute top-3 inset-x-3.5 z-30 flex gap-1 pointer-events-none">
+                  <div className="h-1 flex-1 bg-white/35 rounded-full overflow-hidden backdrop-blur-sm">
+                    <div
+                      className="h-full bg-white rounded-full transition-all duration-100 shadow-sm"
+                      style={{ width: `${realCaseProgress}%` }}
+                    />
+                  </div>
+                </div>
+
+                {/* Cabecera superior: Badge perfil + Logo Instagram + Botón Audio */}
+                <div className="absolute top-6 inset-x-3.5 z-30 flex items-center justify-between">
+                  {/* Pastilla de perfil estilo EmbedSocial / Instagram */}
+                  <div className="flex items-center gap-2 rounded-full bg-white/95 backdrop-blur-md px-3 py-1 shadow-md border border-white/60">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-[#1d4ed8] via-[#0284c7] to-[#2dd4bf] p-1 shadow-sm">
+                      <img src="/v4.svg" alt="FinanzasTrack" className="h-3.5 w-3.5 object-contain" />
+                    </span>
+                    <div className="flex flex-col text-left">
+                      <div className="flex items-center gap-1 leading-none">
+                        <span className="text-[12px] font-bold text-slate-900 tracking-tight">finanzastrack</span>
+                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-[#0095f6]">
+                          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.9 14.7l-4.1-4.1 1.4-1.4 2.7 2.7 6.9-6.9 1.4 1.4-8.3 8.3z" />
+                        </svg>
+                      </div>
+                      <span className="text-[9px] text-slate-500 font-medium leading-tight mt-0.5">Caso Real • 41s</span>
+                    </div>
+                  </div>
+
+                  {/* Icono de Instagram y botón de volumen */}
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      type="button"
+                      onClick={handleToggleRealCaseMute}
+                      className="flex h-7 w-7 items-center justify-center rounded-full bg-black/60 backdrop-blur-md text-white border border-white/20 hover:bg-black/80 transition-transform active:scale-90"
+                      aria-label={isRealCaseMuted ? 'Activar sonido' : 'Silenciar sonido'}
+                    >
+                      {isRealCaseMuted ? (
+                        <VolumeX className="h-3.5 w-3.5 text-rose-300" />
+                      ) : (
+                        <Volume2 className="h-3.5 w-3.5 text-emerald-300" />
+                      )}
+                    </button>
+
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] shadow-md">
+                      <svg className="w-3.5 h-3.5 fill-white" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Video de fondo a pantalla completa dentro de la card */}
+                <div
+                  className="relative h-full w-full cursor-pointer"
+                  onClick={handleToggleRealCasePlay}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      handleToggleRealCasePlay()
+                    }
+                  }}
+                  aria-label={isRealCasePlaying ? 'Pausar historia' : 'Reproducir historia'}
+                >
+                  <video
+                    ref={realCaseRef}
+                    src="/finanzastrack.mp4"
+                    poster="/finanzastrack-poster.jpg"
+                    playsInline
+                    preload="metadata"
+                    muted={isRealCaseMuted}
+                    onTimeUpdate={handleRealCaseTimeUpdate}
+                    onPlay={() => setIsRealCasePlaying(true)}
+                    onPause={() => setIsRealCasePlaying(false)}
+                    onEnded={() => {
+                      setIsRealCasePlaying(false)
+                      setRealCaseProgress(0)
+                    }}
+                    className="h-full w-full object-cover"
+                  >
+                    Tu navegador no soporta la reproducción de video HTML5.
+                  </video>
+
+                  {/* Botón Central Play cuando está pausado */}
+                  {!isRealCasePlaying && (
+                    <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/35 backdrop-blur-[1px] transition-all group-hover/story:bg-black/20">
+                      <div className="relative flex items-center justify-center">
+                        <span className="absolute inline-flex h-16 w-16 animate-ping rounded-full bg-white/40 duration-1000" />
+                        <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-white text-slate-900 shadow-2xl transition-transform duration-300 group-hover/story:scale-110">
+                          <Play className="ml-0.5 h-6 w-6 fill-slate-900 text-slate-900" />
+                        </div>
+                      </div>
+                      <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 backdrop-blur-md px-3 py-1 text-[11px] font-semibold text-white border border-white/20 shadow-md">
+                        <Sparkles className="h-3 w-3 text-teal-300" />
+                        Ver caso real con IA
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Pie de foto estilo Instagram Reel / Story */}
+                  <div className="absolute bottom-0 inset-x-0 z-20 p-4 pt-10 bg-gradient-to-t from-black/90 via-black/50 to-transparent text-white pointer-events-none">
+                    <div className="flex items-center gap-1.5 mb-1.5">
+                      <span className="inline-block px-2 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold text-white border border-white/30">
+                        💵 Efectivo & Copiloto IA
+                      </span>
+                    </div>
+                    <p className="text-xs text-white/95 leading-relaxed font-medium line-clamp-2">
+                      "Sin datos registrados no hay análisis". Controla tus billetes al instante.
+                      <span className="font-bold text-amber-300 ml-1">#AhorroReal #Finanzas</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Flecha Derecha (>) */}
+            <button
+              type="button"
+              onClick={() => handleSlideStories('next')}
+              className="group/arrow z-30 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.12)] border border-slate-200/90 text-slate-700 transition-all duration-200 hover:scale-110 hover:border-indigo-300 hover:text-indigo-600 hover:shadow-[0_8px_25px_rgba(79,70,229,0.2)] active:scale-95"
+              aria-label="Siguiente historia"
+            >
+              <ChevronRight className="h-6 w-6 stroke-[2.5] transition-transform group-hover/arrow:translate-x-0.5" />
+            </button>
+          </div>
+
+          {/* Indicadores de carrusel para móviles */}
+          <div className="flex md:hidden items-center justify-center gap-2 mt-4">
+            <button
+              type="button"
+              onClick={() => setActiveStoryIndex(0)}
+              className={`h-2 rounded-full transition-all ${
+                activeStoryIndex === 0 ? 'w-6 bg-indigo-600' : 'w-2 bg-slate-300'
+              }`}
+              aria-label="Ver App Móvil"
+            />
+            <button
+              type="button"
+              onClick={() => setActiveStoryIndex(1)}
+              className={`h-2 rounded-full transition-all ${
+                activeStoryIndex === 1 ? 'w-6 bg-indigo-600' : 'w-2 bg-slate-300'
+              }`}
+              aria-label="Ver Caso Real"
+            />
+          </div>
+
+          {/* Banner CTA debajo del widget */}
+          <div className="mt-12 rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 p-6 sm:p-8 text-center text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-5 border border-indigo-500/20">
+            <div className="text-left">
+              <p className="text-base sm:text-lg font-bold text-white">
+                ¿Listo para tener el control total de tu dinero en tu celular y computadora?
+              </p>
+              <p className="text-xs sm:text-sm text-indigo-200/80 mt-1">
+                Acceso completo e ilimitado de por vida por un pago único de S/ 30.
+              </p>
+            </div>
+            <a
+              href="#precio"
+              className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white px-7 py-3.5 text-sm sm:text-base font-bold shadow-lg shadow-emerald-600/30 transition-all hover:-translate-y-0.5"
+            >
+              <span>Quiero Acceder Ahora</span>
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </section>
 
