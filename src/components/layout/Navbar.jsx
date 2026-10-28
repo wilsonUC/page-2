@@ -51,15 +51,9 @@ function Navbar({ onNavigate }) {
               className="relative z-10 h-6 w-6 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-110"
             />
           </span>
-          <div className="flex items-center gap-2">
-            <span className="text-[19px] sm:text-[20px] font-bold leading-tight tracking-tight text-slate-900">
-              FinanzasTrack
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] sm:text-[11px] font-bold text-emerald-700 border border-emerald-200/80">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              v2.0
-            </span>
-          </div>
+          <span className="text-[19px] sm:text-[20px] font-bold leading-tight tracking-tight text-slate-900">
+            FinanzasTrack
+          </span>
         </a>
 
         {/* Navegación Desktop */}

@@ -34,7 +34,7 @@ import {
 } from 'lucide-react'
 
 const stats = [
-  { value: '100%', label: 'Seguro y Privado', sublabel: 'Cifrado bancario', variant: 'emerald' },
+  { value: '100%', label: 'Seguro y Privado', sublabel: 'Datos protegidos', variant: 'emerald' },
   { value: 'S/ 30', label: 'Acceso completo', sublabel: 'Pago único', variant: 'primary' },
   { value: '24/7', label: 'Siempre Disponible', sublabel: 'Nube en tiempo real', variant: 'emerald' },
 ]

@@ -59,15 +59,9 @@ function Footer({ onNavigate }) {
                 alt="FinanzasTrack"
                 className="h-7 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
               />
-              <div className="flex items-center gap-2">
-                <span className="text-lg font-black tracking-tight text-white">
-                  FinanzasTrack
-                </span>
-                <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-400">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  v2.0
-                </span>
-              </div>
+              <span className="text-lg font-black tracking-tight text-white">
+                FinanzasTrack
+              </span>
             </a>
 
             <p className="mt-2 text-xs leading-relaxed text-slate-400">
