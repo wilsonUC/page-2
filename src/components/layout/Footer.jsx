@@ -10,13 +10,30 @@ import {
 } from 'lucide-react'
 
 const navLinks = [
-  { label: 'Beneficios', href: '#beneficios' },
-  { label: 'Funcionalidades', href: '#funcionalidades' },
-  { label: 'Precio', href: '#precio' },
-  { label: 'Preguntas Frecuentes', href: '#faq' },
+  { label: 'Beneficios', href: '/beneficios' },
+  { label: 'Funcionalidades', href: '/funcionalidades' },
+  { label: 'Precio', href: '/precio' },
+  { label: 'Preguntas Frecuentes', href: '/faq' },
 ]
 
-function Footer() {
+function Footer({ onNavigate }) {
+  const handleLinkClick = (e, href) => {
+    e.preventDefault()
+    if (onNavigate) {
+      onNavigate(href)
+    } else {
+      window.location.href = href
+    }
+  }
+
+  const handleLogoClick = (e) => {
+    e.preventDefault()
+    if (onNavigate) {
+      onNavigate('/')
+    } else {
+      window.location.href = '/'
+    }
+  }
   return (
     <footer className="relative overflow-hidden border-t border-slate-800/80 bg-[#080d1a] text-slate-300">
       {/* Luces ambientales de fondo */}
@@ -34,7 +51,8 @@ function Footer() {
           <div className="lg:col-span-4">
             <a
               className="group inline-flex items-center gap-2 outline-offset-4 transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
-              href="#inicio"
+              href="/"
+              onClick={handleLogoClick}
             >
               <img
                 src="/v4.svg"
@@ -81,6 +99,7 @@ function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
+                      onClick={(e) => handleLinkClick(e, link.href)}
                       className="inline-block text-slate-400 transition-all duration-200 hover:text-white hover:translate-x-1"
                     >
                       {link.label}

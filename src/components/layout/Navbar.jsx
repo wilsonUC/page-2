@@ -2,22 +2,42 @@ import { useState } from 'react'
 import { ArrowRight, LogIn, Menu, UserPlus, X } from 'lucide-react'
 
 const navItems = [
-  { label: 'Beneficios', href: '#beneficios' },
-  { label: 'Funcionalidades', href: '#funcionalidades' },
-  { label: 'Precio', href: '#precio' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Beneficios', href: '/beneficios' },
+  { label: 'Funcionalidades', href: '/funcionalidades' },
+  { label: 'Precio', href: '/precio' },
+  { label: 'FAQ', href: '/faq' },
 ]
 
-function Navbar() {
+function Navbar({ onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const handleLinkClick = (e, href) => {
+    e.preventDefault()
+    setMobileMenuOpen(false)
+    if (onNavigate) {
+      onNavigate(href)
+    } else {
+      window.location.href = href
+    }
+  }
+
+  const handleLogoClick = (e) => {
+    e.preventDefault()
+    setMobileMenuOpen(false)
+    if (onNavigate) {
+      onNavigate('/')
+    } else {
+      window.location.href = '/'
+    }
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/90 shadow-[0_1px_3px_rgba(0,0,0,0.03)] backdrop-blur-xl">
       <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
         <a
           className="group flex items-center gap-2.5 rounded-lg outline-offset-4 transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] motion-reduce:hover:scale-100"
-          href="#inicio"
-          onClick={() => setMobileMenuOpen(false)}
+          href="/"
+          onClick={handleLogoClick}
         >
           <span className="relative grid h-10 w-10 place-content-center overflow-hidden rounded-2xl bg-gradient-to-br from-[#1d4ed8] via-[#0284c7] to-[#2dd4bf] p-2 shadow-lg shadow-teal-500/25 transition-all duration-300 group-hover:scale-105 group-hover:shadow-teal-500/45">
             {/* Destello de brillo animado */}
@@ -49,6 +69,7 @@ function Navbar() {
               <a
                 className="relative py-1 text-slate-600 transition-colors duration-200 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-indigo-600 after:transition-transform after:duration-300 hover:text-indigo-600 hover:after:scale-x-100 motion-reduce:after:hidden"
                 href={item.href}
+                onClick={(e) => handleLinkClick(e, item.href)}
               >
                 {item.label}
               </a>
@@ -56,8 +77,9 @@ function Navbar() {
           ))}
         </ul>
 
-        {/* Botones CTA Desktop */}
-        <div className="hidden items-center gap-2.5 md:flex">
+        {/* Acciones del Navbar (Desktop y Móvil) */}
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          {/* Botón de Registro (Visible en Móvil y Desktop) */}
           <a
             href="https://app.finanzastrack.site/register"
             title="Crear Cuenta / Registrarse"
@@ -67,24 +89,25 @@ function Navbar() {
             <UserPlus className="h-5 w-5 text-white transition-transform duration-200 group-hover:scale-110 drop-shadow-md stroke-[2.2]" aria-hidden="true" />
           </a>
 
+          {/* Botón Iniciar Sesión (Solo Desktop) */}
           <a
             href="https://app.finanzastrack.site/login"
-            className="group flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 text-[14px] font-semibold text-white shadow-[0_4px_14px_rgba(79,70,229,0.3)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-[0_6px_20px_rgba(79,70,229,0.4)] active:translate-y-0 active:scale-[0.98] motion-reduce:hover:translate-y-0"
+            className="hidden md:flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 text-[14px] font-semibold text-white shadow-[0_4px_14px_rgba(79,70,229,0.3)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-indigo-700 hover:shadow-[0_6px_20px_rgba(79,70,229,0.4)] active:translate-y-0 active:scale-[0.98] motion-reduce:hover:translate-y-0"
           >
             <LogIn className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" aria-hidden="true" />
             <span>Iniciar Sesión</span>
           </a>
-        </div>
 
-        {/* Botón Hamburguesa Móvil */}
-        <button
-          type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700 transition-colors hover:bg-slate-100 md:hidden"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
-        >
-          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+          {/* Botón Hamburguesa Móvil */}
+          <button
+            type="button"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700 transition-colors hover:bg-slate-100 md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </nav>
 
       {/* Menú Desplegable Móvil */}
@@ -96,7 +119,7 @@ function Navbar() {
                 <a
                   href={item.href}
                   className="block rounded-lg px-3 py-2 text-base font-semibold text-slate-700 hover:bg-indigo-50 hover:text-indigo-600"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => handleLinkClick(e, item.href)}
                 >
                   {item.label}
                 </a>
@@ -105,9 +128,9 @@ function Navbar() {
           </ul>
           <div className="mt-4 pt-4 border-t border-slate-100 flex flex-col gap-2.5">
             <a
-              href="#precio"
+              href="/precio"
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 py-3 text-center text-sm font-bold text-white shadow-md shadow-indigo-600/30"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleLinkClick(e, '/precio')}
             >
               <span>Comenzar Ahora • S/ 30</span>
               <ArrowRight className="h-4 w-4" />

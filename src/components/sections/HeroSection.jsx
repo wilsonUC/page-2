@@ -917,9 +917,8 @@ function HeroSection() {
             <div className="flex items-center justify-center gap-5 sm:gap-8 w-full">
               {/* HISTORIA 1: App Móvil (finanzastrack-vertical.mp4) */}
               <div
-                className={`relative w-full max-w-[280px] sm:max-w-[320px] aspect-[9/16] rounded-[24px] sm:rounded-[28px] overflow-hidden bg-slate-950 shadow-2xl transition-all duration-300 select-none group/story ${
-                  activeStoryIndex === 0 ? 'ring-2 ring-indigo-500/40 scale-100 opacity-100' : 'sm:scale-95 sm:opacity-95'
-                } ${activeStoryIndex === 1 ? 'hidden md:block' : 'block'}`}
+                className={`relative w-full max-w-[280px] sm:max-w-[320px] aspect-[9/16] rounded-[24px] sm:rounded-[28px] overflow-hidden bg-slate-950 shadow-2xl transition-all duration-300 select-none group/story ${activeStoryIndex === 0 ? 'ring-2 ring-indigo-500/40 scale-100 opacity-100' : 'sm:scale-95 sm:opacity-95'
+                  } ${activeStoryIndex === 1 ? 'hidden md:block' : 'block'}`}
               >
                 {/* Barra de progreso superior estilo Instagram Story */}
                 <div className="absolute top-3 inset-x-3.5 z-30 flex gap-1 pointer-events-none">
@@ -1038,9 +1037,8 @@ function HeroSection() {
 
               {/* HISTORIA 2: Caso Real con Dinero en Efectivo e IA (finanzastrack.mp4) */}
               <div
-                className={`relative w-full max-w-[280px] sm:max-w-[320px] aspect-[9/16] rounded-[24px] sm:rounded-[28px] overflow-hidden bg-slate-950 shadow-2xl transition-all duration-300 select-none group/story ${
-                  activeStoryIndex === 1 ? 'ring-2 ring-indigo-500/40 scale-100 opacity-100' : 'sm:scale-95 sm:opacity-95'
-                } ${activeStoryIndex === 0 ? 'hidden md:block' : 'block'}`}
+                className={`relative w-full max-w-[280px] sm:max-w-[320px] aspect-[9/16] rounded-[24px] sm:rounded-[28px] overflow-hidden bg-slate-950 shadow-2xl transition-all duration-300 select-none group/story ${activeStoryIndex === 1 ? 'ring-2 ring-indigo-500/40 scale-100 opacity-100' : 'sm:scale-95 sm:opacity-95'
+                  } ${activeStoryIndex === 0 ? 'hidden md:block' : 'block'}`}
               >
                 {/* Barra de progreso superior estilo Instagram Story */}
                 <div className="absolute top-3 inset-x-3.5 z-30 flex gap-1 pointer-events-none">
@@ -1174,17 +1172,15 @@ function HeroSection() {
             <button
               type="button"
               onClick={() => setActiveStoryIndex(0)}
-              className={`h-2 rounded-full transition-all ${
-                activeStoryIndex === 0 ? 'w-6 bg-indigo-600' : 'w-2 bg-slate-300'
-              }`}
+              className={`h-2 rounded-full transition-all ${activeStoryIndex === 0 ? 'w-6 bg-indigo-600' : 'w-2 bg-slate-300'
+                }`}
               aria-label="Ver App Móvil"
             />
             <button
               type="button"
               onClick={() => setActiveStoryIndex(1)}
-              className={`h-2 rounded-full transition-all ${
-                activeStoryIndex === 1 ? 'w-6 bg-indigo-600' : 'w-2 bg-slate-300'
-              }`}
+              className={`h-2 rounded-full transition-all ${activeStoryIndex === 1 ? 'w-6 bg-indigo-600' : 'w-2 bg-slate-300'
+                }`}
               aria-label="Ver Caso Real"
             />
           </div>
@@ -1422,13 +1418,13 @@ function HeroSection() {
           <div className="text-center mb-8">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-indigo-200 bg-indigo-50 px-3.5 py-1 text-xs font-bold text-indigo-700 shadow-sm">
               <Zap className="h-3.5 w-3.5 text-indigo-600" />
-              ACCESO COMPLETO Y PERMANENTE
+              ACCESO COMPLETO
             </span>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-              Invierte una sola vez, <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 bg-clip-text text-transparent">ahorra toda la vida</span>
+            <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl md:text-4xl lg:text-[42px]">
+              Invierte hoy, <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 bg-clip-text text-transparent">multiplica tu ahorro</span>
             </h2>
             <p className="mt-2.5 text-sm md:text-base text-slate-600">
-              Sin mensualidades, sin renovaciones obligatorias ni tarifas ocultas.
+              Sin mensualidades, sin cargos sorpresa ni tarifas ocultas.
             </p>
           </div>
 
