@@ -1490,7 +1490,7 @@ function HeroSection() {
               {/* Botón Central Grande de Acción (WhatsApp / Compra) */}
               <div className="text-center mb-10">
                 <a
-                  href="https://wa.me/51980570301?text=%C2%A1Hola!%20FinanzasTrack%20deseo%20mi%20acceso%20a%20la%20app%20."
+                  href="https://wa.me/51991880390?text=%C2%A1Hola!%20FinanzasTrack%20deseo%20mi%20acceso%20a%20la%20app%20."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex flex-col items-center justify-center w-full sm:w-auto rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 hover:from-blue-700 hover:via-indigo-700 hover:to-teal-600 text-white px-10 py-4.5 shadow-xl shadow-indigo-600/30 transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-600/40 active:translate-y-0"
@@ -1507,11 +1507,11 @@ function HeroSection() {
                 {/* Botón de llamada para celular */}
                 <div className="mt-3 md:hidden">
                   <a
-                    href="tel:+51980570301"
+                    href="tel:+51991880390"
                     className="inline-flex items-center justify-center gap-2 text-xs font-bold text-slate-600 hover:text-indigo-600"
                   >
                     <Phone className="h-3.5 w-3.5" />
-                    <span>O si prefieres, puedes llamarnos al +51 980 570 301</span>
+                    <span>O si prefieres, puedes llamarnos al +51 991 880 390</span>
                   </a>
                 </div>
                 <p className="mt-2.5 text-xs text-slate-500">
