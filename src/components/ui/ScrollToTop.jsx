@@ -44,10 +44,12 @@ export default function ScrollToTop() {
         aria-label="Volver al inicio de la página"
         className="group relative flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#1d4ed8] via-[#0284c7] to-[#2dd4bf] text-white border border-white/20 shadow-md shadow-slate-900/15 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-900/25 active:translate-y-0 active:scale-95 focus:outline-none"
       >
-        <ChevronUp
-          className="h-5 w-5 stroke-[2.5] text-white transition-transform duration-200 group-hover:-translate-y-0.5"
-          aria-hidden="true"
-        />
+        <div className="relative z-10 flex items-center justify-center animate-[arrow-scroll-up_1.8s_ease-in-out_infinite]">
+          <ChevronUp
+            className="h-5 w-5 stroke-[2.5] text-white transition-transform duration-200 group-hover:-translate-y-0.5"
+            aria-hidden="true"
+          />
+        </div>
       </button>
     </div>
   )
