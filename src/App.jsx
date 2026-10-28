@@ -153,8 +153,8 @@ function App() {
         )}
       </main>
       {!is404 && <Footer onNavigate={handleNavigate} />}
-      <ScrollToTop />
-      <FloatingWhatsApp />
+      {!is404 && <ScrollToTop />}
+      {!is404 && <FloatingWhatsApp />}
     </div>
   )
 }
