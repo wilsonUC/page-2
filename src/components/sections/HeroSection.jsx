@@ -694,27 +694,36 @@ function HeroSection() {
                 href="#precio"
                 className="group flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-8 py-4 text-base font-bold text-white shadow-[0_4px_16px_rgba(5,150,105,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-[0_8px_24px_rgba(5,150,105,0.45)] sm:w-auto"
               >
-                <span>Quiero Ordenar Mis Finanzas Ahora</span>
+                <span>Quiero Mi Prueba Gratis</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
               </a>
               <a
-                href="#beneficios"
+                href="https://app.finanzastrack.site/register"
                 className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300/90 bg-white/90 px-7 py-4 text-base font-semibold text-slate-700 shadow-sm backdrop-blur-sm transition-all duration-200 hover:border-slate-400 hover:bg-white sm:w-auto"
               >
-                <span>Ver cómo funciona 👇</span>
+                <span>Regístrate Aquí 👇</span>
               </a>
             </div>
 
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold text-slate-600">
-              <span className="flex items-center gap-1.5 text-emerald-800 bg-emerald-50/90 border border-emerald-200/80 rounded-full px-3 py-1 shadow-sm">
-                <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Plan Anual S/ 30
-              </span>
-              <span className="flex items-center gap-1.5 text-slate-700 bg-white/85 border border-slate-200/80 rounded-full px-3 py-1 shadow-sm">
-                <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Acceso anual completo
-              </span>
-              <span className="flex items-center gap-1.5 text-slate-700 bg-white/85 border border-slate-200/80 rounded-full px-3 py-1 shadow-sm">
+              <a
+                href="#precio"
+                className="group flex items-center gap-1.5 text-emerald-800 bg-emerald-50/90 border border-emerald-200/80 rounded-full px-3 py-1 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-100/90 hover:border-emerald-300 hover:shadow-md cursor-pointer active:translate-y-0"
+              >
+                <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Acceso anual completo S/ 30
+              </a>
+              <a
+                href="#experiencia-movil"
+                className="group flex items-center gap-1.5 text-slate-700 bg-white/85 border border-slate-200/80 rounded-full px-3 py-1 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-white hover:border-slate-300 hover:text-slate-900 hover:shadow-md cursor-pointer active:translate-y-0"
+              >
+                <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Ver cómo funciona
+              </a>
+              <a
+                href="#precio"
+                className="group flex items-center gap-1.5 text-slate-700 bg-white/85 border border-slate-200/80 rounded-full px-3 py-1 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-white hover:border-slate-300 hover:text-slate-900 hover:shadow-md cursor-pointer active:translate-y-0"
+              >
                 <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Sin mensualidades
-              </span>
+              </a>
             </div>
           </section>
 
@@ -1490,7 +1499,7 @@ function HeroSection() {
               {/* Botón Central Grande de Acción (WhatsApp / Compra) */}
               <div className="text-center mb-10">
                 <a
-                  href="https://wa.me/51991880390?text=%C2%A1Hola!%20FinanzasTrack%20deseo%20mi%20acceso%20a%20la%20app%20."
+                  href="https://wa.me/51991880390?text=Hola%2C%20quiero%20probar%20FinanzasTrack%20gratis%2048%20horas"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex flex-col items-center justify-center w-full sm:w-auto rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 hover:from-blue-700 hover:via-indigo-700 hover:to-teal-600 text-white px-10 py-4.5 shadow-xl shadow-indigo-600/30 transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-600/40 active:translate-y-0"

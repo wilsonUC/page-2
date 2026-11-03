@@ -157,7 +157,7 @@ function Footer({ onNavigate }) {
               </a>
 
               <a
-                href="https://wa.me/51980570301?text=%C2%A1Hola!%20FinanzasTrack%20deseo%20mi%20acceso%20a%20la%20app%20."
+                href="https://wa.me/51991880390?text=Hola%2C%20quiero%20probar%20FinanzasTrack%20gratis%2048%20horas"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-between rounded-lg border border-slate-800 bg-slate-900/90 px-3.5 py-2 text-xs font-medium text-slate-300 transition-all duration-200 hover:border-emerald-500/40 hover:bg-emerald-500/10 hover:text-emerald-300"

@@ -1,6 +1,6 @@
 const WHATSAPP_NUMBER = '51991880390'
 const WHATSAPP_MESSAGE = encodeURIComponent(
-  '¡Hola! FinanzasTrack deseo mi acceso a la app .'
+  'Hola, quiero probar FinanzasTrack gratis 48 horas'
 )
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`
 
