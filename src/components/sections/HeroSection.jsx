@@ -450,25 +450,25 @@ const testimonials = [
     role: 'Diseñador UI / Freelance',
     avatarBg: 'bg-emerald-100 text-emerald-700',
     highlight: 'Control de gastos diario',
-    image: '/rodrigo-salazar.png',
+    image: '/rodrigo-salazar.jpg',
   },
   {
     quote:
-      'Lo que más me encanta es el módulo de Metas conectado al Pool de Ahorro y el Asistente IA integrado. Le pregunto cómo voy con mi presupuesto de viaje a Cusco y me da consejos financieros exactos con mis números reales.',
+      'Fijar límites de presupuesto por categoría me cambió por completo el mes. Las barras visuales me avisan antes de sobrepasarme en compras o salidas y descubrí exactamente mis gastos hormiga. Llegar a fin de mes con dinero a favor ya no es un problema.',
     name: 'Valeria Cárdenas',
     role: 'Coordinadora de Marketing',
     avatarBg: 'bg-indigo-100 text-indigo-700',
-    highlight: 'Metas de ahorro e IA',
-    image: '/valeria-cardenas.png',
+    highlight: 'Presupuestos y Cero Fugas',
+    image: '/valeria-cardenas.jpg',
   },
   {
     quote:
-      'Tengo 8 pagos fijos entre alquiler, internet y préstamos. El sistema de transacciones recurrentes con alertas de corte y atrasos me quitó un peso enorme de encima. Pagué los S/ 30 una sola vez y valió totalmente la pena.',
+      'Manejo múltiples ingresos entre mi sueldo y proyectos freelance. Tener en una sola pantalla mi balance total, mis entradas y el desglose de gastos en tiempo real me da una claridad tremenda.',
     name: 'Jorge Luis Huamán',
     role: 'Ingeniero de Sistemas',
     avatarBg: 'bg-purple-100 text-purple-700',
-    highlight: 'Gestión de recurrentes',
-    image: '/jorge-luis-huaman.png',
+    highlight: 'Balance y Reportes en Vivo',
+    image: '/jorge-luis-huaman.jpg',
   },
 ]
 
@@ -697,12 +697,51 @@ function HeroSection() {
                 <span>Quiero Mi Prueba Gratis</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
               </a>
-              <a
-                href="https://app.finanzastrack.site/register"
-                className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300/90 bg-white/90 px-7 py-4 text-base font-semibold text-slate-700 shadow-sm backdrop-blur-sm transition-all duration-200 hover:border-slate-400 hover:bg-white sm:w-auto"
-              >
-                <span>Regístrate Aquí 👇</span>
-              </a>
+              <div className="relative group/reg w-full sm:w-auto">
+                {/* Halo de resplandor dorado exterior pulsante */}
+                <span
+                  className="pointer-events-none absolute -inset-1 rounded-2xl bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 opacity-60 blur-md transition-all duration-300 group-hover/reg:opacity-100 group-hover/reg:blur-lg animate-pulse"
+                  aria-hidden="true"
+                />
+
+                <a
+                  href="https://app.finanzastrack.site/register"
+                  className="relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-xl border-2 border-yellow-200/90 bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#f59e0b] px-8 py-4 text-base sm:text-[17px] font-black tracking-wide text-slate-950 shadow-[0_6px_22px_rgba(245,158,11,0.45)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(245,158,11,0.65)] hover:border-white active:translate-y-0 active:scale-[0.98] sm:w-auto"
+                >
+                  {/* Destello de brillo animado que cruza el botón periódicamente */}
+                  <span
+                    className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/55 to-transparent animate-[logo-shine_3.2s_infinite]"
+                    aria-hidden="true"
+                  />
+
+                  <span className="relative z-10 drop-shadow-xs">Regístrate Aquí</span>
+
+                  <span className="relative z-10 flex items-center justify-center">
+                    <svg
+                      viewBox="0 0 28 28"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-7 w-7 sm:h-8 sm:w-8 transition-transform duration-200 group-hover/reg:scale-115 group-hover/reg:-rotate-6 drop-shadow-[0_3px_6px_rgba(0,0,0,0.3)]"
+                    >
+                      {/* Rayos / Chispas de clic saliendo del dedo */}
+                      <path d="M12 1.5 L12 4.5" stroke="#0f172a" strokeWidth="2.4" strokeLinecap="round" />
+                      <path d="M5.5 4.5 L7.8 7.2" stroke="#0f172a" strokeWidth="2.4" strokeLinecap="round" />
+                      <path d="M18.5 4.5 L16.2 7.2" stroke="#0f172a" strokeWidth="2.4" strokeLinecap="round" />
+                      <path d="M3.5 10.5 L6.8 11.2" stroke="#0f172a" strokeWidth="2.4" strokeLinecap="round" />
+                      <path d="M20.5 10.5 L17.2 11.2" stroke="#0f172a" strokeWidth="2.4" strokeLinecap="round" />
+                      {/* Mano blanca con contorno oscuro haciendo clic */}
+                      <path
+                        d="M12 5.5 C10.8 5.5 9.8 6.5 9.8 7.7 L9.8 16.5 C9 16 7.8 16 7 16.6 C5.8 17.5 5.6 19.2 6.6 20.5 L9.6 24.2 C11 25.8 13 26.8 15.2 26.8 L17.5 26.8 C20.8 26.8 23 24.5 23 21.2 L23 17 C23 15.8 22 14.8 20.8 14.8 C20.5 14.8 20.2 14.9 19.9 15.1 C19.6 14.3 18.9 13.8 18 13.8 C17.6 13.8 17.3 13.9 17 14.1 C16.7 13.3 15.9 12.8 15 12.8 C14.6 12.8 14.3 12.9 14 13.1 L14 7.7 C14 6.5 13 5.5 12 5.5 Z"
+                        fill="#ffffff"
+                        stroke="#0f172a"
+                        strokeWidth="2.1"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </span>
+                </a>
+              </div>
             </div>
 
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold text-slate-600">
