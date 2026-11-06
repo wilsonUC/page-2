@@ -450,7 +450,7 @@ const testimonials = [
     role: 'Diseñador UI / Freelance',
     avatarBg: 'bg-emerald-100 text-emerald-700',
     highlight: 'Control de gastos diario',
-    image: '/rodrigo-salazar.jpg',
+    image: '/rodrigo-salazar.jpg?v=3',
   },
   {
     quote:
@@ -468,7 +468,7 @@ const testimonials = [
     role: 'Ingeniero de Sistemas',
     avatarBg: 'bg-purple-100 text-purple-700',
     highlight: 'Balance y Reportes en Vivo',
-    image: '/jorge-luis-huaman.jpg',
+    image: '/jorge-luis-huaman.jpg?v=3',
   },
 ]
 
