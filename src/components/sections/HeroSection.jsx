@@ -897,6 +897,8 @@ function HeroSection({ onNavigate }) {
                     src="/finanzastrack-horizontal-poster.jpg"
                     alt="Vista previa de FinanzasTrack"
                     className="absolute inset-0 h-full w-full object-cover sm:object-contain transition-transform duration-500 ease-out group-hover/overlay:scale-[1.02]"
+                    fetchPriority="high"
+                    decoding="async"
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/30 to-slate-950/40 transition-opacity duration-300 group-hover/overlay:opacity-75" />
@@ -1400,6 +1402,7 @@ function HeroSection({ onNavigate }) {
                       alt={`Vista de ${sec.title}`}
                       className="h-full w-full object-cover object-top transition-transform duration-500 group-hover/mockup:scale-[1.02]"
                       loading="lazy"
+                      decoding="async"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
                         if (e.currentTarget.nextElementSibling) {
@@ -1516,6 +1519,8 @@ function HeroSection({ onNavigate }) {
               src="/device-group1.png"
               alt="FinanzasTrack en Computadora, Laptop y Celular"
               className="w-full max-w-[760px] h-auto object-contain drop-shadow-[0_25px_40px_rgba(15,23,42,0.14)] animate-subtle-float"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 
@@ -1746,6 +1751,7 @@ function HeroSection({ onNavigate }) {
                       alt={t.name}
                       className="h-full w-full object-cover object-center"
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 </div>
