@@ -16,6 +16,9 @@ const VALID_PATHS = [
   '/experiencia-movil',
   '/funcionalidades',
   '/precio',
+  '/ia',
+  '/movil',
+  '/testimonios',
   '/faq',
 ]
 
@@ -28,6 +31,9 @@ const VALID_HASHES = [
   '#experiencia-movil',
   '#funcionalidades',
   '#precio',
+  '#ia',
+  '#movil',
+  '#testimonios',
   '#faq',
 ]
 
@@ -43,6 +49,12 @@ const SECTION_MAP = {
   '#funcionalidades': 'funcionalidades',
   '/precio': 'precio',
   '#precio': 'precio',
+  '/ia': 'ia',
+  '#ia': 'ia',
+  '/movil': 'movil',
+  '#movil': 'movil',
+  '/testimonios': 'testimonios',
+  '#testimonios': 'testimonios',
   '/faq': 'faq',
   '#faq': 'faq',
 }
@@ -86,10 +98,19 @@ function App() {
   useEffect(() => {
     if (is404) return
 
-    const targetSection =
-      SECTION_MAP[cleanPath] || (currentHash ? SECTION_MAP[currentHash] : null)
+    // Prioridad: Si hay hash en la URL (ej: #testimonios), este tiene prioridad sobre la ruta previa
+    const hashSection = currentHash ? SECTION_MAP[currentHash] : null
+    const pathSection = SECTION_MAP[cleanPath]
+    const targetSection = hashSection || pathSection
 
     if (targetSection) {
+      // Si la URL contenía un hash híbrido (ej: /funcionalidades#testimonios), limpiarla a la ruta canónica
+      if (currentHash && hashSection) {
+        window.history.replaceState({}, '', '/' + hashSection)
+        setCurrentPath('/' + hashSection)
+        setCurrentHash('')
+      }
+
       const timer = setTimeout(() => {
         const el = document.getElementById(targetSection)
         if (el) {
@@ -149,7 +170,7 @@ function App() {
             onGoHome={handleNavigate}
           />
         ) : (
-          <HeroSection />
+          <HeroSection onNavigate={handleNavigate} />
         )}
       </main>
       {!is404 && <Footer onNavigate={handleNavigate} />}

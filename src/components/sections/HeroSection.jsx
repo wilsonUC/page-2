@@ -450,7 +450,7 @@ const testimonials = [
     role: 'Diseñador UI / Freelance',
     avatarBg: 'bg-emerald-100 text-emerald-700',
     highlight: 'Control de gastos diario',
-    image: '/rodrigo-salazar.jpg?v=3',
+    image: '/rodrigo-salazar.jpg?v=4',
   },
   {
     quote:
@@ -459,7 +459,7 @@ const testimonials = [
     role: 'Coordinadora de Marketing',
     avatarBg: 'bg-indigo-100 text-indigo-700',
     highlight: 'Presupuestos y Cero Fugas',
-    image: '/valeria-cardenas.jpg',
+    image: '/valeria-cardenas.jpg?v=4',
   },
   {
     quote:
@@ -515,9 +515,22 @@ function getInitialCountdownSeconds() {
   }
 }
 
-function HeroSection() {
+function HeroSection({ onNavigate }) {
   const [openFaq, setOpenFaq] = useState(0)
   const [countdownSeconds, setCountdownSeconds] = useState(getInitialCountdownSeconds)
+
+  const handleInternalNavigate = (href) => {
+    if (onNavigate) {
+      onNavigate(href)
+    } else {
+      const targetId = href.replace(/^(\/|#)/, '')
+      const el = document.getElementById(targetId)
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+        window.history.pushState({}, '', '/' + targetId)
+      }
+    }
+  }
   // 1. Video Horizontal Superior (arriba)
   const [isHorizontalPlaying, setIsHorizontalPlaying] = useState(false)
   const horizontalVideoRef = useRef(null)
@@ -691,7 +704,11 @@ function HeroSection() {
 
             <div className="mt-8 flex flex-col items-center justify-center gap-3.5 sm:flex-row sm:gap-4">
               <a
-                href="#precio"
+                href="/precio"
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleInternalNavigate('/precio')
+                }}
                 className="group flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-8 py-4 text-base font-bold text-white shadow-[0_4px_16px_rgba(5,150,105,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-700 hover:shadow-[0_8px_24px_rgba(5,150,105,0.45)] sm:w-auto"
               >
                 <span>Quiero Mi Prueba Gratis</span>
@@ -746,19 +763,31 @@ function HeroSection() {
 
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold text-slate-600">
               <a
-                href="#precio"
-                className="group flex items-center gap-1.5 text-emerald-800 bg-emerald-50/90 border border-emerald-200/80 rounded-full px-3 py-1 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-100/90 hover:border-emerald-300 hover:shadow-md cursor-pointer active:translate-y-0"
-              >
-                <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Acceso anual completo S/ 30
-              </a>
-              <a
-                href="#experiencia-movil"
+                href="/experiencia-movil"
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleInternalNavigate('/experiencia-movil')
+                }}
                 className="group flex items-center gap-1.5 text-slate-700 bg-white/85 border border-slate-200/80 rounded-full px-3 py-1 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-white hover:border-slate-300 hover:text-slate-900 hover:shadow-md cursor-pointer active:translate-y-0"
               >
                 <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Ver cómo funciona
               </a>
               <a
-                href="#precio"
+                href="/movil"
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleInternalNavigate('/movil')
+                }}
+                className="group flex items-center gap-1.5 text-emerald-800 bg-emerald-50/90 border border-emerald-200/80 rounded-full px-3 py-1 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-emerald-100/90 hover:border-emerald-300 hover:shadow-md cursor-pointer active:translate-y-0"
+              >
+                <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> IA de FinanzasTrack
+              </a>
+              <a
+                href="/testimonios"
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleInternalNavigate('/testimonios')
+                }}
                 className="group flex items-center gap-1.5 text-slate-700 bg-white/85 border border-slate-200/80 rounded-full px-3 py-1 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-white hover:border-slate-300 hover:text-slate-900 hover:shadow-md cursor-pointer active:translate-y-0"
               >
                 <Check className="h-3.5 w-3.5 text-emerald-600 stroke-[3]" /> Sin mensualidades
@@ -1244,7 +1273,11 @@ function HeroSection() {
               </p>
             </div>
             <a
-              href="#precio"
+              href="/precio"
+              onClick={(e) => {
+                e.preventDefault()
+                handleInternalNavigate('/precio')
+              }}
               className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white px-7 py-3.5 text-sm sm:text-base font-bold shadow-lg shadow-emerald-600/30 transition-all hover:-translate-y-0.5"
             >
               <span>Quiero Acceder Ahora</span>
@@ -1338,7 +1371,8 @@ function HeroSection() {
             {appSections.map((sec) => (
               <article
                 key={sec.id}
-                className={`grid items-center gap-8 lg:grid-cols-2 lg:gap-12 ${sec.imageLeft ? '' : 'lg:[&>*:first-child]:order-2'
+                id={sec.id}
+                className={`scroll-mt-24 grid items-center gap-8 lg:grid-cols-2 lg:gap-12 ${sec.imageLeft ? '' : 'lg:[&>*:first-child]:order-2'
                   }`}
               >
                 {/* Contenedor Mockup / Espacio de Imagen */}
@@ -1414,17 +1448,17 @@ function HeroSection() {
         </section>
 
         {/* 7. MÓDULO DE INTELIGENCIA ARTIFICIAL */}
-        <section className="mx-auto mt-24 w-full max-w-6xl">
+        <section id="ia" className="mx-auto mt-24 w-full max-w-6xl scroll-mt-24">
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0f172a] via-[#1e1b4b] to-[#0f172a] p-8 text-white shadow-2xl shadow-indigo-950/30 md:p-12">
             <div className="relative z-10">
               <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
                 <div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/20 px-3.5 py-1 text-xs font-bold text-indigo-300 backdrop-blur-md">
                     <Bot className="h-4 w-4" />
-                    <span>TU ASESOR FINANCIERO EN EL BOLSILLO</span>
+                    <span>TU IA GRATIS</span>
                   </div>
                   <h2 className="mt-4 text-3xl font-extrabold tracking-tight md:text-4xl">
-                    Tu Asesor Financiero en el Bolsillo 24/7 que te dice exactamente cómo ahorrar
+                    Tu Asesor Financiero en el Bolsillo 24/7
                   </h2>
                   <p className="mt-2 max-w-2xl text-sm leading-relaxed text-indigo-200/90 md:text-base">
                     No necesitas saber de finanzas ni ser economista. Tu copiloto con inteligencia artificial analiza tus gastos en tiempo real, frena fugas de dinero y te guía paso a paso para que te sobre dinero a fin de mes.
@@ -1687,7 +1721,7 @@ function HeroSection() {
         </section>
 
         {/* 9. TESTIMONIOS Y SOCIAL PROOF */}
-        <section className="mx-auto mt-28 w-full max-w-6xl">
+        <section id="testimonios" className="mx-auto mt-28 w-full max-w-6xl scroll-mt-24">
           <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-wider text-indigo-600">Testimonios</p>
             <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
